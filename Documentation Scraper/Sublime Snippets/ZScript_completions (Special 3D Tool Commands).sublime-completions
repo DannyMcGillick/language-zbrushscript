@@ -1,0 +1,69 @@
+{
+    "scope": "text.zscript",
+    "completions": [
+        {
+            "trigger": "DispMapCreate\tCreates DisplacementMap Output: Returns zero if executed successfully. Any other value indicates an error",
+            "contents": "[DispMapCreate, 1024, 1024, 1, 7, 2]"
+        },
+        {
+            "trigger": "DispMapCreate\t (args)",
+            "contents": "[DispMapCreate, \n\t Image Width, \n\t Image Height, \n\t Smooth (default:yes), \n\t SubPoly (default:0), \n\t Border (default:8), \n\t UVTile index (default:ignores UV tiles)\n]"
+        },
+        {
+            "trigger": "Mesh3DGet\tGets information about the currently active Mesh3D tool. Output: Returns zero if command executed successfully, any other value indicates and error (Sub-Level only).",
+            "contents": "[Mesh3DGet, 0]"
+        },
+        {
+            "trigger": "Mesh3DGet\t (args)",
+            "contents": "[Mesh3DGet, \n\t Property: (0:PointsCount 1:FacesCount 2:XYZ bounds 3:UVBounds 4:1stUVTile 5:NxtUVTile 6:PolysInUVTile 7:3DAreaOfUVTile 8:Full3DMeshArea), \n\t Optional input 1 Vertix/Face/Group/UVTile H index (0 based), \n\t Optional input 2, \n\t Optional output variable1, \n\t Optional output variable2, \n\t Optional output variable3, \n\t Optional output variable4, \n\t Optional output variable5, \n\t Optional output variable6, \n\t Optional output variable7, \n\t Optional output variable8\n]"
+        },
+        {
+            "trigger": "NormalMapCreate\tCreates NormalMap Output: Returns zero if executed successfully. Any other value indicates an error",
+            "contents": "[NormalMapCreate, 1024, 1024, 1, 7, 2]"
+        },
+        {
+            "trigger": "NormalMapCreate\t (args)",
+            "contents": "[NormalMapCreate, \n\t Image Width, \n\t Image Height, \n\t Smooth (default:yes), \n\t SubPoly (default:0), \n\t Border (default:8), \n\t UVTile index (default:ignores UV tiles), \n\t Local(tangent) coordinates? (default:world coordinates)\n]"
+        },
+        {
+            "trigger": "ZSphereAdd\tAdds new ZSphere to the currently active ZSpheres tool Output: Returns the the index of the new ZSphere or -1 if command failed (Sub-Level only).",
+            "contents": "[ZSphereAdd, 0, .5, 1, .1, 0]"
+        },
+        {
+            "trigger": "ZSphereAdd\t (args)",
+            "contents": "[ZSphereAdd , \n\t xPos, \n\t yPos, \n\t zPos, \n\t Radius, \n\t Parent index (0 based), \n\t Optional Color 0x000000<->0xffffff (RED*65536)+(GREEN*256)+BLUE, \n\t Optional Mask (0:unmasked to 255:fully masked), \n\t Optional TimeStamp, \n\t Optional Flags (0:default, \n\t 1:invisible link to parent)\n]"
+        },
+        {
+            "trigger": "ZSphereDel\tDeletes a ZSphere from the currently active ZSpheres tool Output: Returns zero if command executed successfully (Sub-Level only).",
+            "contents": "[ZSphereDel, 2]"
+        },
+        {
+            "trigger": "ZSphereDel\t (args)",
+            "contents": "[ZSphereDel , \n\t ZSphere index (Sphere 0 can't be deleted)\n]"
+        },
+        {
+            "trigger": "ZSphereEdit\tPrepares the currently active ZSpheres tool for ZScript editing session. Output: Returns the zero if command executed successfully.",
+            "contents": "[ZSphereEdit, ...commands...]"
+        },
+        {
+            "trigger": "ZSphereEdit\t (args)",
+            "contents": "[ZSphereEdit , \n\t ZSpheres editing commands, \n\t Store undo? (0:Skip Undo, \n\t 1:Store undo)\n]"
+        },
+        {
+            "trigger": "ZSphereGet\tGets information about the currently active ZSpheres tool. (Must be placed within ZSphereEdit command) Output: Returns the value of the specified property (Sub-Level only).",
+            "contents": "[ZSphereGet, 0]"
+        },
+        {
+            "trigger": "ZSphereGet\t (args)",
+            "contents": "[ZSphereGet, \n\t Property: 0:ZSpheres count, \n\t 1:xPos, \n\t 2:yPos, \n\t 3:zPos, \n\t 4:radius, \n\t 5:color, \n\t 6:mask, \n\t 7:ParentIndex(-1:none), \n\t 8:LastClickedIndex(-1:none), \n\t 9:TimeStamp, \n\t 10:ChildsCount, \n\t 11:ChildIndex (2nd index), \n\t 12:TimeStampCount, \n\t 13:TimeStampIndex, \n\t 14:flags, \n\t 15:Twist Angle, \n\t 16:Membrane, \n\t 17:X Res, \n\t 18:Y Res, \n\t 19:Z Res, \n\t Optional ZSphere index (0 based), \n\t Optional 2nd index (0 based)\n]"
+        },
+        {
+            "trigger": "ZSphereSet\tModifies a property of the currently active ZSpheres tool. (Must be placed within ZSphereEdit command) Output: Returns zero if command executed successfully (Sub-Level only).",
+            "contents": "[ZSphereSet, 4, 6, .5]"
+        },
+        {
+            "trigger": "ZSphereSet\t (args)",
+            "contents": "[ZSphereSet , \n\t Property: 0:unused, \n\t 1:xPos, \n\t 2:yPos, \n\t 3:zPos, \n\t 4:radius, \n\t 5:color, \n\t 6:mask, \n\t 7:ParentIndex, \n\t 8:unused, \n\t 9:TimeStamp, \n\t 10:unused, \n\t 11:unused, \n\t 12:unused, \n\t 13:unused, \n\t 14:flags, \n\t 15:Twist Angle, \n\t 16:Membrane, \n\t 17:X Res, \n\t 18:Y Res, \n\t 19:Z Res, \n\t 20:XYZ Res, \n\t 21:UserValue, \n\t ZSphere index (0 based), \n\t New property value\n]"
+        }
+    ]
+}

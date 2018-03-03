@@ -1,0 +1,253 @@
+{
+    "scope": "text.zscript",
+    "completions": [
+        {
+            "trigger": "BackColorSet\tSets the pen background color (Top Level).",
+            "contents": "[BackColorSet, 255, 255, 0]"
+        },
+        {
+            "trigger": "BackColorSet\t (args)",
+            "contents": "[BackColorSet, \n\t Red, \n\t Green, \n\t Blue\n]"
+        },
+        {
+            "trigger": "Caption\tDisplays a text line using the current Caption settings (Top Level).",
+            "contents": "[Caption, This Is A Caption]"
+        },
+        {
+            "trigger": "Caption\t (args)",
+            "contents": "[Caption, \n\t Text\n]"
+        },
+        {
+            "trigger": "FontSetColor\tSets the color of the zscript window font (Top Level).",
+            "contents": "[FontSetColor, 255, 0, 0]"
+        },
+        {
+            "trigger": "FontSetColor\t (args)",
+            "contents": "[FontSetColor, \n\t Red, \n\t Green, \n\t Blue\n]"
+        },
+        {
+            "trigger": "FontSetOpacity\tSets the opacity of the zscript window font (Top Level).",
+            "contents": "[FontSetOpacity, .25]"
+        },
+        {
+            "trigger": "FontSetOpacity\t (args)",
+            "contents": "[FontSetOpacity, \n\t Opacity\n]"
+        },
+        {
+            "trigger": "FontSetSize\tSets the intensity of the zscript window font (Top Level).",
+            "contents": "[FontSetSize, 2]"
+        },
+        {
+            "trigger": "FontSetSize\t (args)",
+            "contents": "[FontSetSize, \n\t Size: 1:Small 2:Med 3:Large\n]"
+        },
+        {
+            "trigger": "FontSetSizeLarge\tSets the size of the zscript window font to large (Top Level).",
+            "contents": "[FontSetSizeLarge]"
+        },
+        {
+            "trigger": "FontSetSizeLarge\t (args)",
+            "contents": "[FontSetSizeLarge\n]"
+        },
+        {
+            "trigger": "FontSetSizeMedium\tSets the size of the zscript window font to medium (Top Level).",
+            "contents": "[FontSetSizeMedium]"
+        },
+        {
+            "trigger": "FontSetSizeMedium\t (args)",
+            "contents": "[FontSetSizeMedium\n]"
+        },
+        {
+            "trigger": "FontSetSizeSmall\tSets the size of the zscript window font to small.",
+            "contents": "[FontSetSizeSmall]"
+        },
+        {
+            "trigger": "FontSetSizeSmall\t (args)",
+            "contents": "[FontSetSizeSmall\n]"
+        },
+        {
+            "trigger": "FrontColorSet\tSets the main interface color to a new value (Top Level).",
+            "contents": "[FrontColorSet, Text, 0, 0, 0]"
+        },
+        {
+            "trigger": "FrontColorSet\t (args)",
+            "contents": "[FrontColorSet, \n\t Description Text, \n\t Red, \n\t Green, \n\t Blue, \n\t Initially Disabled? (0:Enabled(ByDefault) NonZero:Disabled)\n]"
+        },
+        {
+            "trigger": "HotKeyText\tDisplays a hot-key for the specified interface item (Top Level).",
+            "contents": "[HotKeyText, DOCUMENT:UNDO]"
+        },
+        {
+            "trigger": "HotKeyText\t (args)",
+            "contents": "[HotKeyText, \n\t Interface item path\n]"
+        },
+        {
+            "trigger": "Image\tLoads and displays an image (Top Level).",
+            "contents": "[Image, TestImage.psd]"
+        },
+        {
+            "trigger": "Image\t (args)",
+            "contents": "[Image, \n\t FileName (.psd .bmp + .pct for Mac Systems), \n\t Align (0:center 1:left 2:right), \n\t Resized Width\n]"
+        },
+        {
+            "trigger": "ISetStatus\tEnables or Disables a ZScript interface item (can only be used for ZScript-generated interface items).",
+            "contents": "[ISetStatus, ZScript:DoIt, 1]"
+        },
+        {
+            "trigger": "ISetStatus\t (args)",
+            "contents": "[ISetStatus, \n\t Interface item path, \n\t New status ( 0:Disable NotZero:Enable )\n]"
+        },
+        {
+            "trigger": "PageSetWidth\tSets the width of the page (Top Level).",
+            "contents": "[PageSetWidth, 300]"
+        },
+        {
+            "trigger": "PageSetWidth\t (args)",
+            "contents": "[PageSetWidth, \n\t Preferred PageWidth\n]"
+        },
+        {
+            "trigger": "PaintBackground\tPaints the background using the current background color (Top Level).",
+            "contents": "[PaintBackground, 10, 10, 10]"
+        },
+        {
+            "trigger": "PaintBackground\t (args)",
+            "contents": "[PaintBackground, \n\t Red, \n\t Green, \n\t Blue\n]"
+        },
+        {
+            "trigger": "PaintBackSliver\tDraws a full page-width rectangle using the current background color (Top Level).",
+            "contents": "[PaintBackSliver, 20, 255, 255, 0]"
+        },
+        {
+            "trigger": "PaintBackSliver\t (args)",
+            "contents": "[PaintBackSliver, \n\t height, \n\t Red, \n\t Green, \n\t Blue\n]"
+        },
+        {
+            "trigger": "PaintPageBreak\tDraws a visual page-break (Top Level).",
+            "contents": "[PaintPageBreak]"
+        },
+        {
+            "trigger": "PaintPageBreak\t (args)",
+            "contents": "[PaintPageBreak\n]"
+        },
+        {
+            "trigger": "PaintRect\tDraws a rectangle (in the ZScript window) using the current pen color (Top Level).",
+            "contents": "[PaintRect, 80, 100]"
+        },
+        {
+            "trigger": "PaintRect\t (args)",
+            "contents": "[PaintRect, \n\t Width, \n\t height, \n\t Red, \n\t Green, \n\t Blue\n]"
+        },
+        {
+            "trigger": "PaintTextRect\tDraws a rectangle with imbedded text (Top Level).",
+            "contents": "[PaintTextRect, 200, 100, \"This is an Example\"]"
+        },
+        {
+            "trigger": "PaintTextRect\t (args)",
+            "contents": "[PaintTextRect, \n\t Width, \n\t Height, \n\t Text\n]"
+        },
+        {
+            "trigger": "PD\tMoves the pen position to the beginning of the next line (Same as PenMoveDown).",
+            "contents": "[PD]"
+        },
+        {
+            "trigger": "PD\t (args)",
+            "contents": "[PD\n]"
+        },
+        {
+            "trigger": "PenMove\tMoves the pen a relative distance.",
+            "contents": "[PenMove, 40, 80]"
+        },
+        {
+            "trigger": "PenMove\t (args)",
+            "contents": "[PenMove, \n\t Horizontal Offset, \n\t Vertical Offset\n]"
+        },
+        {
+            "trigger": "PenMoveCenter\tMoves the pen position to the horizontal center of the page .",
+            "contents": "[PenMoveCenter]"
+        },
+        {
+            "trigger": "PenMoveCenter\t (args)",
+            "contents": "[PenMoveCenter\n]"
+        },
+        {
+            "trigger": "PenMoveDown\tMoves the pen position to the beginning of the next line .",
+            "contents": "[PenMoveDown]"
+        },
+        {
+            "trigger": "PenMoveDown\t (args)",
+            "contents": "[PenMoveDown\n]"
+        },
+        {
+            "trigger": "PenMoveLeft\tMoves the pen position to the left side of the page .",
+            "contents": "[PenMoveLeft]"
+        },
+        {
+            "trigger": "PenMoveLeft\t (args)",
+            "contents": "[PenMoveLeft\n]"
+        },
+        {
+            "trigger": "PenMoveRight\tMoves the pen position to the right side of the page .",
+            "contents": "[PenMoveRight]"
+        },
+        {
+            "trigger": "PenMoveRight\t (args)",
+            "contents": "[PenMoveRight\n]"
+        },
+        {
+            "trigger": "PenSetColor\tSets the pen main color .",
+            "contents": "[PenSetColor, 128, 128, 128]"
+        },
+        {
+            "trigger": "PenSetColor\t (args)",
+            "contents": "[PenSetColor, \n\t Red, \n\t Green, \n\t Blue\n]"
+        },
+        {
+            "trigger": "PropertySet\tModifies the setting of Title, SubTitle and Caption text.\nProperty Indexes:\n0 = FontSetSize(1=small, 2=med, 3=large)\n1 = alignments(0=center, 1=L, 2=R)\n2 = Opacity(0-1)\n3 = 0x0000000xffffff\n4 = Border size\n5 = BackColor1 (0x0000000xffffff)\n6 = GradientMode (-1=None, 0=Flat, 1=HGrad, 2=VGrad, 3=DHGrad, 4=DVGrad)\n7 = BackColor2 (0x0000000xffffff)",
+            "contents": "[PropertySet, Title, 1, 1]"
+        },
+        {
+            "trigger": "PropertySet\t (args)",
+            "contents": "[PropertySet, \n\t The base command name (Title, \n\tSubTitle, \n\tCaption), \n\t Property Index, \n\t The new Value\n]"
+        },
+        {
+            "trigger": "SectionBegin\tBegins a collapsible section .",
+            "contents": "[SectionBegin, Chapterl2]"
+        },
+        {
+            "trigger": "SectionBegin\t (args)",
+            "contents": "[SectionBegin, \n\t Section Title, \n\t Initial state (1:Expanded, \n\t 0:Collapsed ), \n\t Popup Info Text, \n\t Commands group to execute when expanding to reveal content, \n\t Commands group to execute when collapsing to hide content, \n\t Initially Disabled? (0:Enabled(ByDefault) NonZero:Disabled)\n]"
+        },
+        {
+            "trigger": "SectionEnd\tEnds a collapsible section .",
+            "contents": "[SectionEnd]"
+        },
+        {
+            "trigger": "SectionEnd\t (args)",
+            "contents": "[SectionEnd\n]"
+        },
+        {
+            "trigger": "SubTitle\tDisplays a text line using the current SubTitle settings .",
+            "contents": "[SubTitle, \"Chapter 23\"]"
+        },
+        {
+            "trigger": "SubTitle\t (args)",
+            "contents": "[SubTitle, \n\t Text\n]"
+        },
+        {
+            "trigger": "TextCalcWidth\tCalculates the pixel-width of the specified string Output: Width of text in pixels .",
+            "contents": "[TextCalcWidth, \"Test\"]"
+        },
+        {
+            "trigger": "TextCalcWidth\t (args)",
+            "contents": "[TextCalcWidth, \n\t The text to be evaluated\n]"
+        },
+        {
+            "trigger": "Title\tDisplays a text line using the current Title settings .",
+            "contents": "[Title, \"Hello\"]"
+        },
+        {
+            "trigger": "Title\t (args)",
+            "contents": "[Title, \n\t Text\n]"
+        }
+    ]
+}

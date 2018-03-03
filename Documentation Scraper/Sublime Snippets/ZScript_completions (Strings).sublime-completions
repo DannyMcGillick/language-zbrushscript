@@ -1,0 +1,77 @@
+{
+    "scope": "text.zscript",
+    "completions": [
+        {
+            "trigger": "StrAsk\tAsks user to input a string. Output: Returns the text typed by user or an empty string if canceled.",
+            "contents": "[StrAsk, \"Type text in here\", \"Please enter a file name\"]"
+        },
+        {
+            "trigger": "StrAsk\t (args)",
+            "contents": "[StrAsk, \n\t Initial string, \n\t Title\n]"
+        },
+        {
+            "trigger": "StrExtract\tReturns specified portion of the input string Output: The extracted portion of the input string.",
+            "contents": "[StrExtract, \"abcdefgh\", 3, 5]"
+        },
+        {
+            "trigger": "StrExtract\t (args)",
+            "contents": "[StrExtract, \n\t Input string, \n\t Start character index (0:left), \n\t End character index (0:left)\n]"
+        },
+        {
+            "trigger": "StrFind\tLocate a string within a string. Output: Returns the starting index of the 1st string within the 2nd string. returns -1 if not found.",
+            "contents": "[StrFind, \"Br\", \"ZBrush\"]"
+        },
+        {
+            "trigger": "StrFind\t (args)",
+            "contents": "[StrFind, \n\t find this string, \n\t in this string, \n\t Optional start search index (default:0)\n]"
+        },
+        {
+            "trigger": "StrFromAsc\tReturns the character of the specified Ascii value. Output: The character of the specified Ascii value.",
+            "contents": "[StrFromAsc, 65]"
+        },
+        {
+            "trigger": "StrFromAsc\t (args)",
+            "contents": "[StrFromAsc, \n\t Input Ascii value\n]"
+        },
+        {
+            "trigger": "StrLength\tReturns the number of characters in the input string. Output: Number of characters in the input string.",
+            "contents": "[StrLength, \"Hello\"]"
+        },
+        {
+            "trigger": "StrLength\t (args)",
+            "contents": "[StrLength, \n\t String to evaluate\n]"
+        },
+        {
+            "trigger": "StrLower\tReturns the lowercase version of the input string. Output: The lowercase version of the input string.",
+            "contents": "[StrLower, \"ZBrush\"]"
+        },
+        {
+            "trigger": "StrLower\t (args)",
+            "contents": "[StrLower, \n\t Input string\n]"
+        },
+        {
+            "trigger": "StrMerge\tCombines two (or more) strings into one string. Output: The combined string. Note: result string will not exceed 255 characters in length",
+            "contents": "[StrMerge, \"Texture number \", \"15\", \" is selected\"]"
+        },
+        {
+            "trigger": "StrMerge\t (args)",
+            "contents": "[StrMerge, \n\t Str 1, \n\t Str 2, \n\t Optional Str 3, \n\t Opt Str 4, \n\t Opt Str 5, \n\t Opt Str 6, \n\t Opt Str 7, \n\t Opt Str 8, \n\t Opt Str 9, \n\t Opt Str 10, \n\t Opt Str 11, \n\t Opt Str 12\n]"
+        },
+        {
+            "trigger": "StrToAsc\tReturns the Ascii value of a character. Output: The Ascii value of a character.",
+            "contents": "[StrToAsc, \"ZBrush\"]"
+        },
+        {
+            "trigger": "StrToAsc\t (args)",
+            "contents": "[StrToAsc, \n\t Input string, \n\t Optional character offset (default:0)\n]"
+        },
+        {
+            "trigger": "StrUpper\tReturns the uppercase version of the input string. Output: The uppercase version of the input string.",
+            "contents": "[StrUpper, \"ZBrush\"]"
+        },
+        {
+            "trigger": "StrUpper\t (args)",
+            "contents": "[StrUpper, \n\t Input string\n]"
+        }
+    ]
+}

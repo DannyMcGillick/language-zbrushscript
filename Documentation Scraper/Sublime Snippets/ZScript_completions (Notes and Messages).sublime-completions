@@ -1,0 +1,77 @@
+{
+    "scope": "text.zscript",
+    "completions": [
+        {
+            "trigger": "Note\tDisplays a note to the user. Output: If the note has UI buttons then the return value of the pressed buttons (1=1st button, 2=2nd button \u2026), otherwise the return value will be zero (Sub-Level only).",
+            "contents": "[Note, \"Hello There\"]"
+        },
+        {
+            "trigger": "Note\t (args)",
+            "contents": "[Note, \n\t \"Text line\", \n\t Optional path1 of an interface item to be pointed out (default:none), \n\t Display Duration (in seconds) (0:wait for user action(default), \n\t -1:combine with next note command), \n\t Popup background color (0x000000<->0xffffff, \n\t default:0x606060, \n\t 0:No Background), \n\t Prefered distance of the note from the specified interface item (default:48), \n\t Prefered Note width (in pixels, \n\t default:400), \n\t optional marked windows fill color (0x000000<->0xffffff or (blue+(green*256)+(red*65536))(Omitted value:No fill)), \n\t Frame horizontal size (1:Max width (default)), \n\t Frame vertical size (1:Max height (default)), \n\t Frame left side (0:left (default), \n\t .5:center, \n\t 1:right) Omit value for horizontal autocentering, \n\t Frame top side ( 0:top (default), \n\t .5:center, \n\t 1:bottom )Omit value for vertical auto-centering, \n\t Optional icon file name\n]"
+        },
+        {
+            "trigger": "NoteBar\tDisplays a note in progress bar (Sub-Level only).",
+            "contents": "[NoteBar, \u201dZScript is calculating, Please wait...\"]"
+        },
+        {
+            "trigger": "NoteBar\t (args)",
+            "contents": "[NoteBar, \n\t The Message that will be shown (use empty string to clear current note), \n\t Optional progress-bar value (0:Min, \n\t 1:Max)\n]"
+        },
+        {
+            "trigger": "NoteIButton\tDefines a button to be included within the next Note to be shown (Sub-Level only).",
+            "contents": "[NoteIButton, \"OK\"] "
+        },
+        {
+            "trigger": "NoteIButton\t (args)",
+            "contents": "[NoteIButton, \n\t Button name, \n\t Optional button icon, \n\t Initially Pressed? (default:unpressed), \n\t Initially Disabled? (default:enabled), \n\t Optional button H relative position (Positive value:offset from left, \n\t Negative value:offset from right, \n\t 0:automatic), \n\t Optional button V relative position (Positive value:offset from top, \n\t Negative value:offset from bottom, \n\t 0:automatic), \n\t Optional button width in pixels (default:automatic), \n\t Optional button height in pixels (default:automatic), \n\t Optional button color (0x000000<->0xffffff or (blue+(green*256)+(red*65536))), \n\t Optional text color (0x000000<->0xffffff or (blue+(green*256)+(red*65536))), \n\t Optional background opacity (default:1), \n\t Optional text opacity (default:1) , \n\t Optional image opacity (default:1)\n]"
+        },
+        {
+            "trigger": "NoteIGet\tReturns the value of am NoteIButton which was shown in the last displayed Note. Output: The item value.",
+            "contents": "[NoteIGet, 1]"
+        },
+        {
+            "trigger": "NoteIGet\t (args)",
+            "contents": "[NoteIGet, \n\t Note-button index (1:1st) or its name\n]"
+        },
+        {
+            "trigger": "NoteISwitch\tDefine a switch-button to be included within the next Note to be shown (Sub-Level only).",
+            "contents": "[NoteISwitch, \"Double Sided\"]"
+        },
+        {
+            "trigger": "NoteISwitch\t (args)",
+            "contents": "[NoteISwitch, \n\t Switch name, \n\t Optional button icon, \n\t Initially Pressed? (default:unpressed), \n\t Initially Disabled ? (default:enabled), \n\t Optional button H relative position (Positive value:offset from left, \n\t Negative value:offset from right, \n\t 0:automatic), \n\t Optional button V relative position (Positive value:offset from top, \n\t Negative value:offset from bottom, \n\t 0:automatic), \n\t Optional button width in pixels (default:automatic), \n\t Optional button height in pixels (default:automatic), \n\t Optional button color (0x000000<->0xffffff or (blue+(green*256)+(red*65536))), \n\t Optional text color (0x000000<->0xffffff or (blue+(green*256)+(red*65536))), \n\t Optional background opacity (default:1), \n\t Optional text opacity (default:1), \n\t Optional image opacity (default:1)\n]"
+        },
+        {
+            "trigger": "MessageOK\tDisplays a user message with a single OK button",
+            "contents": "[MessageOK, \"Hello There\"]"
+        },
+        {
+            "trigger": "MessageOK\t (args)",
+            "contents": "[MessageOK, \n\t The Message that will be shown, \n\t The Title of the message\n]"
+        },
+        {
+            "trigger": "MessageOKCancel\tDisplays a user message with CANCEL and OK buttons Output: Returns the button that the user clicked. (0=CANCEL, 1=OK)(Sub-Level only).",
+            "contents": "[MessageOkCancel, \"Delete this image?\"]"
+        },
+        {
+            "trigger": "MessageOKCancel\t (args)",
+            "contents": "[MessageOKCancel, \n\t The Message that will be shown, \n\t The Title of the message\n]"
+        },
+        {
+            "trigger": "MessageYesNo\tDisplays a user message with YES and NO buttons Output: Returns the button that the user clicked (0=NO, 1=YES)(Sub-Level only).",
+            "contents": "[MessageYesNo, \"Are you sure?\"]"
+        },
+        {
+            "trigger": "MessageYesNo\t (args)",
+            "contents": "[MessageYesNo, \n\t The Message that will be shown, \n\t The Title of the message\n]"
+        },
+        {
+            "trigger": "MessageYesNoCancel\tDisplays a user message with YES, NO and CANCEL buttons Output: Returns the button that the user clicked (0=NO, 1=YES CANCEL=-1)(Sub-Level only).",
+            "contents": "[MessageYesNoCancel, \"Are you sure?\"]"
+        },
+        {
+            "trigger": "MessageYesNoCancel\t (args)",
+            "contents": "[MessageYesNoCancel, \n\t The Message that will be shown, \n\t The Title of the message\n]"
+        }
+    ]
+}

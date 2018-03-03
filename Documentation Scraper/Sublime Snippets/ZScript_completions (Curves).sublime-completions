@@ -1,0 +1,53 @@
+{
+    "scope": "text.zscript",
+    "completions": [
+        {
+            "trigger": "CurveAddPoint\tAdd a new point to the specified curve (Sub-Level only). Output: Returns the point index (zero based) or -1 if failed.",
+            "contents": "[CurveAddPoint, 1,1,2,3]"
+        },
+        {
+            "trigger": "CurveAddPoint\t (args)",
+            "contents": "[CurveAddPoint, \n\t Curve Index (zero based), \n\t x position, \n\t y position, \n\t z position\n]"
+        },
+        {
+            "trigger": "CurvesCreateMesh\tCreates a mesh from the current curves (Sub-Level only). Output: Returns the number of points in the new mesh. zero=error, -1=file exists.",
+            "contents": "[CurvesCreateMesh, myCurveMesh, 1, 10]"
+        },
+        {
+            "trigger": "CurvesCreateMesh\t (args)",
+            "contents": "[CurvesCreateMesh, \n\t Name, \n\t Action (0(default): Append mesh to the active mesh, \n\t 1: Add as a new subtool, \n\t 2: Export OBJ file if file does not exist, \n\t 3: Export Obj file and overwrite if exists), \n\t Thickness (zero: single side mesh)\n]"
+        },
+        {
+            "trigger": "CurvesDelete\tDeletes named curves list (Sub-Level only).",
+            "contents": "[CurvesDelete, myCurves]"
+        },
+        {
+            "trigger": "CurvesDelete\t (args)",
+            "contents": "[CurvesDelete, \n\t name\n]"
+        },
+        {
+            "trigger": "CurvesNewCurve\tCreates a new curve in the current curves list (Sub-Level only). Output: Returns the curve index (zero based) or -1 if failed.",
+            "contents": "[CurvesNewCurve]"
+        },
+        {
+            "trigger": "CurvesNewCurve\t (args)",
+            "contents": "[CurvesNewCurve\n]"
+        },
+        {
+            "trigger": "CurvesNew\tCreates a new curves list (Sub-Level only).",
+            "contents": "[CurvesNew, myCurves]"
+        },
+        {
+            "trigger": "CurvesNew\t (args)",
+            "contents": "[CurvesNew, \n\t name\n]"
+        },
+        {
+            "trigger": "CurvesToUI\tCopy the ZScript curves to UI (Sub-Level only). Output: Returns zero if OK or -1 if failed.",
+            "contents": "[CurvesToUI]"
+        },
+        {
+            "trigger": "CurvesToUI\t (args)",
+            "contents": "[CurvesToUI\n]"
+        }
+    ]
+}

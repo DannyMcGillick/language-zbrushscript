@@ -1,0 +1,117 @@
+{
+    "scope": "text.zscript",
+    "completions": [
+        {
+            "trigger": "GetActiveToolPath\tReturns the full path of the active tool (Sub-Level only). Output: The path of the active tool.",
+            "contents": "[SubToolSelect, 4]"
+        },
+        {
+            "trigger": "GetActiveToolPath\t (args)",
+            "contents": "[GetActiveToolPath\n]"
+        },
+        {
+            "trigger": "SubToolSelect\tSelects the subtool at the specified subtool index (Sub-Level only). Output: Returns zero if OK, -1 if error.",
+            "contents": "[SubToolSelect, 4]"
+        },
+        {
+            "trigger": "SubToolSelect\t (args)",
+            "contents": "[SubToolSelect, \n\t Subtool Index (zero based).\n]"
+        },
+        {
+            "trigger": "SubToolLocate\tLocates a subtool by the specified unique ID (Sub-Level only). Output: Returns the index of the located subtool or -1 if error.",
+            "contents": "[SubToolGetID, 4]"
+        },
+        {
+            "trigger": "SubToolLocate\t (args)",
+            "contents": "[SubToolLocate, \n\t Unique Subtool ID\n]"
+        },
+        {
+            "trigger": "SubToolGetID\tReturns the unique subtool ID (Sub-Level only). Output: Returns the unique subtool ID or zero if error. Note that duplicates of meshes have the same ID.",
+            "contents": "[SubToolGetID, 4]"
+        },
+        {
+            "trigger": "SubToolGetID\t (args)",
+            "contents": "[SubToolGetID, \n\t Subtool Index (zero based). If omited then uses the currently selected subtool.\n]"
+        },
+        {
+            "trigger": "SubToolGetActiveIndex\tReturns the index of the active subtool (Sub-Level only). Output: Returns the index of the active subtool (zero based).",
+            "contents": "[ToolGetPath, 4]"
+        },
+        {
+            "trigger": "SubToolGetActiveIndex\t (args)",
+            "contents": "[SubToolGetActiveIndex\n]"
+        },
+        {
+            "trigger": "SubToolGetCount\tReturns the number of subtools in the active tool (Sub-Level only). Output: Returns the number of subtools. Return 0 if error.",
+            "contents": "[ToolGetPath, 4]"
+        },
+        {
+            "trigger": "SubToolGetCount\t (args)",
+            "contents": "[SubToolGetCount\n]"
+        },
+        {
+            "trigger": "ToolGetActiveIndex\tReturns the index of the active tool (Sub-Level only). Output: Returns the index of the active tool (zero based).",
+            "contents": "[ToolGetPath, 4]"
+        },
+        {
+            "trigger": "ToolGetActiveIndex\t (args)",
+            "contents": "[ToolGetActiveIndex\n]"
+        },
+        {
+            "trigger": "ToolGetCount\tReturns the number of available tools (Sub-Level only). Output: Returns the number of available tools.",
+            "contents": "[ToolGetPath, 4]"
+        },
+        {
+            "trigger": "ToolGetCount\t (args)",
+            "contents": "[ToolGetCount\n]"
+        },
+        {
+            "trigger": "ToolGetPath\tReturns the file path or name of the specified tool (Sub-Level only). Output: Result path (without the .ztl). Empty if error.",
+            "contents": "[ToolGetPath, 4]"
+        },
+        {
+            "trigger": "ToolGetPath\t (args)",
+            "contents": "[ToolGetPath, \n\t Tool Index (zero based). If omited then uses the currently selected tool.\n]"
+        },
+        {
+            "trigger": "ToolGetSubToolID\tReturns the unique subtool ID (Sub-Level only). Output: Returns the unique subtool ID or zero if error. Note that duplicates of meshes have the same ID.",
+            "contents": "[ToolGetSubToolID, 1, 4]"
+        },
+        {
+            "trigger": "ToolGetSubToolID\t (args)",
+            "contents": "[ToolGetSubToolID, \n\t Tool Index (zero based). If omited then use the currently selected tool., \n\tSubtool Index (zero based). If omited then uses the selected subtool.\n]"
+        },
+        {
+            "trigger": "ToolGetSubToolsCount\tReturns the number of subtools in the specified tool index (Sub-Level only). Output: Returns the number of subtools. Return 0 if error.",
+            "contents": "[ToolGetSubToolsCount, 4]"
+        },
+        {
+            "trigger": "ToolGetSubToolsCount\t (args)",
+            "contents": "[ToolGetSubToolsCount, \n\t Tool Index (zero based). If omited then uses the currently selected tool.\n]"
+        },
+        {
+            "trigger": "ToolLocateSubTool\tLocates a subtool by the specified unique ID (Sub-Level only). Output: Returns the index of the located tool and subtool or -1 if error.",
+            "contents": "[ToolSelect, 4]"
+        },
+        {
+            "trigger": "ToolLocateSubTool\t (args)",
+            "contents": "[ToolLocateSubTool, \n\t Unique Subtool ID, \n\t Optional subtool index result\n]"
+        },
+        {
+            "trigger": "ToolSelect\tSelects the tool at the specified tool index (Sub-Level only). Output: Returns zero if OK, -1 if error.",
+            "contents": "[ToolSelect, 4]"
+        },
+        {
+            "trigger": "ToolSelect\t (args)",
+            "contents": "[ToolSelect, \n\t Tool Index (zero based).\n]"
+        },
+        {
+            "trigger": "ToolSetPath\tSets the file path or name of the specified tool (Sub-Level only). Output: Returns zero if OK, -1 if error.",
+            "contents": "[ToolSetPath, ,[FileNameAdvance,[ToolGetPath]]]"
+        },
+        {
+            "trigger": "ToolSetPath\t (args)",
+            "contents": "[ToolSetPath, \n\t Tool Index (zero based). If omited then uses the currently selected tool., \n\t New Path. Path extension (such as .ztl) will be omited.\n]"
+        }
+    ]
+}

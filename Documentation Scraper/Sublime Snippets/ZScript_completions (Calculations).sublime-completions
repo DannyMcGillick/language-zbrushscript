@@ -1,0 +1,125 @@
+{
+    "scope": "text.zscript",
+    "completions": [
+        {
+            "trigger": "Interpolate\tPerforms time-based interpolation Output: Interpolated value or list",
+            "contents": "[Interpolate, 0.25, startx, endx]"
+        },
+        {
+            "trigger": "Interpolate\t (args)",
+            "contents": "[Interpolate, \n\t Time (0:AtStart 0.5:half 1:AtEnd), \n\t Value1 (Num, \n\t VarName or ListName), \n\t Value2 (Num, \n\t VarName or ListName), \n\t Value3 (Num, \n\t VarName or ListName), \n\t Value4 (Num, \n\t VarName or ListName), \n\t Angle interpolation (0:no(default), \n\t 1:yes )\n]"
+        },
+        {
+            "trigger": "Math Operators\t\n\n+ Plus\n- Minus\n* Multiplied by\n/ Divided by\n^^ To the Power of\n\nNote: Unlike some programming languages, calculations are always evaluated from left to right. That means\n\n2 + 3 * 4\nevaluates to 20.\n\nTo make sure certain parts of the calculation are evaluated first, place them inside parentheses:\n\n2 + (3 * 4)\nevaluates to 14.\n\n",
+            "contents": "&& AND"
+        },
+        {
+            "trigger": "Math Operators\t (args)",
+            "contents": "[ - * / ^\n^"
+        },
+        {
+            "trigger": "Logical Operators\t\n\n&& AND\n|| OR\n! NOT\n\nNote: When evaluating several conditions, group using parentheses:\n\n(myVar < 8)&&(myVar >=2)\n\n\n((myVarA < 8)&&(myVarA >=2)) || (myVarA == (myVarB - 1))\n\n",
+            "contents": "INT(value) Integer Portion of value; removes everything after decimal point"
+        },
+        {
+            "trigger": "Logical Operators\t (args)",
+            "contents": "&& \n!"
+        },
+        {
+            "trigger": "Math Functions\t\n\nINT(value) Integer Portion of value; removes everything after decimal point\nFRAC(value) Fractional Portion of value; removes everything before decimal point\nABS(value) Absolute Value (ignores + or - sign)\nNEG(value) Changes the + or - sign of value\nMIN(value1, value2) Finds the lesser of two values\nMAX(value1, value2) Finds the greater of two values\nSQRT(value) Square Root of the value\nRAND(value) Random Number between 0 and value\nIRAND(value) Random Integer between 0 and value\nSIN(angle) Trig Sine of the angle, in degrees\nCOS(angle) Trig cosine of the angle, in degrees\nTAN(angle) Trig Tangent of the angle, in degrees\nASIN(value) Trig ArcSine of the value\nACOS(value) Trig ArcCosine of the value\nATAN(value) Trig ArcTangent of the value\nATAN2(value, value) Trig ArcTangent of the value (*ZBrush 3 only)\nLOG(value) Natural Log of the value\nLOG10(value) Base 10 Log of the value\nBOOL(value) Boolean Evaluation\n\n",
+            "contents": "[Randomize]"
+        },
+        {
+            "trigger": "Math Functions\t (args)",
+            "contents": "INT(value\n)"
+        },
+        {
+            "trigger": "Randomize\tResets the Rand generator.",
+            "contents": "[Randomize]"
+        },
+        {
+            "trigger": "Randomize\t (args)",
+            "contents": "[Randomize, \n\t Optional seed value (0 to 32767)\n]"
+        },
+        {
+            "trigger": "RGB\tCombines 3 color-components into one RGB value Output: Combined RGB",
+            "contents": "[RGB, 20, 40, 80]"
+        },
+        {
+            "trigger": "RGB\t (args)",
+            "contents": "[RGB, \n\t Red, \n\t Green, \n\t Blue\n]"
+        },
+        {
+            "trigger": "Val\tEvaluates the input and returns a numerical value Output: Value of the named variable",
+            "contents": "[Val, (xPos*2)+4]"
+        },
+        {
+            "trigger": "Val\t (args)",
+            "contents": "[Val, \n\t Variable name\n]"
+        },
+        {
+            "trigger": "Var\tGets the value of a named variable Output: Value of the named variable",
+            "contents": "[Var, myString]"
+        },
+        {
+            "trigger": "Var\t (args)",
+            "contents": "[Var, \n\t Variable name\n]"
+        },
+        {
+            "trigger": "VarAdd\tAdds a value to an existing variable",
+            "contents": "[VarAdd, xPos, 42]"
+        },
+        {
+            "trigger": "VarAdd\t (args)",
+            "contents": "[VarAdd, \n\t Variable name, \n\t Value To Add\n]"
+        },
+        {
+            "trigger": "VarDec\tSubtracts 1 from the value of an existing variable",
+            "contents": "[VarDec, loopCounter]"
+        },
+        {
+            "trigger": "VarDec\t (args)",
+            "contents": "[VarDec, \n\t Variable name\n]"
+        },
+        {
+            "trigger": "VarDiv\tDivides an existing variable by a value",
+            "contents": "[VarDiv, xPos, 42]"
+        },
+        {
+            "trigger": "VarDiv\t (args)",
+            "contents": "[VarDiv, \n\t Variable name, \n\t Value to Divide By\n]"
+        },
+        {
+            "trigger": "VarInc\tAdds 1 to the value of an existing variable",
+            "contents": "[VarInc, loopCounter]"
+        },
+        {
+            "trigger": "VarInc\t (args)",
+            "contents": "[VarInc, \n\t Variable name\n]"
+        },
+        {
+            "trigger": "VarMul\tMultiplies an existing variable by a value",
+            "contents": "[VarMul, myVar, 5]"
+        },
+        {
+            "trigger": "VarMul\t (args)",
+            "contents": "[VarMul, \n\t Variable name, \n\t Value To Multiply\n]"
+        },
+        {
+            "trigger": "VarSize\tReturns the number of items in a variable or in a list Output: The number of items in a list or 1 if it is a simple variable",
+            "contents": "[VarSize, list1]"
+        },
+        {
+            "trigger": "VarSize\t (args)",
+            "contents": "[VarSize, \n\t Variable name\n]"
+        },
+        {
+            "trigger": "VarSub\tSubtracts a value from an existing variable",
+            "contents": "[VarSub, xPos, 42]"
+        },
+        {
+            "trigger": "VarSub\t (args)",
+            "contents": "[VarSub, \n\t Variable name, \n\t Value To Subtract\n]"
+        }
+    ]
+}

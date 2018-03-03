@@ -1,0 +1,8 @@
+{
+  ".text.zbrushscript": {
+    "editor": {
+      "softWrap": false,
+      "commentStart": "// "
+    }
+  }
+}

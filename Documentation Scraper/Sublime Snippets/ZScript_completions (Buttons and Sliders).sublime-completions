@@ -1,0 +1,69 @@
+{
+    "scope": "text.zscript",
+    "completions": [
+        {
+            "trigger": "IButton\tCreates an interactive push button (can be placed anywhere but advise Top Level).",
+            "contents": "[IButton, \"Click Me\", , [MessageOK, YouClicked]]"
+        },
+        {
+            "trigger": "IButton\t (args)",
+            "contents": "[IButton, \n\t  Button name, \n\t Popup info Text, \n\t Commands group to execute when button is pressed, \n\t Initially Disabled? (0:Enabled(ByDefault) NonZero:Disabled), \n\t Button width in pixels (0:AutoWidth NonZero:Specified width), \n\t Optional hotkey, \n\t Optional button icon (.psd .bmp + .pct for Mac Systems), \n\t Button height in pixels (0:AutoHeight NonZero:Specified height)\n]"
+        },
+        {
+            "trigger": "ISlider\tCreates an interactive slider (Top Level).",
+            "contents": "[ISlider, ChangeMe, 12, 1, 0, 100, , [MessageOk, ThankYou]]"
+        },
+        {
+            "trigger": "ISlider\t (args)",
+            "contents": "[ISlider, \n\t  Slider name, \n\t CurValue, \n\t Resolution, \n\t MinValue, \n\t MaxValue, \n\t Popup info Text, \n\t Commands group to execute when value is changed, \n\t Initially Disabled? (0:Enabled(ByDefault) NonZero:Disabled), \n\t Slider width in pixels (0:AutoWidth NonZero:Specified width)\n]"
+        },
+        {
+            "trigger": "ISwitch\tCreates an interactive switch (Top Level).",
+            "contents": "[ISwitch, ClickMe, 1, \"Info text\", [MessageOK, On], [MessageOK, Off]]"
+        },
+        {
+            "trigger": "ISwitch\t (args)",
+            "contents": "[ISwitch, \n\t  Switch name , \n\t Initial state (1:pressed, \n\t 0:unpressed), \n\t Popup info Text, \n\t Commands group to execute when button is pressed , \n\t Commands group to execute when button is unpressed, \n\t Initially Disabled? (0:Enabled(ByDefault) NonZero:Disabled), \n\t Switch width in pixels (0:AutoWidth NonZero:Specified width)\n]"
+        },
+        {
+            "trigger": "ISubPalette\tAdds a subpalette to ZBrush interface. Output: Returns 1 if subpalette added successfully. Returns 0 if subpalette could not be added or if it already exsists.",
+            "contents": "[ISubPalette, \"ZPlugin:My Plugins\"]"
+        },
+        {
+            "trigger": "ISubPalette\t (args)",
+            "contents": "[ISubPalette, \n\t Subpalette name, \n\t Title mode? (0:Show Title and minimize button(ByDefault) 1:Show Title without minimize button 2:Hide Title ), \n\t Optional subpalette gray-scale (8-bits) icon (Standard size of 20x20 pixels), \n\t Left Inset (0:default), \n\t Right Inset (0:default), \n\t Left Top (0:default), \n\t Right Bottom (0:default)\n]"
+        },
+        {
+            "trigger": "ButtonFind\tLocates a ZBrush interface item (Top Level).",
+            "contents": "[ButtonFind, Document:Width, Text]"
+        },
+        {
+            "trigger": "ButtonFind\t (args)",
+            "contents": "[ButtonFind, \n\t  Interface item path, \n\t Button name, \n\t Initially Disabled? (0:Enabled(ByDefault) NonZero:Disabled)\n]"
+        },
+        {
+            "trigger": "ButtonPress\tLocates and presses a ZBrush interface item (Top Level).",
+            "contents": "[ButtonPress, Tool:Sphere3D, Text]"
+        },
+        {
+            "trigger": "ButtonPress\t (args)",
+            "contents": "[ButtonPress, \n\t  Interface item path, \n\t Button name, \n\t Initially Disabled? (0:Enabled(ByDefault) NonZero:Disabled)\n]"
+        },
+        {
+            "trigger": "ButtonSet\tLocates and sets a new value to a ZBrush interface item (Top Level).",
+            "contents": "[ButtonSet, Document:Width, 123, Text]"
+        },
+        {
+            "trigger": "ButtonSet\t (args)",
+            "contents": "[ButtonSet, \n\t Interface item path, \n\t Value, \n\t Button name, \n\t Initially Disabled? (0:Enabled(ByDefault) NonZero:Disabled)\n]"
+        },
+        {
+            "trigger": "ButtonUnPress\tLocates and unpresses a ZBrush interface item (Top Level).",
+            "contents": "[ButtonUnPress, Layer:Modifiers:W, Text]"
+        },
+        {
+            "trigger": "ButtonUnPress\t (args)",
+            "contents": "[ButtonUnPress, \n\t Interface item path, \n\t Button name, \n\t Initially Disabled? (0:Enabled(ByDefault) NonZero:Disabled)\n]"
+        }
+    ]
+}

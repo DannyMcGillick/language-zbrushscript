@@ -1,0 +1,18 @@
+{
+  "name": "language-zbrushscript",
+  "version": "0.0.0",
+  "description": "Syntax hilighting and API Snipppets for ZBrush scripting",
+  "keywords": [
+    "ZBrush",
+    "ZScript",
+    "ZBrush scripting",
+    "ZBrush Script"
+  ],
+  "repository": "https://github.com/atom/language-zbrushscript",
+  "license": "MIT",
+  "engines": {
+    "atom": ">=1.0.0 <2.0.0"
+  },
+  "dependencies": {
+  }
+}

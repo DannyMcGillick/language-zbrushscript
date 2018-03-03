@@ -1,0 +1,2234 @@
+{
+    ".text.zbrushscript": {
+        "IButton": {
+            "prefix": "IButton",
+            "body": "[IButton, \"Click Me\", , [MessageOK, YouClicked]]",
+            "description": "Creates an interactive push button (can be placed anywhere but advise Top Level)."
+        },
+        "IButton args()": {
+            "prefix": "IButton",
+            "body": "[IButton, \n\t  Button name, \n\t Popup info Text, \n\t Commands group to execute when button is pressed, \n\t Initially Disabled? (0:Enabled(ByDefault) NonZero:Disabled), \n\t Button width in pixels (0:AutoWidth NonZero:Specified width), \n\t Optional hotkey, \n\t Optional button icon (.psd .bmp + .pct for Mac Systems), \n\t Button height in pixels (0:AutoHeight NonZero:Specified height)\n]",
+            "description": "Creates an interactive push button (can be placed anywhere but advise Top Level)."
+        },
+        "ISlider": {
+            "prefix": "ISlider",
+            "body": "[ISlider, ChangeMe, 12, 1, 0, 100, , [MessageOk, ThankYou]]",
+            "description": "Creates an interactive slider (Top Level)."
+        },
+        "ISlider args()": {
+            "prefix": "ISlider",
+            "body": "[ISlider, \n\t  Slider name, \n\t CurValue, \n\t Resolution, \n\t MinValue, \n\t MaxValue, \n\t Popup info Text, \n\t Commands group to execute when value is changed, \n\t Initially Disabled? (0:Enabled(ByDefault) NonZero:Disabled), \n\t Slider width in pixels (0:AutoWidth NonZero:Specified width)\n]",
+            "description": "Creates an interactive slider (Top Level)."
+        },
+        "ISwitch": {
+            "prefix": "ISwitch",
+            "body": "[ISwitch, ClickMe, 1, \"Info text\", [MessageOK, On], [MessageOK, Off]]",
+            "description": "Creates an interactive switch (Top Level)."
+        },
+        "ISwitch args()": {
+            "prefix": "ISwitch",
+            "body": "[ISwitch, \n\t  Switch name , \n\t Initial state (1:pressed, \n\t 0:unpressed), \n\t Popup info Text, \n\t Commands group to execute when button is pressed , \n\t Commands group to execute when button is unpressed, \n\t Initially Disabled? (0:Enabled(ByDefault) NonZero:Disabled), \n\t Switch width in pixels (0:AutoWidth NonZero:Specified width)\n]",
+            "description": "Creates an interactive switch (Top Level)."
+        },
+        "ISubPalette": {
+            "prefix": "ISubPalette",
+            "body": "[ISubPalette, \"ZPlugin:My Plugins\"]",
+            "description": "Adds a subpalette to ZBrush interface. Output: Returns 1 if subpalette added successfully. Returns 0 if subpalette could not be added or if it already exsists."
+        },
+        "ISubPalette args()": {
+            "prefix": "ISubPalette",
+            "body": "[ISubPalette, \n\t Subpalette name, \n\t Title mode? (0:Show Title and minimize button(ByDefault) 1:Show Title without minimize button 2:Hide Title ), \n\t Optional subpalette gray-scale (8-bits) icon (Standard size of 20x20 pixels), \n\t Left Inset (0:default), \n\t Right Inset (0:default), \n\t Left Top (0:default), \n\t Right Bottom (0:default)\n]",
+            "description": "Adds a subpalette to ZBrush interface. Output: Returns 1 if subpalette added successfully. Returns 0 if subpalette could not be added or if it already exsists."
+        },
+        "ButtonFind": {
+            "prefix": "ButtonFind",
+            "body": "[ButtonFind, Document:Width, Text]",
+            "description": "Locates a ZBrush interface item (Top Level)."
+        },
+        "ButtonFind args()": {
+            "prefix": "ButtonFind",
+            "body": "[ButtonFind, \n\t  Interface item path, \n\t Button name, \n\t Initially Disabled? (0:Enabled(ByDefault) NonZero:Disabled)\n]",
+            "description": "Locates a ZBrush interface item (Top Level)."
+        },
+        "ButtonPress": {
+            "prefix": "ButtonPress",
+            "body": "[ButtonPress, Tool:Sphere3D, Text]",
+            "description": "Locates and presses a ZBrush interface item (Top Level)."
+        },
+        "ButtonPress args()": {
+            "prefix": "ButtonPress",
+            "body": "[ButtonPress, \n\t  Interface item path, \n\t Button name, \n\t Initially Disabled? (0:Enabled(ByDefault) NonZero:Disabled)\n]",
+            "description": "Locates and presses a ZBrush interface item (Top Level)."
+        },
+        "ButtonSet": {
+            "prefix": "ButtonSet",
+            "body": "[ButtonSet, Document:Width, 123, Text]",
+            "description": "Locates and sets a new value to a ZBrush interface item (Top Level)."
+        },
+        "ButtonSet args()": {
+            "prefix": "ButtonSet",
+            "body": "[ButtonSet, \n\t Interface item path, \n\t Value, \n\t Button name, \n\t Initially Disabled? (0:Enabled(ByDefault) NonZero:Disabled)\n]",
+            "description": "Locates and sets a new value to a ZBrush interface item (Top Level)."
+        },
+        "ButtonUnPress": {
+            "prefix": "ButtonUnPress",
+            "body": "[ButtonUnPress, Layer:Modifiers:W, Text]",
+            "description": "Locates and unpresses a ZBrush interface item (Top Level)."
+        },
+        "ButtonUnPress args()": {
+            "prefix": "ButtonUnPress",
+            "body": "[ButtonUnPress, \n\t Interface item path, \n\t Button name, \n\t Initially Disabled? (0:Enabled(ByDefault) NonZero:Disabled)\n]",
+            "description": "Locates and unpresses a ZBrush interface item (Top Level)."
+        },
+        "Note": {
+            "prefix": "Note",
+            "body": "[Note, \"Hello There\"]",
+            "description": "Displays a note to the user. Output: If the note has UI buttons then the return value of the pressed buttons (1=1st button, 2=2nd button \u2026), otherwise the return value will be zero (Sub-Level only)."
+        },
+        "Note args()": {
+            "prefix": "Note",
+            "body": "[Note, \n\t \"Text line\", \n\t Optional path1 of an interface item to be pointed out (default:none), \n\t Display Duration (in seconds) (0:wait for user action(default), \n\t -1:combine with next note command), \n\t Popup background color (0x000000<->0xffffff, \n\t default:0x606060, \n\t 0:No Background), \n\t Prefered distance of the note from the specified interface item (default:48), \n\t Prefered Note width (in pixels, \n\t default:400), \n\t optional marked windows fill color (0x000000<->0xffffff or (blue+(green*256)+(red*65536))(Omitted value:No fill)), \n\t Frame horizontal size (1:Max width (default)), \n\t Frame vertical size (1:Max height (default)), \n\t Frame left side (0:left (default), \n\t .5:center, \n\t 1:right) Omit value for horizontal autocentering, \n\t Frame top side ( 0:top (default), \n\t .5:center, \n\t 1:bottom )Omit value for vertical auto-centering, \n\t Optional icon file name\n]",
+            "description": "Displays a note to the user. Output: If the note has UI buttons then the return value of the pressed buttons (1=1st button, 2=2nd button \u2026), otherwise the return value will be zero (Sub-Level only)."
+        },
+        "NoteBar": {
+            "prefix": "NoteBar",
+            "body": "[NoteBar, \u201dZScript is calculating, Please wait...\"]",
+            "description": "Displays a note in progress bar (Sub-Level only)."
+        },
+        "NoteBar args()": {
+            "prefix": "NoteBar",
+            "body": "[NoteBar, \n\t The Message that will be shown (use empty string to clear current note), \n\t Optional progress-bar value (0:Min, \n\t 1:Max)\n]",
+            "description": "Displays a note in progress bar (Sub-Level only)."
+        },
+        "NoteIButton": {
+            "prefix": "NoteIButton",
+            "body": "[NoteIButton, \"OK\"] ",
+            "description": "Defines a button to be included within the next Note to be shown (Sub-Level only)."
+        },
+        "NoteIButton args()": {
+            "prefix": "NoteIButton",
+            "body": "[NoteIButton, \n\t Button name, \n\t Optional button icon, \n\t Initially Pressed? (default:unpressed), \n\t Initially Disabled? (default:enabled), \n\t Optional button H relative position (Positive value:offset from left, \n\t Negative value:offset from right, \n\t 0:automatic), \n\t Optional button V relative position (Positive value:offset from top, \n\t Negative value:offset from bottom, \n\t 0:automatic), \n\t Optional button width in pixels (default:automatic), \n\t Optional button height in pixels (default:automatic), \n\t Optional button color (0x000000<->0xffffff or (blue+(green*256)+(red*65536))), \n\t Optional text color (0x000000<->0xffffff or (blue+(green*256)+(red*65536))), \n\t Optional background opacity (default:1), \n\t Optional text opacity (default:1) , \n\t Optional image opacity (default:1)\n]",
+            "description": "Defines a button to be included within the next Note to be shown (Sub-Level only)."
+        },
+        "NoteIGet": {
+            "prefix": "NoteIGet",
+            "body": "[NoteIGet, 1]",
+            "description": "Returns the value of am NoteIButton which was shown in the last displayed Note. Output: The item value."
+        },
+        "NoteIGet args()": {
+            "prefix": "NoteIGet",
+            "body": "[NoteIGet, \n\t Note-button index (1:1st) or its name\n]",
+            "description": "Returns the value of am NoteIButton which was shown in the last displayed Note. Output: The item value."
+        },
+        "NoteISwitch": {
+            "prefix": "NoteISwitch",
+            "body": "[NoteISwitch, \"Double Sided\"]",
+            "description": "Define a switch-button to be included within the next Note to be shown (Sub-Level only)."
+        },
+        "NoteISwitch args()": {
+            "prefix": "NoteISwitch",
+            "body": "[NoteISwitch, \n\t Switch name, \n\t Optional button icon, \n\t Initially Pressed? (default:unpressed), \n\t Initially Disabled ? (default:enabled), \n\t Optional button H relative position (Positive value:offset from left, \n\t Negative value:offset from right, \n\t 0:automatic), \n\t Optional button V relative position (Positive value:offset from top, \n\t Negative value:offset from bottom, \n\t 0:automatic), \n\t Optional button width in pixels (default:automatic), \n\t Optional button height in pixels (default:automatic), \n\t Optional button color (0x000000<->0xffffff or (blue+(green*256)+(red*65536))), \n\t Optional text color (0x000000<->0xffffff or (blue+(green*256)+(red*65536))), \n\t Optional background opacity (default:1), \n\t Optional text opacity (default:1), \n\t Optional image opacity (default:1)\n]",
+            "description": "Define a switch-button to be included within the next Note to be shown (Sub-Level only)."
+        },
+        "MessageOK": {
+            "prefix": "MessageOK",
+            "body": "[MessageOK, \"Hello There\"]",
+            "description": "Displays a user message with a single OK button"
+        },
+        "MessageOK args()": {
+            "prefix": "MessageOK",
+            "body": "[MessageOK, \n\t The Message that will be shown, \n\t The Title of the message\n]",
+            "description": "Displays a user message with a single OK button"
+        },
+        "MessageOKCancel": {
+            "prefix": "MessageOKCancel",
+            "body": "[MessageOkCancel, \"Delete this image?\"]",
+            "description": "Displays a user message with CANCEL and OK buttons Output: Returns the button that the user clicked. (0=CANCEL, 1=OK)(Sub-Level only)."
+        },
+        "MessageOKCancel args()": {
+            "prefix": "MessageOKCancel",
+            "body": "[MessageOKCancel, \n\t The Message that will be shown, \n\t The Title of the message\n]",
+            "description": "Displays a user message with CANCEL and OK buttons Output: Returns the button that the user clicked. (0=CANCEL, 1=OK)(Sub-Level only)."
+        },
+        "MessageYesNo": {
+            "prefix": "MessageYesNo",
+            "body": "[MessageYesNo, \"Are you sure?\"]",
+            "description": "Displays a user message with YES and NO buttons Output: Returns the button that the user clicked (0=NO, 1=YES)(Sub-Level only)."
+        },
+        "MessageYesNo args()": {
+            "prefix": "MessageYesNo",
+            "body": "[MessageYesNo, \n\t The Message that will be shown, \n\t The Title of the message\n]",
+            "description": "Displays a user message with YES and NO buttons Output: Returns the button that the user clicked (0=NO, 1=YES)(Sub-Level only)."
+        },
+        "MessageYesNoCancel": {
+            "prefix": "MessageYesNoCancel",
+            "body": "[MessageYesNoCancel, \"Are you sure?\"]",
+            "description": "Displays a user message with YES, NO and CANCEL buttons Output: Returns the button that the user clicked (0=NO, 1=YES CANCEL=-1)(Sub-Level only)."
+        },
+        "MessageYesNoCancel args()": {
+            "prefix": "MessageYesNoCancel",
+            "body": "[MessageYesNoCancel, \n\t The Message that will be shown, \n\t The Title of the message\n]",
+            "description": "Displays a user message with YES, NO and CANCEL buttons Output: Returns the button that the user clicked (0=NO, 1=YES CANCEL=-1)(Sub-Level only)."
+        },
+        "CanvasClick": {
+            "prefix": "CanvasClick",
+            "body": "[CanvasClick, 10, 10, 20, 20]",
+            "description": "Emulates a click within the current canvas area"
+        },
+        "CanvasClick args()": {
+            "prefix": "CanvasClick",
+            "body": "[CanvasClick, \n\t X1, \n\t Y1, \n\t X2, \n\t Y2, \n\t X3, \n\t Y3, \n\t X4, \n\t Y4, \n\t X5, \n\t Y5, \n\t X6, \n\t Y6, \n\t X7, \n\t Y7, \n\t X8, \n\t Y8\n]",
+            "description": "Emulates a click within the current canvas area"
+        },
+        "CanvasGyroHide": {
+            "prefix": "CanvasGyroHide",
+            "body": "[CanvasGyroHide]",
+            "description": "Hides the Transformation Gyro"
+        },
+        "CanvasGyroHide args()": {
+            "prefix": "CanvasGyroHide",
+            "body": "[CanvasGyroHide\n]",
+            "description": "Hides the Transformation Gyro"
+        },
+        "CanvasGyroShow": {
+            "prefix": "CanvasGyroShow",
+            "body": "[CanvasGyroShow]",
+            "description": "Shows the Transformation Gyro"
+        },
+        "CanvasGyroShow args()": {
+            "prefix": "CanvasGyroShow",
+            "body": "[CanvasGyroShow\n]",
+            "description": "Shows the Transformation Gyro"
+        },
+        "CanvasPanGetH": {
+            "prefix": "CanvasPanGetH",
+            "body": "[CanvasPanGetH]",
+            "description": "Returns the H pan value of the active document view Output: The current H Pan value."
+        },
+        "CanvasPanGetH args()": {
+            "prefix": "CanvasPanGetH",
+            "body": "[CanvasPanGetH\n]",
+            "description": "Returns the H pan value of the active document view Output: The current H Pan value."
+        },
+        "CanvasPanGetV": {
+            "prefix": "CanvasPanGetV",
+            "body": "[CanvasPanGetV]",
+            "description": "Returns the V pan value of the active document view Output: The current V Pan value."
+        },
+        "CanvasPanGetV args()": {
+            "prefix": "CanvasPanGetV",
+            "body": "[CanvasPanGetV\n]",
+            "description": "Returns the V pan value of the active document view Output: The current V Pan value."
+        },
+        "CanvasPanSet": {
+            "prefix": "CanvasPanSet",
+            "body": "[CanvasPanSet, 320, 240]",
+            "description": "Pans (Scrolls) the active document view"
+        },
+        "CanvasPanSet args()": {
+            "prefix": "CanvasPanSet",
+            "body": "[CanvasPanSet, \n\t H value (0:left of document), \n\t V value (0:top of document)\n]",
+            "description": "Pans (Scrolls) the active document view"
+        },
+        "CanvasStroke": {
+            "prefix": "CanvasStroke",
+            "body": "[CanvasStroke, [StrokeGetLast]]",
+            "description": "Emulates a brush stroke within the current canvas area"
+        },
+        "CanvasStroke args()": {
+            "prefix": "CanvasStroke",
+            "body": "[CanvasStroke, \n\t StrokeData, \n\t Delayed update until end of stroke, \n\t Rotation, \n\t HScale, \n\t VScale, \n\t HOffset, \n\t VOffset\n]",
+            "description": "Emulates a brush stroke within the current canvas area"
+        },
+        "CanvasStrokes": {
+            "prefix": "CanvasStrokes",
+            "body": "[CanvasStrokes, [Var, loadedStrokes]]",
+            "description": "Emulates multiple brush strokes within the current canvas area"
+        },
+        "CanvasStrokes args()": {
+            "prefix": "CanvasStrokes",
+            "body": "[CanvasStrokes, \n\t StrokesData, \n\t Delayed update until end of stroke, \n\t Rotation, \n\t HScale, \n\t VScale, \n\t HOffset, \n\t VOffset, \n\t HRotateCenter, \n\t VRotateCenter\n]",
+            "description": "Emulates multiple brush strokes within the current canvas area"
+        },
+        "CanvasZoomGet": {
+            "prefix": "CanvasZoomGet",
+            "body": "[CanvasZoomGet]",
+            "description": "Returns the zoom value of the active document view Output: The current zoom value."
+        },
+        "CanvasZoomGet args()": {
+            "prefix": "CanvasZoomGet",
+            "body": "[CanvasZoomGet\n]",
+            "description": "Returns the zoom value of the active document view Output: The current zoom value."
+        },
+        "CanvasZoomSet": {
+            "prefix": "CanvasZoomSet",
+            "body": "[CanvasZoomSet, 2]",
+            "description": "Sets the zoom factor of the active document view"
+        },
+        "CanvasZoomSet args()": {
+            "prefix": "CanvasZoomSet",
+            "body": "[CanvasZoomSet, \n\t Zoom factor\n]",
+            "description": "Sets the zoom factor of the active document view"
+        },
+        "PixolPick": {
+            "prefix": "PixolPick",
+            "body": "[PixolPick, 1, 10, 20]",
+            "description": "Retrieves information about a specified Pixol Output: The value of the specified Pixol"
+        },
+        "PixolPick args()": {
+            "prefix": "PixolPick",
+            "body": "[PixolPick, \n\t Component Index: 0:CompositeColor (0x000000<->0xffffff or (red*65536+green*256+blue)); 1:Z(-32576 to 32576); 2:Red(0 to 255); 3:Green(0 to 255); 4:Blue(0 to 255); 5:MaterialIndex(0 to 255); 6:XNormal(-1 to 1); 7:YNormal(-1 to 1); 8:ZNormal(-1 to 0), \n\t H Position, \n\t V Position\n]",
+            "description": "Retrieves information about a specified Pixol Output: The value of the specified Pixol"
+        },
+        "StrokeGetInfo": {
+            "prefix": "StrokeGetInfo",
+            "body": "[StrokeGetInfo, [StrokeGetLast], 0]",
+            "description": "Retrieves the information from a specified Stroke-type Variable Output: StrokeInfo resultInfo number: 0=PointsCount 1=IndexedHPos 2=IndexedVPos 3=IndexedPressure 4=MinH\n5=MinV 6=MaxH 7=MaxV 8=MaxRadius 9=MaxRadiusPointlndex 10=MaxDeltaH 11=MaxDeltaV\n12=Total Distance 13=Twirl Count 14=DeducedZValue 15=IndexedkeyPress"
+        },
+        "StrokeGetInfo args()": {
+            "prefix": "StrokeGetInfo",
+            "body": "[StrokeGetInfo, \n\t Stroke-type Variable, \n\t Info number, \n\t Point index (0 based)\n]",
+            "description": "Retrieves the information from a specified Stroke-type Variable Output: StrokeInfo resultInfo number: 0=PointsCount 1=IndexedHPos 2=IndexedVPos 3=IndexedPressure 4=MinH\n5=MinV 6=MaxH 7=MaxV 8=MaxRadius 9=MaxRadiusPointlndex 10=MaxDeltaH 11=MaxDeltaV\n12=Total Distance 13=Twirl Count 14=DeducedZValue 15=IndexedkeyPress"
+        },
+        "StrokeGetLast": {
+            "prefix": "StrokeGetLast",
+            "body": "[CanvasStroke, [StrokeGetLast]]",
+            "description": "Retrieves the last drawn brush stroke Output: StrokeData"
+        },
+        "StrokeGetLast args()": {
+            "prefix": "StrokeGetLast",
+            "body": "[StrokeGetLast\n]",
+            "description": "Retrieves the last drawn brush stroke Output: StrokeData"
+        },
+        "StrokeLoad": {
+            "prefix": "StrokeLoad",
+            "body": "[VarSet, Strokel, [StrokeLoad, \"Star.txt\"]]",
+            "description": "Loads a brush-stroke text file Output: StrokeData"
+        },
+        "StrokeLoad args()": {
+            "prefix": "StrokeLoad",
+            "body": "[StrokeLoad, \n\t FileName(.txt)\n]",
+            "description": "Loads a brush-stroke text file Output: StrokeData"
+        },
+        "StrokesLoad": {
+            "prefix": "StrokesLoad",
+            "body": "[VarSet, Strokel, [StrokesLoad, \"Star.txt\"]]",
+            "description": "Loads a brush-strokes text file Output: StrokesData"
+        },
+        "StrokesLoad args()": {
+            "prefix": "StrokesLoad",
+            "body": "[StrokesLoad, \n\t FileName(.txt)\n]",
+            "description": "Loads a brush-strokes text file Output: StrokesData"
+        },
+        "TransformGet": {
+            "prefix": "TransformGet",
+            "body": "[TransformGet, xPos, yPos, zPos, xSc, ySc, zSc, xRot, yRot, zRot]",
+            "description": "Gets current transformation values (Sub-Level only)."
+        },
+        "TransformGet args()": {
+            "prefix": "TransformGet",
+            "body": "[TransformGet, \n\t xPosition, \n\t yPosition, \n\t zPosition, \n\t xScale, \n\t yScale, \n\t zScale, \n\t xRotate, \n\t yRotate, \n\t zRotate\n]",
+            "description": "Gets current transformation values (Sub-Level only)."
+        },
+        "TransformSet": {
+            "prefix": "TransformSet",
+            "body": "[TransformSet, (Document:Width*.5), (Document:Height*.5), 0, 100, 100, 100, 0, 0, 0]",
+            "description": "Sets new transformation values (Sub-Level only)."
+        },
+        "TransformSet args()": {
+            "prefix": "TransformSet",
+            "body": "[TransformSet, \n\t xPosition, \n\t yPosition, \n\t zPosition, \n\t xScale, \n\t yScale, \n\t zScale, \n\t xRotate, \n\t yRotate, \n\t zRotate\n]",
+            "description": "Sets new transformation values (Sub-Level only)."
+        },
+        "IClick": {
+            "prefix": "IClick",
+            "body": "[IClick, LIGHT:Intensity, 55, 10]",
+            "description": "Emulates a click within a specified ZBrush interface item (Sub-Level only)."
+        },
+        "IClick args()": {
+            "prefix": "IClick",
+            "body": "[IClick, \n\t Interface item path, \n\t X1, \n\t Y1, \n\t X2, \n\t Y2, \n\t X3, \n\t Y3, \n\t X4, \n\t Y4, \n\t X5, \n\t Y5, \n\t X6, \n\t Y6, \n\t X7, \n\t Y7\n]",
+            "description": "Emulates a click within a specified ZBrush interface item (Sub-Level only)."
+        },
+        "IClose": {
+            "prefix": "IClose",
+            "body": "[IClose, ZScript:Play]",
+            "description": "Closes an interface item."
+        },
+        "IClose args()": {
+            "prefix": "IClose",
+            "body": "[IClose, \n\t Interface item path, \n\t Show Zoom Rectangles?, \n\t Target parent window?\n]",
+            "description": "Closes an interface item."
+        },
+        "IColorSet": {
+            "prefix": "IColorSet",
+            "body": "[IColorSet, 255, 0, 0]",
+            "description": "Sets the active color to a new value"
+        },
+        "IColorSet args()": {
+            "prefix": "IColorSet",
+            "body": "[IColorSet, \n\t Red (0-255), \n\t Green (0-255), \n\t Blue (0-255)\n]",
+            "description": "Sets the active color to a new value"
+        },
+        "IConfig": {
+            "prefix": "IConfig",
+            "body": "[IConfig, 2.0]",
+            "description": "Sets ZBrush internal version-configuration"
+        },
+        "IConfig args()": {
+            "prefix": "IConfig",
+            "body": "[IConfig, \n\t ZBrush version-configuration \n]",
+            "description": "Sets ZBrush internal version-configuration"
+        },
+        "IDialog": {
+            "prefix": "IDialog",
+            "body": "[IDisable, Zscript:DoIt]",
+            "description": "Command currently disabled"
+        },
+        "IDialog args()": {
+            "prefix": "IDialog",
+            "body": "[IDisable, \n\t Window path, \n\t Window ID or relative windowID(-100<->100)\n]",
+            "description": "Command currently disabled"
+        },
+        "IDisable": {
+            "prefix": "IDisable",
+            "body": "[IDisable, Zscript:DoIt]",
+            "description": "Disables a ZScript interface item (can only be used for ZScript-generated interface items)"
+        },
+        "IDisable args()": {
+            "prefix": "IDisable",
+            "body": "[IDisable, \n\t Window path, \n\t Window ID or relative windowID(-100<->100)\n]",
+            "description": "Disables a ZScript interface item (can only be used for ZScript-generated interface items)"
+        },
+        "IEnable": {
+            "prefix": "IEnable",
+            "body": "[IEnable, ZScript:DoIt]",
+            "description": "Enables a ZScript interface item (can only be used for ZScript-generated interface items)"
+        },
+        "IEnable args()": {
+            "prefix": "IEnable",
+            "body": "[IEnable, \n\t Window path, \n\t Window ID or relative windowID(-100<->100)\n]",
+            "description": "Enables a ZScript interface item (can only be used for ZScript-generated interface items)"
+        },
+        "IExists": {
+            "prefix": "IExists",
+            "body": "[IExists, TOOL:Sphere3D]",
+            "description": "Verifies that a specified interface item exists. Output: 1 if item exists, 0 otherwise"
+        },
+        "IExists args()": {
+            "prefix": "IExists",
+            "body": "[IExists, \n\t Interface item path\n]",
+            "description": "Verifies that a specified interface item exists. Output: 1 if item exists, 0 otherwise"
+        },
+        "IFadeIn": {
+            "prefix": "IFadeIn",
+            "body": "[IFadeIn, .35]",
+            "description": "Fades in ZBrush window from black."
+        },
+        "IFadeIn args()": {
+            "prefix": "IFadeIn",
+            "body": "[IFadeIn, \n\t Fade in speed in secs. (default:.5 secs)\n]",
+            "description": "Fades in ZBrush window from black."
+        },
+        "IFadeOut": {
+            "prefix": "IFadeOut",
+            "body": "[IFadeOut, .35]",
+            "description": "Fades out ZBrush window to black."
+        },
+        "IFadeOut args()": {
+            "prefix": "IFadeOut",
+            "body": "[IFadeOut, \n\t Fade out speed in secs. (default:.5 secs)\n]",
+            "description": "Fades out ZBrush window to black."
+        },
+        "IGet": {
+            "prefix": "IGet",
+            "body": "[IGet, Draw:Width]",
+            "description": "Returns the current value of a ZBrush or ZScript interface item Output: The item value"
+        },
+        "IGet args()": {
+            "prefix": "IGet",
+            "body": "[IGet, \n\t Interface item path\n]",
+            "description": "Returns the current value of a ZBrush or ZScript interface item Output: The item value"
+        },
+        "IGetFlags": {
+            "prefix": "IGetFlags",
+            "body": "[IGetFlags, windowID]",
+            "description": "Returns the status flags of the specified interface item Output: The flags"
+        },
+        "IGetFlags args()": {
+            "prefix": "IGetFlags",
+            "body": "[IGetFlags, \n\t Interface item path\n]",
+            "description": "Returns the status flags of the specified interface item Output: The flags"
+        },
+        "IGetHotkey": {
+            "prefix": "IGetHotkey",
+            "body": "[IGetHotkey, windowID]",
+            "description": "Returns the hotkey of the specified interface item Output: The Hotkey"
+        },
+        "IGetHotkey args()": {
+            "prefix": "IGetHotkey",
+            "body": "[IGetHotkey, \n\t Interface item path\n]",
+            "description": "Returns the hotkey of the specified interface item Output: The Hotkey"
+        },
+        "IGetID": {
+            "prefix": "IGetID",
+            "body": "[IGetID, Tool:LoadTool]",
+            "description": "Returns the window ID code of the specified interface item Output: The Title"
+        },
+        "IGetID args()": {
+            "prefix": "IGetID",
+            "body": "[IGetID, \n\t Interface item path\n]",
+            "description": "Returns the window ID code of the specified interface item Output: The Title"
+        },
+        "IGetInfo": {
+            "prefix": "IGetInfo",
+            "body": "[IGetInfo, windowID]",
+            "description": "Returns the info (popup info) of the specified interface item Output: The info"
+        },
+        "IGetInfo args()": {
+            "prefix": "IGetInfo",
+            "body": "[IGetInfo, \n\t Interface item path\n]",
+            "description": "Returns the info (popup info) of the specified interface item Output: The info"
+        },
+        "IGetMax": {
+            "prefix": "IGetMax",
+            "body": "[IGetMax, Draw:Width]",
+            "description": "Returns the maximum possible value of a ZBrush or ZScript interface item Output: The item maximum value"
+        },
+        "IGetMax args()": {
+            "prefix": "IGetMax",
+            "body": "[IGetMax, \n\t Interface item path\n]",
+            "description": "Returns the maximum possible value of a ZBrush or ZScript interface item Output: The item maximum value"
+        },
+        "IGetMin": {
+            "prefix": "IGetMin",
+            "body": "[IGetMin, Draw:Width]",
+            "description": "Returns the minimum possible value of a ZBrush or ZScript interface item Output: The item minimum value"
+        },
+        "IGetMin args()": {
+            "prefix": "IGetMin",
+            "body": "[IGetMin, \n\t Interface item path\n]",
+            "description": "Returns the minimum possible value of a ZBrush or ZScript interface item Output: The item minimum value"
+        },
+        "IGetSecondary": {
+            "prefix": "IGetSecondary",
+            "body": "[IGetSeconday, Light:LightPlacement]",
+            "description": "Returns the the secondary value of a 2D interface item Output: The item value"
+        },
+        "IGetSecondary args()": {
+            "prefix": "IGetSecondary",
+            "body": "[IGetSecondary, \n\t Interface item path\n]",
+            "description": "Returns the the secondary value of a 2D interface item Output: The item value"
+        },
+        "IGetStatus": {
+            "prefix": "IGetStatus",
+            "body": "[IGetStatus, Transform:Move] ",
+            "description": "Returns the Enabled/Disabled status of a ZBrush or ZScript interface item Output: The item status 0=Disabled 1=Enabled"
+        },
+        "IGetStatus args()": {
+            "prefix": "IGetStatus",
+            "body": "[IGetStatus, \n\t Interface item path\n]",
+            "description": "Returns the Enabled/Disabled status of a ZBrush or ZScript interface item Output: The item status 0=Disabled 1=Enabled"
+        },
+        "IGetTitle": {
+            "prefix": "IGetTitle",
+            "body": "[IGetTitle, windowID]",
+            "description": "Returns the title of the specified interface item Output: The Title of the button"
+        },
+        "IGetTitle args()": {
+            "prefix": "IGetTitle",
+            "body": "[IGetTitle, \n\t Interface item path, \n\t Return full path? (0:no nonZero:yes)\n]",
+            "description": "Returns the title of the specified interface item Output: The Title of the button"
+        },
+        "IHeight": {
+            "prefix": "IHeight",
+            "body": "[IHeight, Tool:SimpleBrush]",
+            "description": "Returns the pixel-height of an interface item. Output: The height of the interface item."
+        },
+        "IHeight args()": {
+            "prefix": "IHeight",
+            "body": "[IHeight, \n\t Interface item path\n]",
+            "description": "Returns the pixel-height of an interface item. Output: The height of the interface item."
+        },
+        "IHide": {
+            "prefix": "IHide",
+            "body": "[IHide, Draw:Width]",
+            "description": "Hides an interface item."
+        },
+        "IHide args()": {
+            "prefix": "IHide",
+            "body": "[IHide, \n\t Interface item path, \n\t Show Zoom Rectangles?, \n\t Target parent window?\n]",
+            "description": "Hides an interface item."
+        },
+        "IHPos": {
+            "prefix": "IHPos",
+            "body": "[IHPos, Draw:Width, 1]",
+            "description": "Returns the H position of the interface item in Canvas or Global coordinates. Output: The H position of the interface item."
+        },
+        "IHPos args()": {
+            "prefix": "IHPos",
+            "body": "[IHPos, \n\t Interface item path , \n\t Global coordinates?(set value to non-zero for global coordinates; default:Canvas coordinates)\n]",
+            "description": "Returns the H position of the interface item in Canvas or Global coordinates. Output: The H position of the interface item."
+        },
+        "IKeyPress": {
+            "prefix": "IKeyPress",
+            "body": "[IKeyPress, 'x']",
+            "description": "Simulates a key press"
+        },
+        "IKeyPress args()": {
+            "prefix": "IKeyPress",
+            "body": "[IKeyPress, \n\t The key to press (with an optional CTRL/CMD, \n\t ALT/OPT, \n\t SHIFT or TAB combination.) , \n\t Commands group to execute while the key is pressed , \n\t Optional H cursor position prior to key press , \n\t Optional V cursor position prior to key press\n]",
+            "description": "Simulates a key press"
+        },
+        "ILock": {
+            "prefix": "ILock",
+            "body": "[ILock, ZScript:DoIt]",
+            "description": "Locks an interface item."
+        },
+        "ILock args()": {
+            "prefix": "ILock",
+            "body": "[ILock, \n\t Window path, \n\t Window ID or relative windowID(-100<->100)\n]",
+            "description": "Locks an interface item."
+        },
+        "IMaximize": {
+            "prefix": "IMaximize",
+            "body": "[IMaximize, Tool:, 1]",
+            "description": "Locates an interface item and (if possible) maximize its size."
+        },
+        "IMaximize args()": {
+            "prefix": "IMaximize",
+            "body": "[IMaximize, \n\t Interface item path, \n\t Maximizeall sub palettes? (0:no, \n\t NonZero:yes)\n]",
+            "description": "Locates an interface item and (if possible) maximize its size."
+        },
+        "IMinimize": {
+            "prefix": "IMinimize",
+            "body": "[IMinimize, Tool:, 1]",
+            "description": "Locates an interface item and (if possible) minimize its size."
+        },
+        "IMinimize args()": {
+            "prefix": "IMinimize",
+            "body": "[IMinimize, \n\t Interface item path, \n\t Minimize all sub palettes? (0:no, \n\t NonZero:yes)\n]",
+            "description": "Locates an interface item and (if possible) minimize its size."
+        },
+        "IModGet": {
+            "prefix": "IModGet",
+            "body": "[IModGet, Tool:Modifiers:Deformation:Rotate]",
+            "description": "Returns the current modifiers binary state of a ZBrush or ZScript interface item Output: The item value"
+        },
+        "IModGet args()": {
+            "prefix": "IModGet",
+            "body": "[IModGet, \n\t Interface item path\n]",
+            "description": "Returns the current modifiers binary state of a ZBrush or ZScript interface item Output: The item value"
+        },
+        "IModSet": {
+            "prefix": "IModSet",
+            "body": "[IModSet, Tool:Modifiers:Deformation:Rotate, 2]",
+            "description": "Sets the modifiers binary value of a ZBrush or a ZScript interface item"
+        },
+        "IModSet args()": {
+            "prefix": "IModSet",
+            "body": "[IModSet, \n\t Interface item path, \n\t value\n]",
+            "description": "Sets the modifiers binary value of a ZBrush or a ZScript interface item"
+        },
+        "IPress": {
+            "prefix": "IPress",
+            "body": "[IPress, Tool:Cube3D]",
+            "description": "Presses a ZBrush or ZScript interface item (Sub-Level only)."
+        },
+        "IPress args()": {
+            "prefix": "IPress",
+            "body": "[IPress, \n\t Interface item path\n]",
+            "description": "Presses a ZBrush or ZScript interface item (Sub-Level only)."
+        },
+        "IReset": {
+            "prefix": "IReset",
+            "body": "[IReset]",
+            "description": "Interface Reset. Output: Returns the button that the user clicked ( 0=NO, 1=YES ) (Sub-Level only)."
+        },
+        "IReset args()": {
+            "prefix": "IReset",
+            "body": "[IReset, \n\t Optional item to reset (default:All). (0:All, \n\t 1:Interface, \n\t 2:Document, \n\t 3:Tools, \n\t 4:Lights, \n\t 5:Materials, \n\t 6:Stencil) , \n\t Optional ZBrush version-configuration\n]",
+            "description": "Interface Reset. Output: Returns the button that the user clicked ( 0=NO, 1=YES ) (Sub-Level only)."
+        },
+        "IsDisabled": {
+            "prefix": "IsDisabled",
+            "body": "[IsDisabled, Transform:Move]",
+            "description": "Returns 1 if the specified ZBrush or ZScript interface item is currently disabled, returns 0 otherwise Output: The item \u2018Disabled\u2019 status (1=Disabled 0=Enabled)"
+        },
+        "IsDisabled args()": {
+            "prefix": "IsDisabled",
+            "body": "[IsDisabled, \n\t Interface item path\n]",
+            "description": "Returns 1 if the specified ZBrush or ZScript interface item is currently disabled, returns 0 otherwise Output: The item \u2018Disabled\u2019 status (1=Disabled 0=Enabled)"
+        },
+        "IsEnabled": {
+            "prefix": "IsEnabled",
+            "body": "[IsEnabled, Transform:Move]",
+            "description": "Returns 1 if the specified ZBrush or ZScript interface item is currently enabled, returns 0 otherwise Output: The item \u2018Enabled\u2019 status (1=Enabled 0=Disabled)"
+        },
+        "IsEnabled args()": {
+            "prefix": "IsEnabled",
+            "body": "[IsEnabled, \n\t Interface item path\n]",
+            "description": "Returns 1 if the specified ZBrush or ZScript interface item is currently enabled, returns 0 otherwise Output: The item \u2018Enabled\u2019 status (1=Enabled 0=Disabled)"
+        },
+        "ISet": {
+            "prefix": "ISet",
+            "body": "[ISet, Draw:Width, 50]",
+            "description": "Sets a new value to a ZBrush or ZScript interface item"
+        },
+        "ISet args()": {
+            "prefix": "ISet",
+            "body": "[ISet, \n\t Interface item path, \n\t value, \n\t Secondary value\n]",
+            "description": "Sets a new value to a ZBrush or ZScript interface item"
+        },
+        "ISetHotkey": {
+            "prefix": "ISetHotkey",
+            "body": "[ISetHotkey, windowID, 'k']",
+            "description": "Sets the hotkey of the specified interface item"
+        },
+        "ISetHotkey args()": {
+            "prefix": "ISetHotkey",
+            "body": "[ISetHotkey, \n\t Interface item path, \n\t Hotkey(0:no Hotkey)\n]",
+            "description": "Sets the hotkey of the specified interface item"
+        },
+        "ISetMax": {
+            "prefix": "ISetMax",
+            "body": "[ISetMax, Zscript:Counter, 10]",
+            "description": "Sets the maximum value for an ISlider interface item (can only be used for ZScript-generated interface items)"
+        },
+        "ISetMax args()": {
+            "prefix": "ISetMax",
+            "body": "[ISetMax, \n\t Interface item path, \n\t New max value\n]",
+            "description": "Sets the maximum value for an ISlider interface item (can only be used for ZScript-generated interface items)"
+        },
+        "ISetMin": {
+            "prefix": "ISetMin",
+            "body": "[ISetMin, Zscript:Counter, 10]",
+            "description": "Sets the minimum value for an ISlider interface item (can only be used for ZScript-generated interface items)"
+        },
+        "ISetMin args()": {
+            "prefix": "ISetMin",
+            "body": "[ISetMin, \n\t Interface item path, \n\t New min value\n]",
+            "description": "Sets the minimum value for an ISlider interface item (can only be used for ZScript-generated interface items)"
+        },
+        "IShow": {
+            "prefix": "IShow",
+            "body": "[IShow, Draw:Width]",
+            "description": "Locates an interface item and makes it visible."
+        },
+        "IShow args()": {
+            "prefix": "IShow",
+            "body": "[IShow, \n\t Interface item path, \n\t Show Zoom Rectangles?, \n\t Target parent window?\n]",
+            "description": "Locates an interface item and makes it visible."
+        },
+        "IShowActions": {
+            "prefix": "IShowActions",
+            "body": "[IShowActions, 0]",
+            "description": "Temorarily sets the status of ShowActions"
+        },
+        "IShowActions args()": {
+            "prefix": "IShowActions",
+            "body": "[IShowActions, \n\t The ShowActions status.(0:Disable ShowActions, \n\t Positive value:enable show actions, \n\t Negative value:Reset ShowActions)\n]",
+            "description": "Temorarily sets the status of ShowActions"
+        },
+        "IsLocked": {
+            "prefix": "IsLocked",
+            "body": "[IsLocked, Transform:Move]",
+            "description": "Returns 1 if the specified ZBrush or ZScript interface item is currently locked, returns 0 otherwiseOutput: The item \u2018Locked\u2019 status (1=Locked 0=Unlocked)"
+        },
+        "IsLocked args()": {
+            "prefix": "IsLocked",
+            "body": "[IsLocked, \n\t Interface item path\n]",
+            "description": "Returns 1 if the specified ZBrush or ZScript interface item is currently locked, returns 0 otherwiseOutput: The item \u2018Locked\u2019 status (1=Locked 0=Unlocked)"
+        },
+        "IStroke": {
+            "prefix": "IStroke",
+            "body": "[IStroke, [StrokeLoad, \"CurvePoints.txt\"]]",
+            "description": "Emulates a brush stroke within an interface item"
+        },
+        "IStroke args()": {
+            "prefix": "IStroke",
+            "body": "[IStroke, \n\t Interface item path, \n\t StrokeData\n]",
+            "description": "Emulates a brush stroke within an interface item"
+        },
+        "IsUnlocked": {
+            "prefix": "IsUnlocked",
+            "body": "[IsUnLocked, Transform:Move]",
+            "description": "Returns 1 if the specified ZBrush or ZScript interface item is currently unlocked, returns 0 otherwiseOutput: The item \u2018Unlocked\u2019 status (1=Unlocked 0=locked)"
+        },
+        "IsUnlocked args()": {
+            "prefix": "IsUnlocked",
+            "body": "[IsUnlocked, \n\t Interface item path\n]",
+            "description": "Returns 1 if the specified ZBrush or ZScript interface item is currently unlocked, returns 0 otherwiseOutput: The item \u2018Unlocked\u2019 status (1=Unlocked 0=locked)"
+        },
+        "IToggle": {
+            "prefix": "IToggle",
+            "body": "[IToggle, Draw:ZAdd]",
+            "description": "Toggles the state of a ZBrush or ZScript interface item"
+        },
+        "IToggle args()": {
+            "prefix": "IToggle",
+            "body": "[IToggle, \n\t Interface item path\n]",
+            "description": "Toggles the state of a ZBrush or ZScript interface item"
+        },
+        "IUnlock": {
+            "prefix": "IUnlock",
+            "body": "[IUnLock, ZScript:DoIt]",
+            "description": "Unlocks an interface item"
+        },
+        "IUnlock args()": {
+            "prefix": "IUnlock",
+            "body": "[IUnlock, \n\t Window path, \n\t Window ID or relative windowID(-100<->100)\n]",
+            "description": "Unlocks an interface item"
+        },
+        "IUnPress": {
+            "prefix": "IUnPress",
+            "body": "[IUnPress, Layer:Modifiers:w]",
+            "description": "Unpresses a ZBrush or ZScript interface item"
+        },
+        "IUnPress args()": {
+            "prefix": "IUnPress",
+            "body": "[IUnPress, \n\t Interface item path\n]",
+            "description": "Unpresses a ZBrush or ZScript interface item"
+        },
+        "IUpdate": {
+            "prefix": "IUpdate",
+            "body": "[IUpdate, 5]",
+            "description": "Updates the ZBrush interface."
+        },
+        "IUpdate args()": {
+            "prefix": "IUpdate",
+            "body": "[IUpdate, \n\t Repeat count (default:1), \n\t Redraw UI? (default:no, \n\t 1:yes)\n]",
+            "description": "Updates the ZBrush interface."
+        },
+        "IVPos": {
+            "prefix": "IVPos",
+            "body": "[IVPos, Draw:Width, 1]",
+            "description": "Returns the V position of the interface item in Canvas or Global coordinates. Output: The V position of the interface item."
+        },
+        "IVPos args()": {
+            "prefix": "IVPos",
+            "body": "[IVPos, \n\t Interface item path , \n\t Global coordinates? (set value to non-zero for global coordinates, \n\t default:Canvas coordinates)\n]",
+            "description": "Returns the V position of the interface item in Canvas or Global coordinates. Output: The V position of the interface item."
+        },
+        "IWidth": {
+            "prefix": "IWidth",
+            "body": "[IWidth, Tool:SimpleBrush]",
+            "description": "Returns the pixel-width of an interface item. Output: The width of the interface item."
+        },
+        "IWidth args()": {
+            "prefix": "IWidth",
+            "body": "[IWidth, \n\t Interface item path\n]",
+            "description": "Returns the pixel-width of an interface item. Output: The width of the interface item."
+        },
+        "ZBrushInfo": {
+            "prefix": "ZBrushInfo",
+            "body": "[ZBrushInfo, 6]",
+            "description": "Returns ZBrush info. Output: Result value"
+        },
+        "ZBrushInfo args()": {
+            "prefix": "ZBrushInfo",
+            "body": "[ZBrushInfo, \n\t The info type. (0:version number 1:Demo/Beta/Full 2:Runtime seconds 3:Mem use 4:VMem Use 5:Free Mem 6:operating system (0:PC 1:Mac 2:MacOSX) 7:Unique session ID 8:Total RAM)\n]",
+            "description": "Returns ZBrush info. Output: Result value"
+        },
+        "ZBrushPriorityGet": {
+            "prefix": "ZBrushPriorityGet",
+            "body": "[ZBrushPriorityGet]",
+            "description": "Returns the task-priority of ZBrush. Output: The current task-priority"
+        },
+        "ZBrushPriorityGet args()": {
+            "prefix": "ZBrushPriorityGet",
+            "body": "[ZBrushPriorityGet\n]",
+            "description": "Returns the task-priority of ZBrush. Output: The current task-priority"
+        },
+        "ZBrushPrioritySet": {
+            "prefix": "ZBrushPrioritySet",
+            "body": "[ZBrushPrioritySet, 1]",
+            "description": "Sets the task-priority of ZBrush."
+        },
+        "ZBrushPrioritySet args()": {
+            "prefix": "ZBrushPrioritySet",
+            "body": "[ZBrushPrioritySet , \n\t The priority. -2:Low, \n\t -1:BelowNormal, \n\t 0:normal, \n\t 1:Above Normal, \n\t 2:High\n]",
+            "description": "Sets the task-priority of ZBrush."
+        },
+        "MouseHPos": {
+            "prefix": "MouseHPos",
+            "body": "[MouseHPos]",
+            "description": "Returns the current H position of the mouse in Canvas or Global coordinates. Output: The H position of the mouse"
+        },
+        "MouseHPos args()": {
+            "prefix": "MouseHPos",
+            "body": "[MouseHPos, \n\t Global coordinates? (set value to non-zero for global coordinates, \n\t default:Canvas coordinates)\n]",
+            "description": "Returns the current H position of the mouse in Canvas or Global coordinates. Output: The H position of the mouse"
+        },
+        "MouseLButton": {
+            "prefix": "MouseLButton",
+            "body": "[MouseLButton]",
+            "description": "Returns the current state of the left mouse button Output: Returns 1 if mouse button is pressed, returns zero if unpressed"
+        },
+        "MouseLButton args()": {
+            "prefix": "MouseLButton",
+            "body": "[MouseLButton\n]",
+            "description": "Returns the current state of the left mouse button Output: Returns 1 if mouse button is pressed, returns zero if unpressed"
+        },
+        "MouseVPos": {
+            "prefix": "MouseVPos",
+            "body": "[MouseVPos]",
+            "description": "Returns the current V position of the mouse in Canvas or Global coordinates. Output: The V position of the mouse"
+        },
+        "MouseVPos args()": {
+            "prefix": "MouseVPos",
+            "body": "[MouseVPos, \n\t Global coordinates? (set value to non-zero for global coordinates, \n\t default:Canvas coordinates)\n]",
+            "description": "Returns the current V position of the mouse in Canvas or Global coordinates. Output: The V position of the mouse"
+        },
+        "BackColorSet": {
+            "prefix": "BackColorSet",
+            "body": "[BackColorSet, 255, 255, 0]",
+            "description": "Sets the pen background color (Top Level)."
+        },
+        "BackColorSet args()": {
+            "prefix": "BackColorSet",
+            "body": "[BackColorSet, \n\t Red, \n\t Green, \n\t Blue\n]",
+            "description": "Sets the pen background color (Top Level)."
+        },
+        "Caption": {
+            "prefix": "Caption",
+            "body": "[Caption, This Is A Caption]",
+            "description": "Displays a text line using the current Caption settings (Top Level)."
+        },
+        "Caption args()": {
+            "prefix": "Caption",
+            "body": "[Caption, \n\t Text\n]",
+            "description": "Displays a text line using the current Caption settings (Top Level)."
+        },
+        "FontSetColor": {
+            "prefix": "FontSetColor",
+            "body": "[FontSetColor, 255, 0, 0]",
+            "description": "Sets the color of the zscript window font (Top Level)."
+        },
+        "FontSetColor args()": {
+            "prefix": "FontSetColor",
+            "body": "[FontSetColor, \n\t Red, \n\t Green, \n\t Blue\n]",
+            "description": "Sets the color of the zscript window font (Top Level)."
+        },
+        "FontSetOpacity": {
+            "prefix": "FontSetOpacity",
+            "body": "[FontSetOpacity, .25]",
+            "description": "Sets the opacity of the zscript window font (Top Level)."
+        },
+        "FontSetOpacity args()": {
+            "prefix": "FontSetOpacity",
+            "body": "[FontSetOpacity, \n\t Opacity\n]",
+            "description": "Sets the opacity of the zscript window font (Top Level)."
+        },
+        "FontSetSize": {
+            "prefix": "FontSetSize",
+            "body": "[FontSetSize, 2]",
+            "description": "Sets the intensity of the zscript window font (Top Level)."
+        },
+        "FontSetSize args()": {
+            "prefix": "FontSetSize",
+            "body": "[FontSetSize, \n\t Size: 1:Small 2:Med 3:Large\n]",
+            "description": "Sets the intensity of the zscript window font (Top Level)."
+        },
+        "FontSetSizeLarge": {
+            "prefix": "FontSetSizeLarge",
+            "body": "[FontSetSizeLarge]",
+            "description": "Sets the size of the zscript window font to large (Top Level)."
+        },
+        "FontSetSizeLarge args()": {
+            "prefix": "FontSetSizeLarge",
+            "body": "[FontSetSizeLarge\n]",
+            "description": "Sets the size of the zscript window font to large (Top Level)."
+        },
+        "FontSetSizeMedium": {
+            "prefix": "FontSetSizeMedium",
+            "body": "[FontSetSizeMedium]",
+            "description": "Sets the size of the zscript window font to medium (Top Level)."
+        },
+        "FontSetSizeMedium args()": {
+            "prefix": "FontSetSizeMedium",
+            "body": "[FontSetSizeMedium\n]",
+            "description": "Sets the size of the zscript window font to medium (Top Level)."
+        },
+        "FontSetSizeSmall": {
+            "prefix": "FontSetSizeSmall",
+            "body": "[FontSetSizeSmall]",
+            "description": "Sets the size of the zscript window font to small."
+        },
+        "FontSetSizeSmall args()": {
+            "prefix": "FontSetSizeSmall",
+            "body": "[FontSetSizeSmall\n]",
+            "description": "Sets the size of the zscript window font to small."
+        },
+        "FrontColorSet": {
+            "prefix": "FrontColorSet",
+            "body": "[FrontColorSet, Text, 0, 0, 0]",
+            "description": "Sets the main interface color to a new value (Top Level)."
+        },
+        "FrontColorSet args()": {
+            "prefix": "FrontColorSet",
+            "body": "[FrontColorSet, \n\t Description Text, \n\t Red, \n\t Green, \n\t Blue, \n\t Initially Disabled? (0:Enabled(ByDefault) NonZero:Disabled)\n]",
+            "description": "Sets the main interface color to a new value (Top Level)."
+        },
+        "HotKeyText": {
+            "prefix": "HotKeyText",
+            "body": "[HotKeyText, DOCUMENT:UNDO]",
+            "description": "Displays a hot-key for the specified interface item (Top Level)."
+        },
+        "HotKeyText args()": {
+            "prefix": "HotKeyText",
+            "body": "[HotKeyText, \n\t Interface item path\n]",
+            "description": "Displays a hot-key for the specified interface item (Top Level)."
+        },
+        "Image": {
+            "prefix": "Image",
+            "body": "[Image, TestImage.psd]",
+            "description": "Loads and displays an image (Top Level)."
+        },
+        "Image args()": {
+            "prefix": "Image",
+            "body": "[Image, \n\t FileName (.psd .bmp + .pct for Mac Systems), \n\t Align (0:center 1:left 2:right), \n\t Resized Width\n]",
+            "description": "Loads and displays an image (Top Level)."
+        },
+        "ISetStatus": {
+            "prefix": "ISetStatus",
+            "body": "[ISetStatus, ZScript:DoIt, 1]",
+            "description": "Enables or Disables a ZScript interface item (can only be used for ZScript-generated interface items)."
+        },
+        "ISetStatus args()": {
+            "prefix": "ISetStatus",
+            "body": "[ISetStatus, \n\t Interface item path, \n\t New status ( 0:Disable NotZero:Enable )\n]",
+            "description": "Enables or Disables a ZScript interface item (can only be used for ZScript-generated interface items)."
+        },
+        "PageSetWidth": {
+            "prefix": "PageSetWidth",
+            "body": "[PageSetWidth, 300]",
+            "description": "Sets the width of the page (Top Level)."
+        },
+        "PageSetWidth args()": {
+            "prefix": "PageSetWidth",
+            "body": "[PageSetWidth, \n\t Preferred PageWidth\n]",
+            "description": "Sets the width of the page (Top Level)."
+        },
+        "PaintBackground": {
+            "prefix": "PaintBackground",
+            "body": "[PaintBackground, 10, 10, 10]",
+            "description": "Paints the background using the current background color (Top Level)."
+        },
+        "PaintBackground args()": {
+            "prefix": "PaintBackground",
+            "body": "[PaintBackground, \n\t Red, \n\t Green, \n\t Blue\n]",
+            "description": "Paints the background using the current background color (Top Level)."
+        },
+        "PaintBackSliver": {
+            "prefix": "PaintBackSliver",
+            "body": "[PaintBackSliver, 20, 255, 255, 0]",
+            "description": "Draws a full page-width rectangle using the current background color (Top Level)."
+        },
+        "PaintBackSliver args()": {
+            "prefix": "PaintBackSliver",
+            "body": "[PaintBackSliver, \n\t height, \n\t Red, \n\t Green, \n\t Blue\n]",
+            "description": "Draws a full page-width rectangle using the current background color (Top Level)."
+        },
+        "PaintPageBreak": {
+            "prefix": "PaintPageBreak",
+            "body": "[PaintPageBreak]",
+            "description": "Draws a visual page-break (Top Level)."
+        },
+        "PaintPageBreak args()": {
+            "prefix": "PaintPageBreak",
+            "body": "[PaintPageBreak\n]",
+            "description": "Draws a visual page-break (Top Level)."
+        },
+        "PaintRect": {
+            "prefix": "PaintRect",
+            "body": "[PaintRect, 80, 100]",
+            "description": "Draws a rectangle (in the ZScript window) using the current pen color (Top Level)."
+        },
+        "PaintRect args()": {
+            "prefix": "PaintRect",
+            "body": "[PaintRect, \n\t Width, \n\t height, \n\t Red, \n\t Green, \n\t Blue\n]",
+            "description": "Draws a rectangle (in the ZScript window) using the current pen color (Top Level)."
+        },
+        "PaintTextRect": {
+            "prefix": "PaintTextRect",
+            "body": "[PaintTextRect, 200, 100, \"This is an Example\"]",
+            "description": "Draws a rectangle with imbedded text (Top Level)."
+        },
+        "PaintTextRect args()": {
+            "prefix": "PaintTextRect",
+            "body": "[PaintTextRect, \n\t Width, \n\t Height, \n\t Text\n]",
+            "description": "Draws a rectangle with imbedded text (Top Level)."
+        },
+        "PD": {
+            "prefix": "PD",
+            "body": "[PD]",
+            "description": "Moves the pen position to the beginning of the next line (Same as PenMoveDown)."
+        },
+        "PD args()": {
+            "prefix": "PD",
+            "body": "[PD\n]",
+            "description": "Moves the pen position to the beginning of the next line (Same as PenMoveDown)."
+        },
+        "PenMove": {
+            "prefix": "PenMove",
+            "body": "[PenMove, 40, 80]",
+            "description": "Moves the pen a relative distance."
+        },
+        "PenMove args()": {
+            "prefix": "PenMove",
+            "body": "[PenMove, \n\t Horizontal Offset, \n\t Vertical Offset\n]",
+            "description": "Moves the pen a relative distance."
+        },
+        "PenMoveCenter": {
+            "prefix": "PenMoveCenter",
+            "body": "[PenMoveCenter]",
+            "description": "Moves the pen position to the horizontal center of the page ."
+        },
+        "PenMoveCenter args()": {
+            "prefix": "PenMoveCenter",
+            "body": "[PenMoveCenter\n]",
+            "description": "Moves the pen position to the horizontal center of the page ."
+        },
+        "PenMoveDown": {
+            "prefix": "PenMoveDown",
+            "body": "[PenMoveDown]",
+            "description": "Moves the pen position to the beginning of the next line ."
+        },
+        "PenMoveDown args()": {
+            "prefix": "PenMoveDown",
+            "body": "[PenMoveDown\n]",
+            "description": "Moves the pen position to the beginning of the next line ."
+        },
+        "PenMoveLeft": {
+            "prefix": "PenMoveLeft",
+            "body": "[PenMoveLeft]",
+            "description": "Moves the pen position to the left side of the page ."
+        },
+        "PenMoveLeft args()": {
+            "prefix": "PenMoveLeft",
+            "body": "[PenMoveLeft\n]",
+            "description": "Moves the pen position to the left side of the page ."
+        },
+        "PenMoveRight": {
+            "prefix": "PenMoveRight",
+            "body": "[PenMoveRight]",
+            "description": "Moves the pen position to the right side of the page ."
+        },
+        "PenMoveRight args()": {
+            "prefix": "PenMoveRight",
+            "body": "[PenMoveRight\n]",
+            "description": "Moves the pen position to the right side of the page ."
+        },
+        "PenSetColor": {
+            "prefix": "PenSetColor",
+            "body": "[PenSetColor, 128, 128, 128]",
+            "description": "Sets the pen main color ."
+        },
+        "PenSetColor args()": {
+            "prefix": "PenSetColor",
+            "body": "[PenSetColor, \n\t Red, \n\t Green, \n\t Blue\n]",
+            "description": "Sets the pen main color ."
+        },
+        "PropertySet": {
+            "prefix": "PropertySet",
+            "body": "[PropertySet, Title, 1, 1]",
+            "description": "Modifies the setting of Title, SubTitle and Caption text.\nProperty Indexes:\n0 = FontSetSize(1=small, 2=med, 3=large)\n1 = alignments(0=center, 1=L, 2=R)\n2 = Opacity(0-1)\n3 = 0x0000000xffffff\n4 = Border size\n5 = BackColor1 (0x0000000xffffff)\n6 = GradientMode (-1=None, 0=Flat, 1=HGrad, 2=VGrad, 3=DHGrad, 4=DVGrad)\n7 = BackColor2 (0x0000000xffffff)"
+        },
+        "PropertySet args()": {
+            "prefix": "PropertySet",
+            "body": "[PropertySet, \n\t The base command name (Title, \n\tSubTitle, \n\tCaption), \n\t Property Index, \n\t The new Value\n]",
+            "description": "Modifies the setting of Title, SubTitle and Caption text.\nProperty Indexes:\n0 = FontSetSize(1=small, 2=med, 3=large)\n1 = alignments(0=center, 1=L, 2=R)\n2 = Opacity(0-1)\n3 = 0x0000000xffffff\n4 = Border size\n5 = BackColor1 (0x0000000xffffff)\n6 = GradientMode (-1=None, 0=Flat, 1=HGrad, 2=VGrad, 3=DHGrad, 4=DVGrad)\n7 = BackColor2 (0x0000000xffffff)"
+        },
+        "SectionBegin": {
+            "prefix": "SectionBegin",
+            "body": "[SectionBegin, Chapterl2]",
+            "description": "Begins a collapsible section ."
+        },
+        "SectionBegin args()": {
+            "prefix": "SectionBegin",
+            "body": "[SectionBegin, \n\t Section Title, \n\t Initial state (1:Expanded, \n\t 0:Collapsed ), \n\t Popup Info Text, \n\t Commands group to execute when expanding to reveal content, \n\t Commands group to execute when collapsing to hide content, \n\t Initially Disabled? (0:Enabled(ByDefault) NonZero:Disabled)\n]",
+            "description": "Begins a collapsible section ."
+        },
+        "SectionEnd": {
+            "prefix": "SectionEnd",
+            "body": "[SectionEnd]",
+            "description": "Ends a collapsible section ."
+        },
+        "SectionEnd args()": {
+            "prefix": "SectionEnd",
+            "body": "[SectionEnd\n]",
+            "description": "Ends a collapsible section ."
+        },
+        "SubTitle": {
+            "prefix": "SubTitle",
+            "body": "[SubTitle, \"Chapter 23\"]",
+            "description": "Displays a text line using the current SubTitle settings ."
+        },
+        "SubTitle args()": {
+            "prefix": "SubTitle",
+            "body": "[SubTitle, \n\t Text\n]",
+            "description": "Displays a text line using the current SubTitle settings ."
+        },
+        "TextCalcWidth": {
+            "prefix": "TextCalcWidth",
+            "body": "[TextCalcWidth, \"Test\"]",
+            "description": "Calculates the pixel-width of the specified string Output: Width of text in pixels ."
+        },
+        "TextCalcWidth args()": {
+            "prefix": "TextCalcWidth",
+            "body": "[TextCalcWidth, \n\t The text to be evaluated\n]",
+            "description": "Calculates the pixel-width of the specified string Output: Width of text in pixels ."
+        },
+        "Title": {
+            "prefix": "Title",
+            "body": "[Title, \"Hello\"]",
+            "description": "Displays a text line using the current Title settings ."
+        },
+        "Title args()": {
+            "prefix": "Title",
+            "body": "[Title, \n\t Text\n]",
+            "description": "Displays a text line using the current Title settings ."
+        },
+        "VarDef": {
+            "prefix": "VarDef",
+            "body": "[VarDef, xPos, 1]",
+            "description": "Defines a variable (advised Top Level)."
+        },
+        "VarDef args()": {
+            "prefix": "VarDef",
+            "body": "[VarDef, \n\t Variable name, \n\t Variable defaultValue\n]",
+            "description": "Defines a variable (advised Top Level)."
+        },
+        "VarSet": {
+            "prefix": "VarSet",
+            "body": "[VarSet, xPos, 42]",
+            "description": "Sets the value of a named variable (can be placed anywhere)."
+        },
+        "VarSet args()": {
+            "prefix": "VarSet",
+            "body": "[VarSet, \n\t Variable name, \n\t New Value\n]",
+            "description": "Sets the value of a named variable (can be placed anywhere)."
+        },
+        "VarListCopy": {
+            "prefix": "VarListCopy",
+            "body": "[VarListCopy, destList, 0, sourceList, 4, 3]",
+            "description": "Copies items from a source list to a destination list"
+        },
+        "VarListCopy args()": {
+            "prefix": "VarListCopy",
+            "body": "[VarListCopy, \n\t Destination list, \n\t Destination initial index, \n\t Source list, \n\t Source initial index, \n\t Number of items to copy.(if omitted or it is 0, \n\t then all items will be copied)\n]",
+            "description": "Copies items from a source list to a destination list"
+        },
+        "VarLoad": {
+            "prefix": "VarLoad",
+            "body": "[VarLoad, userData, tempFile]",
+            "description": "Loads variable/s from a file Output: Number of loaded or verfied values"
+        },
+        "VarLoad args()": {
+            "prefix": "VarLoad",
+            "body": "[VarLoad, \n\t Variable name, \n\t FileName, \n\t Verify only (1:Only Verify that a proper saved variable file exists, \n\t 0:(default)Verifies and loads values)\n]",
+            "description": "Loads variable/s from a file Output: Number of loaded or verfied values"
+        },
+        "VarSave": {
+            "prefix": "VarSave",
+            "body": "[VarSave, userData, tempFile]",
+            "description": "Saves variable value/s to file Output: Number of saved values"
+        },
+        "VarSave args()": {
+            "prefix": "VarSave",
+            "body": "[VarSave, \n\t Variable name, \n\t FileName\n]",
+            "description": "Saves variable value/s to file Output: Number of saved values"
+        },
+        "StrAsk": {
+            "prefix": "StrAsk",
+            "body": "[StrAsk, \"Type text in here\", \"Please enter a file name\"]",
+            "description": "Asks user to input a string. Output: Returns the text typed by user or an empty string if canceled."
+        },
+        "StrAsk args()": {
+            "prefix": "StrAsk",
+            "body": "[StrAsk, \n\t Initial string, \n\t Title\n]",
+            "description": "Asks user to input a string. Output: Returns the text typed by user or an empty string if canceled."
+        },
+        "StrExtract": {
+            "prefix": "StrExtract",
+            "body": "[StrExtract, \"abcdefgh\", 3, 5]",
+            "description": "Returns specified portion of the input string Output: The extracted portion of the input string."
+        },
+        "StrExtract args()": {
+            "prefix": "StrExtract",
+            "body": "[StrExtract, \n\t Input string, \n\t Start character index (0:left), \n\t End character index (0:left)\n]",
+            "description": "Returns specified portion of the input string Output: The extracted portion of the input string."
+        },
+        "StrFind": {
+            "prefix": "StrFind",
+            "body": "[StrFind, \"Br\", \"ZBrush\"]",
+            "description": "Locate a string within a string. Output: Returns the starting index of the 1st string within the 2nd string. returns -1 if not found."
+        },
+        "StrFind args()": {
+            "prefix": "StrFind",
+            "body": "[StrFind, \n\t find this string, \n\t in this string, \n\t Optional start search index (default:0)\n]",
+            "description": "Locate a string within a string. Output: Returns the starting index of the 1st string within the 2nd string. returns -1 if not found."
+        },
+        "StrFromAsc": {
+            "prefix": "StrFromAsc",
+            "body": "[StrFromAsc, 65]",
+            "description": "Returns the character of the specified Ascii value. Output: The character of the specified Ascii value."
+        },
+        "StrFromAsc args()": {
+            "prefix": "StrFromAsc",
+            "body": "[StrFromAsc, \n\t Input Ascii value\n]",
+            "description": "Returns the character of the specified Ascii value. Output: The character of the specified Ascii value."
+        },
+        "StrLength": {
+            "prefix": "StrLength",
+            "body": "[StrLength, \"Hello\"]",
+            "description": "Returns the number of characters in the input string. Output: Number of characters in the input string."
+        },
+        "StrLength args()": {
+            "prefix": "StrLength",
+            "body": "[StrLength, \n\t String to evaluate\n]",
+            "description": "Returns the number of characters in the input string. Output: Number of characters in the input string."
+        },
+        "StrLower": {
+            "prefix": "StrLower",
+            "body": "[StrLower, \"ZBrush\"]",
+            "description": "Returns the lowercase version of the input string. Output: The lowercase version of the input string."
+        },
+        "StrLower args()": {
+            "prefix": "StrLower",
+            "body": "[StrLower, \n\t Input string\n]",
+            "description": "Returns the lowercase version of the input string. Output: The lowercase version of the input string."
+        },
+        "StrMerge": {
+            "prefix": "StrMerge",
+            "body": "[StrMerge, \"Texture number \", \"15\", \" is selected\"]",
+            "description": "Combines two (or more) strings into one string. Output: The combined string. Note: result string will not exceed 255 characters in length"
+        },
+        "StrMerge args()": {
+            "prefix": "StrMerge",
+            "body": "[StrMerge, \n\t Str 1, \n\t Str 2, \n\t Optional Str 3, \n\t Opt Str 4, \n\t Opt Str 5, \n\t Opt Str 6, \n\t Opt Str 7, \n\t Opt Str 8, \n\t Opt Str 9, \n\t Opt Str 10, \n\t Opt Str 11, \n\t Opt Str 12\n]",
+            "description": "Combines two (or more) strings into one string. Output: The combined string. Note: result string will not exceed 255 characters in length"
+        },
+        "StrToAsc": {
+            "prefix": "StrToAsc",
+            "body": "[StrToAsc, \"ZBrush\"]",
+            "description": "Returns the Ascii value of a character. Output: The Ascii value of a character."
+        },
+        "StrToAsc args()": {
+            "prefix": "StrToAsc",
+            "body": "[StrToAsc, \n\t Input string, \n\t Optional character offset (default:0)\n]",
+            "description": "Returns the Ascii value of a character. Output: The Ascii value of a character."
+        },
+        "StrUpper": {
+            "prefix": "StrUpper",
+            "body": "[StrUpper, \"ZBrush\"]",
+            "description": "Returns the uppercase version of the input string. Output: The uppercase version of the input string."
+        },
+        "StrUpper args()": {
+            "prefix": "StrUpper",
+            "body": "[StrUpper, \n\t Input string\n]",
+            "description": "Returns the uppercase version of the input string. Output: The uppercase version of the input string."
+        },
+        "FileExecute": {
+            "prefix": "FileExecute",
+            "body": "[FileExecute, PluginTest.dll, ShowMsg, \"Hi There\"]",
+            "description": "Executes the specified plugin file (DLL). Output: Returns the result value which was returned by the executed routine. Returns zero if error"
+        },
+        "FileExecute args()": {
+            "prefix": "FileExecute",
+            "body": "[FileExecute, \n\t File name including the extension (such as plugin.dll ), \n\t Routine to call, \n\t Optional text input, \n\t Optional number input, \n\t Optional memory block input, \n\t Optional memory block output\n]",
+            "description": "Executes the specified plugin file (DLL). Output: Returns the result value which was returned by the executed routine. Returns zero if error"
+        },
+        "FileExists": {
+            "prefix": "FileExists",
+            "body": "[FileExists, LargeImage.psd]",
+            "description": "Check if a specific file exists. Output: Returns 1 if file exists. Returns zero if does not exists"
+        },
+        "FileExists args()": {
+            "prefix": "FileExists",
+            "body": "[FileExists, \n\t File name including the extension (such as brush1.ztl )\n]",
+            "description": "Check if a specific file exists. Output: Returns 1 if file exists. Returns zero if does not exists"
+        },
+        "FileGetInfo": {
+            "prefix": "FileGetInfo",
+            "body": "[FileGetInfo, LargeImage.psd, 1]",
+            "description": "Retrieve information about a specified file. Output: returns the requested information or zero if the file not found.\nProperty Indexes:\n1 = file size (in mb)\n2 -7 = Creation date: year, month(1-12), day, hour, minutes, seconds\n8 -13 = Modified date: year, month(1-12), day, hour, minutes, seconds\n14 -19 = Access date: year, month(1-12), day, hour, minutes, seconds"
+        },
+        "FileGetInfo args()": {
+            "prefix": "FileGetInfo",
+            "body": "[FileGetInfo, \n\t File name including extension (such as brush1.ztl), \n\tThe information requested index.\n]",
+            "description": "Retrieve information about a specified file. Output: returns the requested information or zero if the file not found.\nProperty Indexes:\n1 = file size (in mb)\n2 -7 = Creation date: year, month(1-12), day, hour, minutes, seconds\n8 -13 = Modified date: year, month(1-12), day, hour, minutes, seconds\n14 -19 = Access date: year, month(1-12), day, hour, minutes, seconds"
+        },
+        "FileNameAdvance": {
+            "prefix": "FileNameAdvance",
+            "body": "[FileNameAdvance, \"image01.psd\"]",
+            "description": "Increments the index value contained within a filename string Output: Updated file Name."
+        },
+        "FileNameAdvance args()": {
+            "prefix": "FileNameAdvance",
+            "body": "[FileNameAdvance, \n\t Base file name, \n\t Number of digits (0-4) (i.e. 3: 001 ), \n\t Add 'Copy' string?(0:no, \n\t NonZero:yes)\n]",
+            "description": "Increments the index value contained within a filename string Output: Updated file Name."
+        },
+        "FileNameAsk": {
+            "prefix": "FileNameAsk",
+            "body": "[FileNameAsk, \"DXF(*.dxf)|*.dxf|OBJ(*.obj)|*.obj||\", , \"Please select a file to load...\"]",
+            "description": "Asks user for a file name Output: Result file name or an empty string if user canceled operation (Sub-Level only)."
+        },
+        "FileNameAsk args()": {
+            "prefix": "FileNameAsk",
+            "body": "[FileNameAsk, \n\t Extension list (up to 3 extensions), \n\t Default fileName for SaveDialog. Name should be omitted for OpenDialog, \n\t Optional dialog title\n]",
+            "description": "Asks user for a file name Output: Result file name or an empty string if user canceled operation (Sub-Level only)."
+        },
+        "FileNameExtract": {
+            "prefix": "FileNameExtract",
+            "body": "[FileNameExtract, fullFilePath, 2]",
+            "description": "Extracts filename components. Output: The extracted filename component/s."
+        },
+        "FileNameExtract args()": {
+            "prefix": "FileNameExtract",
+            "body": "[FileNameExtract, \n\t File name (Full path), \n\t Component specifier (1:path, \n\t 2:name, \n\t 4:ext)\n]",
+            "description": "Extracts filename components. Output: The extracted filename component/s."
+        },
+        "FileNameGetLastTyped": {
+            "prefix": "FileNameGetLastTyped",
+            "body": "[FileNameGetLastTyped]",
+            "description": "Retrieves the latest file name that was typed by the user in a Save/Load action Output: Latest file name that was typed by the user. Returned string will be empty if the user has canceled the action."
+        },
+        "FileNameGetLastTyped args()": {
+            "prefix": "FileNameGetLastTyped",
+            "body": "[FileNameGetLastTyped\n]",
+            "description": "Retrieves the latest file name that was typed by the user in a Save/Load action Output: Latest file name that was typed by the user. Returned string will be empty if the user has canceled the action."
+        },
+        "FileNameGetLastUsed": {
+            "prefix": "FileNameGetLastUsed",
+            "body": "[FileNameGetLastUsed]",
+            "description": "Retrieves the latest file name that was used (by the user or by ZBrush) in a Save/Load action Output: Latest file name that was used. Returned string will be empty if the user has canceled the action."
+        },
+        "FileNameGetLastUsed args()": {
+            "prefix": "FileNameGetLastUsed",
+            "body": "[FileNameGetLastUsed\n]",
+            "description": "Retrieves the latest file name that was used (by the user or by ZBrush) in a Save/Load action Output: Latest file name that was used. Returned string will be empty if the user has canceled the action."
+        },
+        "FileNameMake": {
+            "prefix": "FileNameMake",
+            "body": "[FileNameMake, Image.psd, 12]",
+            "description": "Combines a base filename with an index number Output: Combined file name Variable"
+        },
+        "FileNameMake args()": {
+            "prefix": "FileNameMake",
+            "body": "[FileNameMake, \n\t Base file name, \n\t Index, \n\t Number of numeric digits to use\n]",
+            "description": "Combines a base filename with an index number Output: Combined file name Variable"
+        },
+        "FileNameResolvePath": {
+            "prefix": "FileNameResolvePath",
+            "body": "[FileNameResolvePath, LargeImage.psd]",
+            "description": "Resolves local path to full path Output: Full path."
+        },
+        "FileNameResolvePath args()": {
+            "prefix": "FileNameResolvePath",
+            "body": "[FileNameResolvePath, \n\t Local File Name\n]",
+            "description": "Resolves local path to full path Output: Full path."
+        },
+        "FileNameSetNext": {
+            "prefix": "FileNameSetNext",
+            "body": "[FileNameSetNext, LargeImage.psd]",
+            "description": "Pre-sets the file name that will be used in the next Save/Load action"
+        },
+        "FileNameSetNext args()": {
+            "prefix": "FileNameSetNext",
+            "body": "[FileNameSetNext, \n\t File name including the extension (such as .psd ). If omitted the stored file name will be cleared.\n]",
+            "description": "Pre-sets the file name that will be used in the next Save/Load action"
+        },
+        "Interpolate": {
+            "prefix": "Interpolate",
+            "body": "[Interpolate, 0.25, startx, endx]",
+            "description": "Performs time-based interpolation Output: Interpolated value or list"
+        },
+        "Interpolate args()": {
+            "prefix": "Interpolate",
+            "body": "[Interpolate, \n\t Time (0:AtStart 0.5:half 1:AtEnd), \n\t Value1 (Num, \n\t VarName or ListName), \n\t Value2 (Num, \n\t VarName or ListName), \n\t Value3 (Num, \n\t VarName or ListName), \n\t Value4 (Num, \n\t VarName or ListName), \n\t Angle interpolation (0:no(default), \n\t 1:yes )\n]",
+            "description": "Performs time-based interpolation Output: Interpolated value or list"
+        },
+        "Math Operators": {
+            "prefix": "Math Operators",
+            "body": "&& AND",
+            "description": "\n\n+ Plus\n- Minus\n* Multiplied by\n/ Divided by\n^^ To the Power of\n\nNote: Unlike some programming languages, calculations are always evaluated from left to right. That means\n\n2 + 3 * 4\nevaluates to 20.\n\nTo make sure certain parts of the calculation are evaluated first, place them inside parentheses:\n\n2 + (3 * 4)\nevaluates to 14.\n\n"
+        },
+        "Math Operators args()": {
+            "prefix": "Math Operators",
+            "body": "[ - * / ^\n^",
+            "description": "\n\n+ Plus\n- Minus\n* Multiplied by\n/ Divided by\n^^ To the Power of\n\nNote: Unlike some programming languages, calculations are always evaluated from left to right. That means\n\n2 + 3 * 4\nevaluates to 20.\n\nTo make sure certain parts of the calculation are evaluated first, place them inside parentheses:\n\n2 + (3 * 4)\nevaluates to 14.\n\n"
+        },
+        "Logical Operators": {
+            "prefix": "Logical Operators",
+            "body": "INT(value) Integer Portion of value; removes everything after decimal point",
+            "description": "\n\n&& AND\n|| OR\n! NOT\n\nNote: When evaluating several conditions, group using parentheses:\n\n(myVar < 8)&&(myVar >=2)\n\n\n((myVarA < 8)&&(myVarA >=2)) || (myVarA == (myVarB - 1))\n\n"
+        },
+        "Logical Operators args()": {
+            "prefix": "Logical Operators",
+            "body": "&& \n!",
+            "description": "\n\n&& AND\n|| OR\n! NOT\n\nNote: When evaluating several conditions, group using parentheses:\n\n(myVar < 8)&&(myVar >=2)\n\n\n((myVarA < 8)&&(myVarA >=2)) || (myVarA == (myVarB - 1))\n\n"
+        },
+        "Math Functions": {
+            "prefix": "Math Functions",
+            "body": "[Randomize]",
+            "description": "\n\nINT(value) Integer Portion of value; removes everything after decimal point\nFRAC(value) Fractional Portion of value; removes everything before decimal point\nABS(value) Absolute Value (ignores + or - sign)\nNEG(value) Changes the + or - sign of value\nMIN(value1, value2) Finds the lesser of two values\nMAX(value1, value2) Finds the greater of two values\nSQRT(value) Square Root of the value\nRAND(value) Random Number between 0 and value\nIRAND(value) Random Integer between 0 and value\nSIN(angle) Trig Sine of the angle, in degrees\nCOS(angle) Trig cosine of the angle, in degrees\nTAN(angle) Trig Tangent of the angle, in degrees\nASIN(value) Trig ArcSine of the value\nACOS(value) Trig ArcCosine of the value\nATAN(value) Trig ArcTangent of the value\nATAN2(value, value) Trig ArcTangent of the value (*ZBrush 3 only)\nLOG(value) Natural Log of the value\nLOG10(value) Base 10 Log of the value\nBOOL(value) Boolean Evaluation\n\n"
+        },
+        "Math Functions args()": {
+            "prefix": "Math Functions",
+            "body": "INT(value\n)",
+            "description": "\n\nINT(value) Integer Portion of value; removes everything after decimal point\nFRAC(value) Fractional Portion of value; removes everything before decimal point\nABS(value) Absolute Value (ignores + or - sign)\nNEG(value) Changes the + or - sign of value\nMIN(value1, value2) Finds the lesser of two values\nMAX(value1, value2) Finds the greater of two values\nSQRT(value) Square Root of the value\nRAND(value) Random Number between 0 and value\nIRAND(value) Random Integer between 0 and value\nSIN(angle) Trig Sine of the angle, in degrees\nCOS(angle) Trig cosine of the angle, in degrees\nTAN(angle) Trig Tangent of the angle, in degrees\nASIN(value) Trig ArcSine of the value\nACOS(value) Trig ArcCosine of the value\nATAN(value) Trig ArcTangent of the value\nATAN2(value, value) Trig ArcTangent of the value (*ZBrush 3 only)\nLOG(value) Natural Log of the value\nLOG10(value) Base 10 Log of the value\nBOOL(value) Boolean Evaluation\n\n"
+        },
+        "Randomize": {
+            "prefix": "Randomize",
+            "body": "[Randomize]",
+            "description": "Resets the Rand generator."
+        },
+        "Randomize args()": {
+            "prefix": "Randomize",
+            "body": "[Randomize, \n\t Optional seed value (0 to 32767)\n]",
+            "description": "Resets the Rand generator."
+        },
+        "RGB": {
+            "prefix": "RGB",
+            "body": "[RGB, 20, 40, 80]",
+            "description": "Combines 3 color-components into one RGB value Output: Combined RGB"
+        },
+        "RGB args()": {
+            "prefix": "RGB",
+            "body": "[RGB, \n\t Red, \n\t Green, \n\t Blue\n]",
+            "description": "Combines 3 color-components into one RGB value Output: Combined RGB"
+        },
+        "Val": {
+            "prefix": "Val",
+            "body": "[Val, (xPos*2)+4]",
+            "description": "Evaluates the input and returns a numerical value Output: Value of the named variable"
+        },
+        "Val args()": {
+            "prefix": "Val",
+            "body": "[Val, \n\t Variable name\n]",
+            "description": "Evaluates the input and returns a numerical value Output: Value of the named variable"
+        },
+        "Var": {
+            "prefix": "Var",
+            "body": "[Var, myString]",
+            "description": "Gets the value of a named variable Output: Value of the named variable"
+        },
+        "Var args()": {
+            "prefix": "Var",
+            "body": "[Var, \n\t Variable name\n]",
+            "description": "Gets the value of a named variable Output: Value of the named variable"
+        },
+        "VarAdd": {
+            "prefix": "VarAdd",
+            "body": "[VarAdd, xPos, 42]",
+            "description": "Adds a value to an existing variable"
+        },
+        "VarAdd args()": {
+            "prefix": "VarAdd",
+            "body": "[VarAdd, \n\t Variable name, \n\t Value To Add\n]",
+            "description": "Adds a value to an existing variable"
+        },
+        "VarDec": {
+            "prefix": "VarDec",
+            "body": "[VarDec, loopCounter]",
+            "description": "Subtracts 1 from the value of an existing variable"
+        },
+        "VarDec args()": {
+            "prefix": "VarDec",
+            "body": "[VarDec, \n\t Variable name\n]",
+            "description": "Subtracts 1 from the value of an existing variable"
+        },
+        "VarDiv": {
+            "prefix": "VarDiv",
+            "body": "[VarDiv, xPos, 42]",
+            "description": "Divides an existing variable by a value"
+        },
+        "VarDiv args()": {
+            "prefix": "VarDiv",
+            "body": "[VarDiv, \n\t Variable name, \n\t Value to Divide By\n]",
+            "description": "Divides an existing variable by a value"
+        },
+        "VarInc": {
+            "prefix": "VarInc",
+            "body": "[VarInc, loopCounter]",
+            "description": "Adds 1 to the value of an existing variable"
+        },
+        "VarInc args()": {
+            "prefix": "VarInc",
+            "body": "[VarInc, \n\t Variable name\n]",
+            "description": "Adds 1 to the value of an existing variable"
+        },
+        "VarMul": {
+            "prefix": "VarMul",
+            "body": "[VarMul, myVar, 5]",
+            "description": "Multiplies an existing variable by a value"
+        },
+        "VarMul args()": {
+            "prefix": "VarMul",
+            "body": "[VarMul, \n\t Variable name, \n\t Value To Multiply\n]",
+            "description": "Multiplies an existing variable by a value"
+        },
+        "VarSize": {
+            "prefix": "VarSize",
+            "body": "[VarSize, list1]",
+            "description": "Returns the number of items in a variable or in a list Output: The number of items in a list or 1 if it is a simple variable"
+        },
+        "VarSize args()": {
+            "prefix": "VarSize",
+            "body": "[VarSize, \n\t Variable name\n]",
+            "description": "Returns the number of items in a variable or in a list Output: The number of items in a list or 1 if it is a simple variable"
+        },
+        "VarSub": {
+            "prefix": "VarSub",
+            "body": "[VarSub, xPos, 42]",
+            "description": "Subtracts a value from an existing variable"
+        },
+        "VarSub args()": {
+            "prefix": "VarSub",
+            "body": "[VarSub, \n\t Variable name, \n\t Value To Subtract\n]",
+            "description": "Subtracts a value from an existing variable"
+        },
+        "Assert": {
+            "prefix": "Assert",
+            "body": "[Assert, [Var, a]<10, \"Something is wrong\"]",
+            "description": "(ZScript debugging helper) aborts execution if specified condition is not true"
+        },
+        "Assert args()": {
+            "prefix": "Assert",
+            "body": "[Assert, \n\t True Or False Evaluation, \n\t Message that will be shown if the first input is false (zero)\n]",
+            "description": "(ZScript debugging helper) aborts execution if specified condition is not true"
+        },
+        "Delay": {
+            "prefix": "Delay",
+            "body": "[Delay, 1]",
+            "description": "Delays execution of ZScript for specified amount of time (Sub-Level only)."
+        },
+        "Delay args()": {
+            "prefix": "Delay",
+            "body": "[Delay, \n\t Delay (in seconds)\n]",
+            "description": "Delays execution of ZScript for specified amount of time (Sub-Level only)."
+        },
+        "Exit": {
+            "prefix": "Exit",
+            "body": "[Exit]",
+            "description": "Aborts execution and exits the current ZScript"
+        },
+        "Exit args()": {
+            "prefix": "Exit",
+            "body": "[Exit\n]",
+            "description": "Aborts execution and exits the current ZScript"
+        },
+        "If": {
+            "prefix": "If",
+            "body": "[If, MyVariable < 10, [MessageOk, LessThanl0], [MessageOk, l0orMore]]",
+            "description": "Provides conditional execution of a commands group (can be placed anywhere)."
+        },
+        "If args()": {
+            "prefix": "If",
+            "body": "[If, \n\t True Or False Evaluation , \n\t Commands group to be executed if true (not zero) , \n\t Commands group to be executed if false (is zero)\n]",
+            "description": "Provides conditional execution of a commands group (can be placed anywhere)."
+        },
+        "IFreeze": {
+            "prefix": "IFreeze",
+            "body": "[IFreeze, ...]",
+            "description": "Disables interface updates."
+        },
+        "IFreeze args()": {
+            "prefix": "IFreeze",
+            "body": "[IFreeze, \n\t Commands group to be executed without updating the interface\n]",
+            "description": "Disables interface updates."
+        },
+        "Loop": {
+            "prefix": "Loop",
+            "body": "[Loop, 5, [MessageOK, Hi]]",
+            "description": "Repeats execution of the specified commands group"
+        },
+        "Loop args()": {
+            "prefix": "Loop",
+            "body": "[Loop, \n\t RepeatCount, \n\t Commands group, \n\t Optional loop-counter variable (starts at Zero)\n]",
+            "description": "Repeats execution of the specified commands group"
+        },
+        "LoopContinue": {
+            "prefix": "LoopContinue",
+            "body": "[LoopContinue]",
+            "description": "Continues execution from the beginning of the current Loop"
+        },
+        "LoopContinue args()": {
+            "prefix": "LoopContinue",
+            "body": "[LoopContinue\n]",
+            "description": "Continues execution from the beginning of the current Loop"
+        },
+        "LoopExit": {
+            "prefix": "LoopExit",
+            "body": "[LoopExit]",
+            "description": "Exits the current Loop"
+        },
+        "LoopExit args()": {
+            "prefix": "LoopExit",
+            "body": "[LoopExit\n]",
+            "description": "Exits the current Loop"
+        },
+        "RoutineCall": {
+            "prefix": "RoutineCall",
+            "body": "[RoutineCall, testing]",
+            "description": "Executes the specified defined routine (can be placed anywhere)."
+        },
+        "RoutineCall args()": {
+            "prefix": "RoutineCall",
+            "body": "[RoutineCall, \n\t Name of the routine to be called, \n\t Input Var01, \n\t Input Var02, \n\t Input Var03, \n\t Input Var04, \n\t Input Var05, \n\t Input Var06, \n\t Input Var07, \n\t Input Var08, \n\t Input Var09, \n\t Input Var10\n]",
+            "description": "Executes the specified defined routine (can be placed anywhere)."
+        },
+        "RoutineDef": {
+            "prefix": "RoutineDef",
+            "body": "[RoutineDef, testing, [MessageOk, Hi][MessageOk, There]]",
+            "description": "Defines a named commands group (can be placed anywhere but generally Top Level)."
+        },
+        "RoutineDef args()": {
+            "prefix": "RoutineDef",
+            "body": "[RoutineDef, \n\t Name of the routine, \n\t Commands group that will be executed when the routine is called, \n\t Input Var01, \n\t Input Var02, \n\t Input Var03, \n\t Input Var04, \n\t Input Var05, \n\t Input Var06, \n\t Input Var07, \n\t Input Var08, \n\t Input Var09, \n\t Input Var10\n]",
+            "description": "Defines a named commands group (can be placed anywhere but generally Top Level)."
+        },
+        "Sleep": {
+            "prefix": "Sleep",
+            "body": "[Sleep, 100, [Note, \"LButton pressed\"], 4]",
+            "description": "Exists ZScript and be awaken by specified event (can be placed anywhere)."
+        },
+        "Sleep args()": {
+            "prefix": "Sleep",
+            "body": "[Sleep , \n\t Sleep amount in seconds, \n\t Commands group to execute when awaken, \n\t Optional event (default:1) (1:Timer 2:Mouse Moved 4:LButton down 8:LButton up 16:KeyDown 32:keyUp 64:ModifierKeyDown 128:ModifierKeyUp 256:Startup 512:Shut down 1024:InterfaceItem pressed/unpressed 2048:tool selected 4096:texture selected 8192:alpha selected), \n\t Optional output variable which will contain the event code that has awaken the ZScript, \n\t Optional output variable which will contain the ID of the window pointed by the mouse\n]",
+            "description": "Exists ZScript and be awaken by specified event (can be placed anywhere)."
+        },
+        "SleepAgain": {
+            "prefix": "SleepAgain",
+            "body": "[SleepAgain]",
+            "description": "Exists ZScript and continues the Sleep command (Sub-Level only)."
+        },
+        "SleepAgain args()": {
+            "prefix": "SleepAgain",
+            "body": "[SleepAgain , \n\t Optional new Sleep amount in seconds (default:unchanged), \n\t Optional event (default:unchanged) (1:Timer 2:Mouse Moved 4:LButton down 8:LButton up 16:KeyDown 32:keyUp 64:ModifierKeyDown 256:Startup 512:Shut down 1024:InterfaceItem post pressed/unpressed 2048:tool selected 4096:texture selected 8192 alpha selected)\n]",
+            "description": "Exists ZScript and continues the Sleep command (Sub-Level only)."
+        },
+        "<zscriptinsert>": {
+            "prefix": "<zscriptinsert>",
+            "body": "<zscriptinsert, \"MyZscript.txt\">",
+            "description": "Inserts all the text and commands of an entire ZScript file. Not strictly a zscript command, it is the only one that does not have square brackets."
+        },
+        "<zscriptinsert> args()": {
+            "prefix": "<zscriptinsert>",
+            "body": "<zscriptinsert, \n\t \"Filename.txt\" \n>",
+            "description": "Inserts all the text and commands of an entire ZScript file. Not strictly a zscript command, it is the only one that does not have square brackets."
+        },
+        "MemCopy": {
+            "prefix": "MemCopy",
+            "body": "[MemCopy, FromMemBlock, 1000, ToMemBlock, 2000, 10000]",
+            "description": "Copies data from one memory block into another. Output: Returns the number of bytes moved. (-1 indicates an error)"
+        },
+        "MemCopy args()": {
+            "prefix": "MemCopy",
+            "body": "[MemCopy, \n\t From Mem block identifier, \n\t From offset, \n\t To Mem block identifier, \n\t To offset, \n\t Number of bytes to move (if omitted, \n\t max possible number of bytes will be copied)\n]",
+            "description": "Copies data from one memory block into another. Output: Returns the number of bytes moved. (-1 indicates an error)"
+        },
+        "MemCreate": {
+            "prefix": "MemCreate",
+            "body": "[MemCreate, myTempData, 1000, 0]",
+            "description": "Creates a new memory block. Output: Returns the size of the new memory block or error code\u20260=Error -1=Memory already exists -2=Can\u2019t create memory block."
+        },
+        "MemCreate args()": {
+            "prefix": "MemCreate",
+            "body": "[MemCreate, \n\t Mem block identifier, \n\t Mem block requested size, \n\t Initial fill? (omitted: noFill - faster to create)\n]",
+            "description": "Creates a new memory block. Output: Returns the size of the new memory block or error code\u20260=Error -1=Memory already exists -2=Can\u2019t create memory block."
+        },
+        "MemCreateFromFile": {
+            "prefix": "MemCreateFromFile",
+            "body": "[MemCreateFromFile, myTempData, mesh.obj]",
+            "description": "Creates a new memory block from a disk file. Output: Returns the size of the new memory block or error code\u20260=Error -1=Memory already exists -2=Can\u2019t create memory block -3=File not found."
+        },
+        "MemCreateFromFile args()": {
+            "prefix": "MemCreateFromFile",
+            "body": "[MemCreateFromFile, \n\t Mem block identifier, \n\t File name including the extension (such as brush1.ztl ), \n\t Optional start file offset for partial file read (default:0), \n\t Optional max bytes to read (default:all file)\n]",
+            "description": "Creates a new memory block from a disk file. Output: Returns the size of the new memory block or error code\u20260=Error -1=Memory already exists -2=Can\u2019t create memory block -3=File not found."
+        },
+        "MemDelete": {
+            "prefix": "MemDelete",
+            "body": "[MemDelete, myTempData]",
+            "description": "Deletes a memory block. Output: Returns the size of the deleted memory block. Returns 0 if memory block could not be found."
+        },
+        "MemDelete args()": {
+            "prefix": "MemDelete",
+            "body": "[MemDelete, \n\t Data block identifier\n]",
+            "description": "Deletes a memory block. Output: Returns the size of the deleted memory block. Returns 0 if memory block could not be found."
+        },
+        "MemGetSize": {
+            "prefix": "MemGetSize",
+            "body": "[MemGetSize, myTempData]",
+            "description": "Returns the size of a memory block (Also useful for determining if a memory block already exists. Output: Returns the size of the memory block. Returns 0 if data block could not be found."
+        },
+        "MemGetSize args()": {
+            "prefix": "MemGetSize",
+            "body": "[MemGetSize, \n\t Memory block identifier\n]",
+            "description": "Returns the size of a memory block (Also useful for determining if a memory block already exists. Output: Returns the size of the memory block. Returns 0 if data block could not be found."
+        },
+        "MemMove": {
+            "prefix": "MemMove",
+            "body": "[MemMove, myTempData, 1000, 2000, 10000]",
+            "description": "Move data within an existing memory block. Output: Returns the mumber of bytes moved."
+        },
+        "MemMove args()": {
+            "prefix": "MemMove",
+            "body": "[MemMove, \n\t Mem block identifier, \n\t From offset, \n\t To offset, \n\t Number of bytes to move\n]",
+            "description": "Move data within an existing memory block. Output: Returns the mumber of bytes moved."
+        },
+        "MemMultiWrite": {
+            "prefix": "MemMultiWrite",
+            "body": "[MemMultiWrite, myTempData, 4, 12, 3, 5, 100]",
+            "description": "Write data to a memory block. Output: Returns the number of actual bytes written"
+        },
+        "MemMultiWrite args()": {
+            "prefix": "MemMultiWrite",
+            "body": "[MemMultiWrite, \n\t Mem block identifier, \n\t Value to write, \n\t Data format (0:omitted:float 1:signed char 2:unsigned char 3:signed short 4:unsigned short 5:signed long 6:unsigned long 7:fixed16 (16.16)), \n\t Offset (in bytes) into memory block, \n\t Repeat count, \n\t Offset (in bytes) to subsequent writes\n]",
+            "description": "Write data to a memory block. Output: Returns the number of actual bytes written"
+        },
+        "MemRead": {
+            "prefix": "MemRead",
+            "body": "[MemRead, myTempData, width, 12, 3]",
+            "description": "Reads data from a memory block. Output: Returns the number of actual bytes read"
+        },
+        "MemRead args()": {
+            "prefix": "MemRead",
+            "body": "[MemRead, \n\t Mem block identifier, \n\t Read variable, \n\t Data format (0:omitted:float 1:signed char 2:unsigned char 3:signed short 4:unsigned short 5:signed long 6:unsigned long 7:fixed16 (16.16)), \n\t Offset (in bytes) into memory block\n]",
+            "description": "Reads data from a memory block. Output: Returns the number of actual bytes read"
+        },
+        "MemReadString": {
+            "prefix": "MemReadString",
+            "body": "[MemReadString, myTempData, tempText, 12, 1]",
+            "description": "Reads a string from a memory block. Output: Returns the number of bytes scanned. (may be larger than the actual bytes read)"
+        },
+        "MemReadString args()": {
+            "prefix": "MemReadString",
+            "body": "[MemReadString, \n\t Mem block identifier, \n\t The string variable, \n\t Offset (in bytes) into memory block, \n\t Break at line end? (default:no), \n\t Skip white space? (default:no), \n\t Max read length 1 - 255(default)\n]",
+            "description": "Reads a string from a memory block. Output: Returns the number of bytes scanned. (may be larger than the actual bytes read)"
+        },
+        "MemResize": {
+            "prefix": "MemResize",
+            "body": "[MemResize, myTempData, 1000]",
+            "description": "Resizes an exsiting memory block. Output: Returns the new size of the memory block. Zero indicates an error."
+        },
+        "MemResize args()": {
+            "prefix": "MemResize",
+            "body": "[MemResize, \n\t Mem block identifier, \n\t New size, \n\t Optional byte value to fill the newly added memory? (omitted:no)\n]",
+            "description": "Resizes an exsiting memory block. Output: Returns the new size of the memory block. Zero indicates an error."
+        },
+        "MemSaveToFile": {
+            "prefix": "MemSaveToFile",
+            "body": "[MemSaveToFile, myTempData, \"mesh.obj\"]",
+            "description": "Saves an exisiting memory block to a disk file. Output: Returns the size of the new memory block or error code\u20260=Error -1=Memory does not exist -2=File already exists -3=File write error."
+        },
+        "MemSaveToFile args()": {
+            "prefix": "MemSaveToFile",
+            "body": "[MemSaveToFile, \n\t Mem block identifier, \n\t File name including the extension (such as brush1.ztl ), \n\t Overwrite if exists? Set to a value (including 0) to save the file even if an identically named file already exists on disk - Default (no argument): do not overwrite\n]",
+            "description": "Saves an exisiting memory block to a disk file. Output: Returns the size of the new memory block or error code\u20260=Error -1=Memory does not exist -2=File already exists -3=File write error."
+        },
+        "MemWrite": {
+            "prefix": "MemWrite",
+            "body": "[MemWrite, myTempData, 4, 12, 3]",
+            "description": "Write data to a memory block. Output: Returns the number of actual bytes written"
+        },
+        "MemWrite args()": {
+            "prefix": "MemWrite",
+            "body": "[MemWrite, \n\t Mem block identifier, \n\t Value to write, \n\t Data format (0:omitted:float 1:signed char 2:unsigned char 3:signed short 4:unsigned short 5:signed long 6:unsigned long 7:fixed16 (16.16)), \n\t Offset (in bytes) into memory block\n]",
+            "description": "Write data to a memory block. Output: Returns the number of actual bytes written"
+        },
+        "MemWriteString": {
+            "prefix": "MemWriteString",
+            "body": "[MemWriteString, myTempData, \"Hello There\", 12]",
+            "description": "Writes a string into a memory block. Output: Returns the number of bytes written. (including the terminating zero)"
+        },
+        "MemWriteString args()": {
+            "prefix": "MemWriteString",
+            "body": "[MemWriteString, \n\t Mem block identifier, \n\t The string, \n\t Offset (in bytes) into memory block, \n\t Write terminating zero char (if omitted:yes)\n]",
+            "description": "Writes a string into a memory block. Output: Returns the number of bytes written. (including the terminating zero)"
+        },
+        "MTransformGet": {
+            "prefix": "MTransformGet",
+            "body": "[MTransformGet, MyDataBlock, 1]",
+            "description": "Gets current transformation values into an existing memory block (Sub-Level only)."
+        },
+        "MTransformGet args()": {
+            "prefix": "MTransformGet",
+            "body": "[MTransformGet, \n\t Mem block identifier, \n\t Optional variable index (default:0)\n]",
+            "description": "Gets current transformation values into an existing memory block (Sub-Level only)."
+        },
+        "MTransformSet": {
+            "prefix": "MTransformSet",
+            "body": "[MTransformSet, MyDataBlock, 1]",
+            "description": "Sets new transformation values from an existing memory block (Sub-Level only)."
+        },
+        "MTransformSet args()": {
+            "prefix": "MTransformSet",
+            "body": "[MTransformSet, \n\t Mem block identifier, \n\t Optional variable index (default:0)\n]",
+            "description": "Sets new transformation values from an existing memory block (Sub-Level only)."
+        },
+        "MVarDef": {
+            "prefix": "MVarDef",
+            "body": "[MVarDef, myTempData, 1000, 0]",
+            "description": "Defines a new variables memory block. Output: Returns the variables count of the new memory block or error code\u20260=Error -1=Memory already exists -2=Can\u2019t create memory block."
+        },
+        "MVarDef args()": {
+            "prefix": "MVarDef",
+            "body": "[MVarDef, \n\t Mem block identifier, \n\t Mem block variables count, \n\t Initial fill? (omitted:noFill - faster to create)\n]",
+            "description": "Defines a new variables memory block. Output: Returns the variables count of the new memory block or error code\u20260=Error -1=Memory already exists -2=Can\u2019t create memory block."
+        },
+        "MVarGet": {
+            "prefix": "MVarGet",
+            "body": "[MVarGet, myTempData, 1]",
+            "description": "Reads a float value from a memory block. Output: Returns the float value."
+        },
+        "MVarGet args()": {
+            "prefix": "MVarGet",
+            "body": "[MVarGet, \n\t Mem block identifier, \n\t Variable index (0 based)\n]",
+            "description": "Reads a float value from a memory block. Output: Returns the float value."
+        },
+        "MVarSet": {
+            "prefix": "MVarSet",
+            "body": "[MVarSet, myTempData, 1, 4]",
+            "description": "Writes a float value to a memory block. Output: Returns the old value of the variable."
+        },
+        "MVarSet args()": {
+            "prefix": "MVarSet",
+            "body": "[MVarSet, \n\t Mem block identifier, \n\t Variable index (0 based), \n\t The value to write\n]",
+            "description": "Writes a float value to a memory block. Output: Returns the old value of the variable."
+        },
+        "SoundPlay": {
+            "prefix": "SoundPlay",
+            "body": "[SoundPlay, SayHello]",
+            "description": "Plays the sounds loaded into a specified memory block. Output: Returns the zero if command executed successfully (Sub-Level only)."
+        },
+        "SoundPlay args()": {
+            "prefix": "SoundPlay",
+            "body": "[SoundPlay, \n\t Mem block identifier, \n\t Optional play mode (0:Play once, \n\t don't wait for completion (default); 1:Play once, \n\t wait for completion; 2:Play loop, \n\t don't wait for completion)\n]",
+            "description": "Plays the sounds loaded into a specified memory block. Output: Returns the zero if command executed successfully (Sub-Level only)."
+        },
+        "SoundStop": {
+            "prefix": "SoundStop",
+            "body": "[Soundstop, SayHello]",
+            "description": "Stops the currently specified sound. Output: Returns the zero if command executed successfully (Sub-Level only)."
+        },
+        "SoundStop args()": {
+            "prefix": "SoundStop",
+            "body": "[SoundStop, \n\t Mem block identifier\n]",
+            "description": "Stops the currently specified sound. Output: Returns the zero if command executed successfully (Sub-Level only)."
+        },
+        "GetActiveToolPath": {
+            "prefix": "GetActiveToolPath",
+            "body": "[SubToolSelect, 4]",
+            "description": "Returns the full path of the active tool (Sub-Level only). Output: The path of the active tool."
+        },
+        "GetActiveToolPath args()": {
+            "prefix": "GetActiveToolPath",
+            "body": "[GetActiveToolPath\n]",
+            "description": "Returns the full path of the active tool (Sub-Level only). Output: The path of the active tool."
+        },
+        "SubToolSelect": {
+            "prefix": "SubToolSelect",
+            "body": "[SubToolSelect, 4]",
+            "description": "Selects the subtool at the specified subtool index (Sub-Level only). Output: Returns zero if OK, -1 if error."
+        },
+        "SubToolSelect args()": {
+            "prefix": "SubToolSelect",
+            "body": "[SubToolSelect, \n\t Subtool Index (zero based).\n]",
+            "description": "Selects the subtool at the specified subtool index (Sub-Level only). Output: Returns zero if OK, -1 if error."
+        },
+        "SubToolLocate": {
+            "prefix": "SubToolLocate",
+            "body": "[SubToolGetID, 4]",
+            "description": "Locates a subtool by the specified unique ID (Sub-Level only). Output: Returns the index of the located subtool or -1 if error."
+        },
+        "SubToolLocate args()": {
+            "prefix": "SubToolLocate",
+            "body": "[SubToolLocate, \n\t Unique Subtool ID\n]",
+            "description": "Locates a subtool by the specified unique ID (Sub-Level only). Output: Returns the index of the located subtool or -1 if error."
+        },
+        "SubToolGetID": {
+            "prefix": "SubToolGetID",
+            "body": "[SubToolGetID, 4]",
+            "description": "Returns the unique subtool ID (Sub-Level only). Output: Returns the unique subtool ID or zero if error. Note that duplicates of meshes have the same ID."
+        },
+        "SubToolGetID args()": {
+            "prefix": "SubToolGetID",
+            "body": "[SubToolGetID, \n\t Subtool Index (zero based). If omited then uses the currently selected subtool.\n]",
+            "description": "Returns the unique subtool ID (Sub-Level only). Output: Returns the unique subtool ID or zero if error. Note that duplicates of meshes have the same ID."
+        },
+        "SubToolGetActiveIndex": {
+            "prefix": "SubToolGetActiveIndex",
+            "body": "[ToolGetPath, 4]",
+            "description": "Returns the index of the active subtool (Sub-Level only). Output: Returns the index of the active subtool (zero based)."
+        },
+        "SubToolGetActiveIndex args()": {
+            "prefix": "SubToolGetActiveIndex",
+            "body": "[SubToolGetActiveIndex\n]",
+            "description": "Returns the index of the active subtool (Sub-Level only). Output: Returns the index of the active subtool (zero based)."
+        },
+        "SubToolGetCount": {
+            "prefix": "SubToolGetCount",
+            "body": "[ToolGetPath, 4]",
+            "description": "Returns the number of subtools in the active tool (Sub-Level only). Output: Returns the number of subtools. Return 0 if error."
+        },
+        "SubToolGetCount args()": {
+            "prefix": "SubToolGetCount",
+            "body": "[SubToolGetCount\n]",
+            "description": "Returns the number of subtools in the active tool (Sub-Level only). Output: Returns the number of subtools. Return 0 if error."
+        },
+        "ToolGetActiveIndex": {
+            "prefix": "ToolGetActiveIndex",
+            "body": "[ToolGetPath, 4]",
+            "description": "Returns the index of the active tool (Sub-Level only). Output: Returns the index of the active tool (zero based)."
+        },
+        "ToolGetActiveIndex args()": {
+            "prefix": "ToolGetActiveIndex",
+            "body": "[ToolGetActiveIndex\n]",
+            "description": "Returns the index of the active tool (Sub-Level only). Output: Returns the index of the active tool (zero based)."
+        },
+        "ToolGetCount": {
+            "prefix": "ToolGetCount",
+            "body": "[ToolGetPath, 4]",
+            "description": "Returns the number of available tools (Sub-Level only). Output: Returns the number of available tools."
+        },
+        "ToolGetCount args()": {
+            "prefix": "ToolGetCount",
+            "body": "[ToolGetCount\n]",
+            "description": "Returns the number of available tools (Sub-Level only). Output: Returns the number of available tools."
+        },
+        "ToolGetPath": {
+            "prefix": "ToolGetPath",
+            "body": "[ToolGetPath, 4]",
+            "description": "Returns the file path or name of the specified tool (Sub-Level only). Output: Result path (without the .ztl). Empty if error."
+        },
+        "ToolGetPath args()": {
+            "prefix": "ToolGetPath",
+            "body": "[ToolGetPath, \n\t Tool Index (zero based). If omited then uses the currently selected tool.\n]",
+            "description": "Returns the file path or name of the specified tool (Sub-Level only). Output: Result path (without the .ztl). Empty if error."
+        },
+        "ToolGetSubToolID": {
+            "prefix": "ToolGetSubToolID",
+            "body": "[ToolGetSubToolID, 1, 4]",
+            "description": "Returns the unique subtool ID (Sub-Level only). Output: Returns the unique subtool ID or zero if error. Note that duplicates of meshes have the same ID."
+        },
+        "ToolGetSubToolID args()": {
+            "prefix": "ToolGetSubToolID",
+            "body": "[ToolGetSubToolID, \n\t Tool Index (zero based). If omited then use the currently selected tool., \n\tSubtool Index (zero based). If omited then uses the selected subtool.\n]",
+            "description": "Returns the unique subtool ID (Sub-Level only). Output: Returns the unique subtool ID or zero if error. Note that duplicates of meshes have the same ID."
+        },
+        "ToolGetSubToolsCount": {
+            "prefix": "ToolGetSubToolsCount",
+            "body": "[ToolGetSubToolsCount, 4]",
+            "description": "Returns the number of subtools in the specified tool index (Sub-Level only). Output: Returns the number of subtools. Return 0 if error."
+        },
+        "ToolGetSubToolsCount args()": {
+            "prefix": "ToolGetSubToolsCount",
+            "body": "[ToolGetSubToolsCount, \n\t Tool Index (zero based). If omited then uses the currently selected tool.\n]",
+            "description": "Returns the number of subtools in the specified tool index (Sub-Level only). Output: Returns the number of subtools. Return 0 if error."
+        },
+        "ToolLocateSubTool": {
+            "prefix": "ToolLocateSubTool",
+            "body": "[ToolSelect, 4]",
+            "description": "Locates a subtool by the specified unique ID (Sub-Level only). Output: Returns the index of the located tool and subtool or -1 if error."
+        },
+        "ToolLocateSubTool args()": {
+            "prefix": "ToolLocateSubTool",
+            "body": "[ToolLocateSubTool, \n\t Unique Subtool ID, \n\t Optional subtool index result\n]",
+            "description": "Locates a subtool by the specified unique ID (Sub-Level only). Output: Returns the index of the located tool and subtool or -1 if error."
+        },
+        "ToolSelect": {
+            "prefix": "ToolSelect",
+            "body": "[ToolSelect, 4]",
+            "description": "Selects the tool at the specified tool index (Sub-Level only). Output: Returns zero if OK, -1 if error."
+        },
+        "ToolSelect args()": {
+            "prefix": "ToolSelect",
+            "body": "[ToolSelect, \n\t Tool Index (zero based).\n]",
+            "description": "Selects the tool at the specified tool index (Sub-Level only). Output: Returns zero if OK, -1 if error."
+        },
+        "ToolSetPath": {
+            "prefix": "ToolSetPath",
+            "body": "[ToolSetPath, ,[FileNameAdvance,[ToolGetPath]]]",
+            "description": "Sets the file path or name of the specified tool (Sub-Level only). Output: Returns zero if OK, -1 if error."
+        },
+        "ToolSetPath args()": {
+            "prefix": "ToolSetPath",
+            "body": "[ToolSetPath, \n\t Tool Index (zero based). If omited then uses the currently selected tool., \n\t New Path. Path extension (such as .ztl) will be omited.\n]",
+            "description": "Sets the file path or name of the specified tool (Sub-Level only). Output: Returns zero if OK, -1 if error."
+        },
+        "TransposeGet": {
+            "prefix": "TransposeGet",
+            "body": "[TransposeGet, xPos, yPos, zPos]",
+            "description": "Gets current Transpose Action Line values (Sub-Level only)."
+        },
+        "TransposeGet args()": {
+            "prefix": "TransposeGet",
+            "body": "[TransposeGet, \n\t Start xPos, \n\t Start yPos, \n\t Start zPos, \n\t End xPos, \n\t End yPos, \n\t End zPos, \n\t Action Line Length, \n\t x of red axis, \n\t y of red axis, \n\t z of red axis, \n\t x of green axis, \n\t y of green axis, \n\t z of green axis, \n\t x of blue axis, \n\t y of blue axis, \n\t z of blue axis\n]",
+            "description": "Gets current Transpose Action Line values (Sub-Level only)."
+        },
+        "TransposeIsShown": {
+            "prefix": "TransposeIsShown",
+            "body": "[TransposeSet, xPos, yPos, zPos]",
+            "description": "Returns status of transpose line. Output: Returns 1 if shown, zero if not (Sub-Level only)."
+        },
+        "TransposeIsShown args()": {
+            "prefix": "TransposeIsShown",
+            "body": "[TransposeIsShown\n]",
+            "description": "Returns status of transpose line. Output: Returns 1 if shown, zero if not (Sub-Level only)."
+        },
+        "TransposeSet": {
+            "prefix": "TransposeSet",
+            "body": "[TransposeSet, xPos, yPos, zPos]",
+            "description": "Sets current Transpose Action Line values (Sub-Level only)."
+        },
+        "TransposeSet args()": {
+            "prefix": "TransposeSet",
+            "body": "[TransposeSet, \n\t Start xPos, \n\t Start yPos, \n\t Start zPos, \n\t End xPos, \n\t End yPos, \n\t End zPos, \n\t Action Line Length, \n\t x of red axis, \n\t y of red axis, \n\t z of red axis, \n\t x of green axis, \n\t y of green axis, \n\t z of green axis, \n\t x of blue axis, \n\t y of blue axis, \n\t z of blue axis\n]",
+            "description": "Sets current Transpose Action Line values (Sub-Level only)."
+        },
+        "CurveAddPoint": {
+            "prefix": "CurveAddPoint",
+            "body": "[CurveAddPoint, 1,1,2,3]",
+            "description": "Add a new point to the specified curve (Sub-Level only). Output: Returns the point index (zero based) or -1 if failed."
+        },
+        "CurveAddPoint args()": {
+            "prefix": "CurveAddPoint",
+            "body": "[CurveAddPoint, \n\t Curve Index (zero based), \n\t x position, \n\t y position, \n\t z position\n]",
+            "description": "Add a new point to the specified curve (Sub-Level only). Output: Returns the point index (zero based) or -1 if failed."
+        },
+        "CurvesCreateMesh": {
+            "prefix": "CurvesCreateMesh",
+            "body": "[CurvesCreateMesh, myCurveMesh, 1, 10]",
+            "description": "Creates a mesh from the current curves (Sub-Level only). Output: Returns the number of points in the new mesh. zero=error, -1=file exists."
+        },
+        "CurvesCreateMesh args()": {
+            "prefix": "CurvesCreateMesh",
+            "body": "[CurvesCreateMesh, \n\t Name, \n\t Action (0(default): Append mesh to the active mesh, \n\t 1: Add as a new subtool, \n\t 2: Export OBJ file if file does not exist, \n\t 3: Export Obj file and overwrite if exists), \n\t Thickness (zero: single side mesh)\n]",
+            "description": "Creates a mesh from the current curves (Sub-Level only). Output: Returns the number of points in the new mesh. zero=error, -1=file exists."
+        },
+        "CurvesDelete": {
+            "prefix": "CurvesDelete",
+            "body": "[CurvesDelete, myCurves]",
+            "description": "Deletes named curves list (Sub-Level only)."
+        },
+        "CurvesDelete args()": {
+            "prefix": "CurvesDelete",
+            "body": "[CurvesDelete, \n\t name\n]",
+            "description": "Deletes named curves list (Sub-Level only)."
+        },
+        "CurvesNewCurve": {
+            "prefix": "CurvesNewCurve",
+            "body": "[CurvesNewCurve]",
+            "description": "Creates a new curve in the current curves list (Sub-Level only). Output: Returns the curve index (zero based) or -1 if failed."
+        },
+        "CurvesNewCurve args()": {
+            "prefix": "CurvesNewCurve",
+            "body": "[CurvesNewCurve\n]",
+            "description": "Creates a new curve in the current curves list (Sub-Level only). Output: Returns the curve index (zero based) or -1 if failed."
+        },
+        "CurvesNew": {
+            "prefix": "CurvesNew",
+            "body": "[CurvesNew, myCurves]",
+            "description": "Creates a new curves list (Sub-Level only)."
+        },
+        "CurvesNew args()": {
+            "prefix": "CurvesNew",
+            "body": "[CurvesNew, \n\t name\n]",
+            "description": "Creates a new curves list (Sub-Level only)."
+        },
+        "CurvesToUI": {
+            "prefix": "CurvesToUI",
+            "body": "[CurvesToUI]",
+            "description": "Copy the ZScript curves to UI (Sub-Level only). Output: Returns zero if OK or -1 if failed."
+        },
+        "CurvesToUI args()": {
+            "prefix": "CurvesToUI",
+            "body": "[CurvesToUI\n]",
+            "description": "Copy the ZScript curves to UI (Sub-Level only). Output: Returns zero if OK or -1 if failed."
+        },
+        "DispMapCreate": {
+            "prefix": "DispMapCreate",
+            "body": "[DispMapCreate, 1024, 1024, 1, 7, 2]",
+            "description": "Creates DisplacementMap Output: Returns zero if executed successfully. Any other value indicates an error"
+        },
+        "DispMapCreate args()": {
+            "prefix": "DispMapCreate",
+            "body": "[DispMapCreate, \n\t Image Width, \n\t Image Height, \n\t Smooth (default:yes), \n\t SubPoly (default:0), \n\t Border (default:8), \n\t UVTile index (default:ignores UV tiles)\n]",
+            "description": "Creates DisplacementMap Output: Returns zero if executed successfully. Any other value indicates an error"
+        },
+        "Mesh3DGet": {
+            "prefix": "Mesh3DGet",
+            "body": "[Mesh3DGet, 0]",
+            "description": "Gets information about the currently active Mesh3D tool. Output: Returns zero if command executed successfully, any other value indicates and error (Sub-Level only)."
+        },
+        "Mesh3DGet args()": {
+            "prefix": "Mesh3DGet",
+            "body": "[Mesh3DGet, \n\t Property: (0:PointsCount 1:FacesCount 2:XYZ bounds 3:UVBounds 4:1stUVTile 5:NxtUVTile 6:PolysInUVTile 7:3DAreaOfUVTile 8:Full3DMeshArea), \n\t Optional input 1 Vertix/Face/Group/UVTile H index (0 based), \n\t Optional input 2, \n\t Optional output variable1, \n\t Optional output variable2, \n\t Optional output variable3, \n\t Optional output variable4, \n\t Optional output variable5, \n\t Optional output variable6, \n\t Optional output variable7, \n\t Optional output variable8\n]",
+            "description": "Gets information about the currently active Mesh3D tool. Output: Returns zero if command executed successfully, any other value indicates and error (Sub-Level only)."
+        },
+        "NormalMapCreate": {
+            "prefix": "NormalMapCreate",
+            "body": "[NormalMapCreate, 1024, 1024, 1, 7, 2]",
+            "description": "Creates NormalMap Output: Returns zero if executed successfully. Any other value indicates an error"
+        },
+        "NormalMapCreate args()": {
+            "prefix": "NormalMapCreate",
+            "body": "[NormalMapCreate, \n\t Image Width, \n\t Image Height, \n\t Smooth (default:yes), \n\t SubPoly (default:0), \n\t Border (default:8), \n\t UVTile index (default:ignores UV tiles), \n\t Local(tangent) coordinates? (default:world coordinates)\n]",
+            "description": "Creates NormalMap Output: Returns zero if executed successfully. Any other value indicates an error"
+        },
+        "ZSphereAdd": {
+            "prefix": "ZSphereAdd",
+            "body": "[ZSphereAdd, 0, .5, 1, .1, 0]",
+            "description": "Adds new ZSphere to the currently active ZSpheres tool Output: Returns the the index of the new ZSphere or -1 if command failed (Sub-Level only)."
+        },
+        "ZSphereAdd args()": {
+            "prefix": "ZSphereAdd",
+            "body": "[ZSphereAdd , \n\t xPos, \n\t yPos, \n\t zPos, \n\t Radius, \n\t Parent index (0 based), \n\t Optional Color 0x000000<->0xffffff (RED*65536)+(GREEN*256)+BLUE, \n\t Optional Mask (0:unmasked to 255:fully masked), \n\t Optional TimeStamp, \n\t Optional Flags (0:default, \n\t 1:invisible link to parent)\n]",
+            "description": "Adds new ZSphere to the currently active ZSpheres tool Output: Returns the the index of the new ZSphere or -1 if command failed (Sub-Level only)."
+        },
+        "ZSphereDel": {
+            "prefix": "ZSphereDel",
+            "body": "[ZSphereDel, 2]",
+            "description": "Deletes a ZSphere from the currently active ZSpheres tool Output: Returns zero if command executed successfully (Sub-Level only)."
+        },
+        "ZSphereDel args()": {
+            "prefix": "ZSphereDel",
+            "body": "[ZSphereDel , \n\t ZSphere index (Sphere 0 can't be deleted)\n]",
+            "description": "Deletes a ZSphere from the currently active ZSpheres tool Output: Returns zero if command executed successfully (Sub-Level only)."
+        },
+        "ZSphereEdit": {
+            "prefix": "ZSphereEdit",
+            "body": "[ZSphereEdit, ...commands...]",
+            "description": "Prepares the currently active ZSpheres tool for ZScript editing session. Output: Returns the zero if command executed successfully."
+        },
+        "ZSphereEdit args()": {
+            "prefix": "ZSphereEdit",
+            "body": "[ZSphereEdit , \n\t ZSpheres editing commands, \n\t Store undo? (0:Skip Undo, \n\t 1:Store undo)\n]",
+            "description": "Prepares the currently active ZSpheres tool for ZScript editing session. Output: Returns the zero if command executed successfully."
+        },
+        "ZSphereGet": {
+            "prefix": "ZSphereGet",
+            "body": "[ZSphereGet, 0]",
+            "description": "Gets information about the currently active ZSpheres tool. (Must be placed within ZSphereEdit command) Output: Returns the value of the specified property (Sub-Level only)."
+        },
+        "ZSphereGet args()": {
+            "prefix": "ZSphereGet",
+            "body": "[ZSphereGet, \n\t Property: 0:ZSpheres count, \n\t 1:xPos, \n\t 2:yPos, \n\t 3:zPos, \n\t 4:radius, \n\t 5:color, \n\t 6:mask, \n\t 7:ParentIndex(-1:none), \n\t 8:LastClickedIndex(-1:none), \n\t 9:TimeStamp, \n\t 10:ChildsCount, \n\t 11:ChildIndex (2nd index), \n\t 12:TimeStampCount, \n\t 13:TimeStampIndex, \n\t 14:flags, \n\t 15:Twist Angle, \n\t 16:Membrane, \n\t 17:X Res, \n\t 18:Y Res, \n\t 19:Z Res, \n\t Optional ZSphere index (0 based), \n\t Optional 2nd index (0 based)\n]",
+            "description": "Gets information about the currently active ZSpheres tool. (Must be placed within ZSphereEdit command) Output: Returns the value of the specified property (Sub-Level only)."
+        },
+        "ZSphereSet": {
+            "prefix": "ZSphereSet",
+            "body": "[ZSphereSet, 4, 6, .5]",
+            "description": "Modifies a property of the currently active ZSpheres tool. (Must be placed within ZSphereEdit command) Output: Returns zero if command executed successfully (Sub-Level only)."
+        },
+        "ZSphereSet args()": {
+            "prefix": "ZSphereSet",
+            "body": "[ZSphereSet , \n\t Property: 0:unused, \n\t 1:xPos, \n\t 2:yPos, \n\t 3:zPos, \n\t 4:radius, \n\t 5:color, \n\t 6:mask, \n\t 7:ParentIndex, \n\t 8:unused, \n\t 9:TimeStamp, \n\t 10:unused, \n\t 11:unused, \n\t 12:unused, \n\t 13:unused, \n\t 14:flags, \n\t 15:Twist Angle, \n\t 16:Membrane, \n\t 17:X Res, \n\t 18:Y Res, \n\t 19:Z Res, \n\t 20:XYZ Res, \n\t 21:UserValue, \n\t ZSphere index (0 based), \n\t New property value\n]",
+            "description": "Modifies a property of the currently active ZSpheres tool. (Must be placed within ZSphereEdit command) Output: Returns zero if command executed successfully (Sub-Level only)."
+        }
+    }
+}

@@ -1,0 +1,33 @@
+# Generated with Atomizr – https://atom.io/packages/atomizr
+".text.zscript":
+	"Gets current Transpose Action Line values (Sub-Level only).":
+		prefix: "TransposeGet"
+		body: "[TransposeGet, xPos, yPos, zPos]$0"
+	" Transposet Set w args":
+		prefix: "TransposeSet"
+		body: "
+			[TransposeSet, 
+				 Start xPos, 
+				 Start yPos, 
+				 Start zPos, 
+				 End xPos, 
+				 End yPos, 
+				 End zPos, 
+				 Action Line Length, 
+				 x of red axis, 
+				 y of red axis, 
+				 z of red axis, 
+				 x of green axis, 
+				 y of green axis, 
+				 z of green axis, 
+				 x of blue axis, 
+				 y of blue axis, 
+				 z of blue axis
+			]$0
+		"
+	"Returns status of transpose line. Output: Returns 1 if shown, zero if not (Sub-Level only).":
+		prefix: "TransposeIsShown"
+		body: "[TransposeSet, xPos, yPos, zPos]$0"
+	// "Sets current Transpose Action Line values (Sub-Level only).":
+	//	prefix: "TransposeSet"
+	//	body: "[TransposeSet, xPos, yPos, zPos]$0"

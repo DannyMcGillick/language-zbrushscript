@@ -1,0 +1,45 @@
+{
+    "scope": "text.zscript",
+    "completions": [
+        {
+            "trigger": "VarDef\tDefines a variable (advised Top Level).",
+            "contents": "[VarDef, xPos, 1]"
+        },
+        {
+            "trigger": "VarDef\t (args)",
+            "contents": "[VarDef, \n\t Variable name, \n\t Variable defaultValue\n]"
+        },
+        {
+            "trigger": "VarSet\tSets the value of a named variable (can be placed anywhere).",
+            "contents": "[VarSet, xPos, 42]"
+        },
+        {
+            "trigger": "VarSet\t (args)",
+            "contents": "[VarSet, \n\t Variable name, \n\t New Value\n]"
+        },
+        {
+            "trigger": "VarListCopy\tCopies items from a source list to a destination list",
+            "contents": "[VarListCopy, destList, 0, sourceList, 4, 3]"
+        },
+        {
+            "trigger": "VarListCopy\t (args)",
+            "contents": "[VarListCopy, \n\t Destination list, \n\t Destination initial index, \n\t Source list, \n\t Source initial index, \n\t Number of items to copy.(if omitted or it is 0, \n\t then all items will be copied)\n]"
+        },
+        {
+            "trigger": "VarLoad\tLoads variable/s from a file Output: Number of loaded or verfied values",
+            "contents": "[VarLoad, userData, tempFile]"
+        },
+        {
+            "trigger": "VarLoad\t (args)",
+            "contents": "[VarLoad, \n\t Variable name, \n\t FileName, \n\t Verify only (1:Only Verify that a proper saved variable file exists, \n\t 0:(default)Verifies and loads values)\n]"
+        },
+        {
+            "trigger": "VarSave\tSaves variable value/s to file Output: Number of saved values",
+            "contents": "[VarSave, userData, tempFile]"
+        },
+        {
+            "trigger": "VarSave\t (args)",
+            "contents": "[VarSave, \n\t Variable name, \n\t FileName\n]"
+        }
+    ]
+}

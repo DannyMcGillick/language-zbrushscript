@@ -1,0 +1,141 @@
+{
+    "scope": "text.zscript",
+    "completions": [
+        {
+            "trigger": "CanvasClick\tEmulates a click within the current canvas area",
+            "contents": "[CanvasClick, 10, 10, 20, 20]"
+        },
+        {
+            "trigger": "CanvasClick\t (args)",
+            "contents": "[CanvasClick, \n\t X1, \n\t Y1, \n\t X2, \n\t Y2, \n\t X3, \n\t Y3, \n\t X4, \n\t Y4, \n\t X5, \n\t Y5, \n\t X6, \n\t Y6, \n\t X7, \n\t Y7, \n\t X8, \n\t Y8\n]"
+        },
+        {
+            "trigger": "CanvasGyroHide\tHides the Transformation Gyro",
+            "contents": "[CanvasGyroHide]"
+        },
+        {
+            "trigger": "CanvasGyroHide\t (args)",
+            "contents": "[CanvasGyroHide\n]"
+        },
+        {
+            "trigger": "CanvasGyroShow\tShows the Transformation Gyro",
+            "contents": "[CanvasGyroShow]"
+        },
+        {
+            "trigger": "CanvasGyroShow\t (args)",
+            "contents": "[CanvasGyroShow\n]"
+        },
+        {
+            "trigger": "CanvasPanGetH\tReturns the H pan value of the active document view Output: The current H Pan value.",
+            "contents": "[CanvasPanGetH]"
+        },
+        {
+            "trigger": "CanvasPanGetH\t (args)",
+            "contents": "[CanvasPanGetH\n]"
+        },
+        {
+            "trigger": "CanvasPanGetV\tReturns the V pan value of the active document view Output: The current V Pan value.",
+            "contents": "[CanvasPanGetV]"
+        },
+        {
+            "trigger": "CanvasPanGetV\t (args)",
+            "contents": "[CanvasPanGetV\n]"
+        },
+        {
+            "trigger": "CanvasPanSet\tPans (Scrolls) the active document view",
+            "contents": "[CanvasPanSet, 320, 240]"
+        },
+        {
+            "trigger": "CanvasPanSet\t (args)",
+            "contents": "[CanvasPanSet, \n\t H value (0:left of document), \n\t V value (0:top of document)\n]"
+        },
+        {
+            "trigger": "CanvasStroke\tEmulates a brush stroke within the current canvas area",
+            "contents": "[CanvasStroke, [StrokeGetLast]]"
+        },
+        {
+            "trigger": "CanvasStroke\t (args)",
+            "contents": "[CanvasStroke, \n\t StrokeData, \n\t Delayed update until end of stroke, \n\t Rotation, \n\t HScale, \n\t VScale, \n\t HOffset, \n\t VOffset\n]"
+        },
+        {
+            "trigger": "CanvasStrokes\tEmulates multiple brush strokes within the current canvas area",
+            "contents": "[CanvasStrokes, [Var, loadedStrokes]]"
+        },
+        {
+            "trigger": "CanvasStrokes\t (args)",
+            "contents": "[CanvasStrokes, \n\t StrokesData, \n\t Delayed update until end of stroke, \n\t Rotation, \n\t HScale, \n\t VScale, \n\t HOffset, \n\t VOffset, \n\t HRotateCenter, \n\t VRotateCenter\n]"
+        },
+        {
+            "trigger": "CanvasZoomGet\tReturns the zoom value of the active document view Output: The current zoom value.",
+            "contents": "[CanvasZoomGet]"
+        },
+        {
+            "trigger": "CanvasZoomGet\t (args)",
+            "contents": "[CanvasZoomGet\n]"
+        },
+        {
+            "trigger": "CanvasZoomSet\tSets the zoom factor of the active document view",
+            "contents": "[CanvasZoomSet, 2]"
+        },
+        {
+            "trigger": "CanvasZoomSet\t (args)",
+            "contents": "[CanvasZoomSet, \n\t Zoom factor\n]"
+        },
+        {
+            "trigger": "PixolPick\tRetrieves information about a specified Pixol Output: The value of the specified Pixol",
+            "contents": "[PixolPick, 1, 10, 20]"
+        },
+        {
+            "trigger": "PixolPick\t (args)",
+            "contents": "[PixolPick, \n\t Component Index: 0:CompositeColor (0x000000<->0xffffff or (red*65536+green*256+blue)); 1:Z(-32576 to 32576); 2:Red(0 to 255); 3:Green(0 to 255); 4:Blue(0 to 255); 5:MaterialIndex(0 to 255); 6:XNormal(-1 to 1); 7:YNormal(-1 to 1); 8:ZNormal(-1 to 0), \n\t H Position, \n\t V Position\n]"
+        },
+        {
+            "trigger": "StrokeGetInfo\tRetrieves the information from a specified Stroke-type Variable Output: StrokeInfo resultInfo number: 0=PointsCount 1=IndexedHPos 2=IndexedVPos 3=IndexedPressure 4=MinH\n5=MinV 6=MaxH 7=MaxV 8=MaxRadius 9=MaxRadiusPointlndex 10=MaxDeltaH 11=MaxDeltaV\n12=Total Distance 13=Twirl Count 14=DeducedZValue 15=IndexedkeyPress",
+            "contents": "[StrokeGetInfo, [StrokeGetLast], 0]"
+        },
+        {
+            "trigger": "StrokeGetInfo\t (args)",
+            "contents": "[StrokeGetInfo, \n\t Stroke-type Variable, \n\t Info number, \n\t Point index (0 based)\n]"
+        },
+        {
+            "trigger": "StrokeGetLast\tRetrieves the last drawn brush stroke Output: StrokeData",
+            "contents": "[CanvasStroke, [StrokeGetLast]]"
+        },
+        {
+            "trigger": "StrokeGetLast\t (args)",
+            "contents": "[StrokeGetLast\n]"
+        },
+        {
+            "trigger": "StrokeLoad\tLoads a brush-stroke text file Output: StrokeData",
+            "contents": "[VarSet, Strokel, [StrokeLoad, \"Star.txt\"]]"
+        },
+        {
+            "trigger": "StrokeLoad\t (args)",
+            "contents": "[StrokeLoad, \n\t FileName(.txt)\n]"
+        },
+        {
+            "trigger": "StrokesLoad\tLoads a brush-strokes text file Output: StrokesData",
+            "contents": "[VarSet, Strokel, [StrokesLoad, \"Star.txt\"]]"
+        },
+        {
+            "trigger": "StrokesLoad\t (args)",
+            "contents": "[StrokesLoad, \n\t FileName(.txt)\n]"
+        },
+        {
+            "trigger": "TransformGet\tGets current transformation values (Sub-Level only).",
+            "contents": "[TransformGet, xPos, yPos, zPos, xSc, ySc, zSc, xRot, yRot, zRot]"
+        },
+        {
+            "trigger": "TransformGet\t (args)",
+            "contents": "[TransformGet, \n\t xPosition, \n\t yPosition, \n\t zPosition, \n\t xScale, \n\t yScale, \n\t zScale, \n\t xRotate, \n\t yRotate, \n\t zRotate\n]"
+        },
+        {
+            "trigger": "TransformSet\tSets new transformation values (Sub-Level only).",
+            "contents": "[TransformSet, (Document:Width*.5), (Document:Height*.5), 0, 100, 100, 100, 0, 0, 0]"
+        },
+        {
+            "trigger": "TransformSet\t (args)",
+            "contents": "[TransformSet, \n\t xPosition, \n\t yPosition, \n\t zPosition, \n\t xScale, \n\t yScale, \n\t zScale, \n\t xRotate, \n\t yRotate, \n\t zRotate\n]"
+        }
+    ]
+}

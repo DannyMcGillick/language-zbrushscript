@@ -1,0 +1,90 @@
+name: "ZScript (ZBrush)"
+scopeName: "text.zbrushscript"
+fileTypes: [
+  "zs", "zbs"
+]
+patterns: [
+  {
+    comment: "Comments e.g. // singleline comment"
+    match: "\\/\\/.*"
+    name: "comment.line.double-slash"
+  }
+  {
+    begin: "\\/\\*"
+    comment: "Block Comments e.g. /* block comment */"
+    end: "\\*\\/\\n?"
+    name: "comment.block.zbrushscript"
+  }
+  {
+    comment: "Documentation Strings e.g. /// Docstring here"
+    match: "\\/\\/\\/.*"
+    name: "comment.block.documentation.zbrushscript"
+  }
+  {
+    comment: "Integers (0 - 9)"
+    match: "\\b[0-9]+[1-9]*\\b"
+    name: "constant.numeric.integer.zbrushscript"
+  }
+  {
+    comment: "Comparison operators (<, >, !=, == etc.)"
+    match: "\\<\\=|\\>\\=|\\=\\=|\\<|\\>|\\!\\="
+    name: "keyword.operator.comparison.zbrushscript"
+  }
+  {
+    comment: "Assignment operators (+=, /=, %= etc.)"
+    match: "\\+\\=|-\\=|\\*\\=|\\/\\=|\\%\\=|\\&\\=|\\&\\&\\=|\\|\\=|\\|\\|\\=|\\^\\=|\\^\\^\\="
+    name: "keyword.operator.assignment.augmented.zbrushscript"
+  }
+  {
+    match: "\\+|\\-|\\*|\\%|\\||\\/"
+    name: "keyword.operator.arithmetic.zbrushscript"
+  }
+  {
+    match: "\\="
+    name: "keyword.operator.assignment.zbrushscript"
+  }
+  {
+    comment: "keyword operators that evaluate to True or False"
+    match: "(\\&\\&|\\|\\||\\^\\^|\\!)"
+    name: "keyword.operator.logical.zbrushscript"
+  }
+  {
+    comment: "Strings"
+    match: "\\\"(?:[^\\\\\\\"]|\\\\.)*\\\""
+    name: "string.quoted.double.zbrushscript"
+  }
+  {
+    begin: "(\\[)(MVarDef|MVarGet|MVarSet|VarDef|VarSet|VarListCopy|VarLoad|VarSave|RoutineDef)?(MemCopy|MemCreate|MemCreateFromFile|MemDelete|MemGetSize|MemMove|MemMultiWrite|MemRead|MemReadString|MemResize|MemSaveToFile|MemWrite|MemWriteString)?(Assert|Delay|Exit|IFreeze|LoopExit|Loop|LoopContinue|LoopExit|If|RoutineCall|RoutineDef|Sleep|SleepAgain|\\<zbrushscriptinsert\\>)?(SectionBegin|SectionEnd)?(FileExecute|FileExists|FileGetInfo|FileNameAdvance|FileNameAsk|FileNameExtract|FileNameGetLastTyped|FileNameGetLastUsed|FileNameMake|FileNameResolvePath|FileNameSetNext|StrAsk|StrExtract|StrFind|StrFromAsc|StrLength|StrLower|StrMerge|StrToAsc|StrUpper|IButton|ISlider|ISwitch|ISubPalette|ButtonFind|ButtonPress|ButtonSet|ButtonUnPress|NoteBar|NoteIButton|NoteIGet|NoteISwitch|Note|MessageOK|MessageOKCancel|MessageYesNo|MessageYesNoCancel|CanvasClick|CanvasGyroHide|CanvasGyroShow|CanvasPanGetH|CanvasPanGetV|CanvasPanSet|CanvasStroke|CanvasStrokes|CanvasZoomGet|CanvasZoomSet|PixolPick|StrokeGetInfo|StrokeGetLast|StrokeLoad|StrokesLoad|TransformGet|TransformSet|IClick|IClose|IColorSet|IConfig|IDialog|IDisable|IEnable|IExists|IFadeIn|IFadeOut|IGet|IGetFlags|IGetHotkey|IGetID|IGetInfo|IGetMax|IGetMin|IGetSecondary|IGetStatus|IGetTitle|IHeight|IHide|IHPos|IKeyPress|ILock|IMaximize|IMinimize|IModGet|IModSet|IPress|IReset|IsDisabled|IsEnabled|ISet|ISetHotkey|ISetMax|ISetMin|IShow|IShowActions|IsLocked|IStroke|IsUnlocked|IToggle|IUnlock|IUnPress|IUpdate|IVPos|IWidth|ZBrushInfo|ZBrushPriorityGet|ZBrushPrioritySet|MouseHPos|MouseLButton|MouseVPos|BackColorSet|Caption|FontSetColor|FontSetOpacity|FontSetSizeLarge|FontSetSizeMedium|FontSetSizeSmall|FontSetSize|FrontColorSet|HotKeyText|Image|ISetStatus|PageSetWidth|PaintBackground|PaintBackSliver|PaintPageBreak|PaintRect|PaintTextRect|PD|PenMoveCenter|PenMoveDown|PenMoveLeft|PenMoveRight|PenSetColor|PenMove|PropertySet|SectionBegin|SectionEnd|SubTitle|TextCalcWidth|Title|Interpolate|Math Operators|Logical Operators|Math Functions|Randomize|RGB|Val|Var|VarAdd|VarDec|VarDiv|VarInc|VarMul|VarSize|VarSub|GetActiveToolPath|SubToolSelect|SubToolLocate|SubToolGetID|SubToolGetActiveIndex|SubToolGetCount|ToolGetActiveIndex|ToolGetCount|ToolGetPath|ToolGetSubToolID|ToolGetSubToolsCount|ToolLocateSubTool|ToolSelect|ToolSetPath|TransposeGet|TransposeIsShown|TransposeSet|CurveAddPoint|CurvesCreateMesh|CurvesDelete|CurvesNewCurve|CurvesNew|CurvesToUI|DispMapCreate|Mesh3DGet|NormalMapCreate|ZSphereAdd|ZSphereDel|ZSphereEdit|ZSphereGet|ZSphereSet)?(\\w*)(\\,*)"
+    beginCaptures:
+      "2":
+        name: "storage.type.zbrushscript"
+      "3":
+        name: "storage.modifier.zbrushscript"
+      "4":
+        name: "keyword.control.zbrushscript"
+      "5":
+        name: "markup.heading.zbrushscript"
+      "6":
+        name: "support.function.zbrushscript"
+      "8":
+        name: "markup.italic.zbrushscript"
+    comment: "zbrushscript Command and reserved keywords e.g. [Command]"
+    end: "(\\])"
+    name: "entity.name.function.zbrushscript"
+    patterns: [
+      {
+        include: "$self"
+      }
+      {
+        comment: "Matches any arguments passed to a zbrushscript command. e.g. [Command, argument1, argument2]"
+        match: "\\w*\\d*\\s*"
+        name: "variable.parameter.zbrushscript"
+      }
+      {
+        comment: "Matches any commas for keyword arguments."
+        match: "\\,"
+        name: "markup.italic.zbrushscript"
+      }
+    ]
+  }
+]

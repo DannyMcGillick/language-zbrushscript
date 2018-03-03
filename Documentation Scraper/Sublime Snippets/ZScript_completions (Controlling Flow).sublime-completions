@@ -1,0 +1,109 @@
+{
+    "scope": "text.zscript",
+    "completions": [
+        {
+            "trigger": "Assert\t(ZScript debugging helper) aborts execution if specified condition is not true",
+            "contents": "[Assert, [Var, a]<10, \"Something is wrong\"]"
+        },
+        {
+            "trigger": "Assert\t (args)",
+            "contents": "[Assert, \n\t True Or False Evaluation, \n\t Message that will be shown if the first input is false (zero)\n]"
+        },
+        {
+            "trigger": "Delay\tDelays execution of ZScript for specified amount of time (Sub-Level only).",
+            "contents": "[Delay, 1]"
+        },
+        {
+            "trigger": "Delay\t (args)",
+            "contents": "[Delay, \n\t Delay (in seconds)\n]"
+        },
+        {
+            "trigger": "Exit\tAborts execution and exits the current ZScript",
+            "contents": "[Exit]"
+        },
+        {
+            "trigger": "Exit\t (args)",
+            "contents": "[Exit\n]"
+        },
+        {
+            "trigger": "If\tProvides conditional execution of a commands group (can be placed anywhere).",
+            "contents": "[If, MyVariable < 10, [MessageOk, LessThanl0], [MessageOk, l0orMore]]"
+        },
+        {
+            "trigger": "If\t (args)",
+            "contents": "[If, \n\t True Or False Evaluation , \n\t Commands group to be executed if true (not zero) , \n\t Commands group to be executed if false (is zero)\n]"
+        },
+        {
+            "trigger": "IFreeze\tDisables interface updates.",
+            "contents": "[IFreeze, ...]"
+        },
+        {
+            "trigger": "IFreeze\t (args)",
+            "contents": "[IFreeze, \n\t Commands group to be executed without updating the interface\n]"
+        },
+        {
+            "trigger": "Loop\tRepeats execution of the specified commands group",
+            "contents": "[Loop, 5, [MessageOK, Hi]]"
+        },
+        {
+            "trigger": "Loop\t (args)",
+            "contents": "[Loop, \n\t RepeatCount, \n\t Commands group, \n\t Optional loop-counter variable (starts at Zero)\n]"
+        },
+        {
+            "trigger": "LoopContinue\tContinues execution from the beginning of the current Loop",
+            "contents": "[LoopContinue]"
+        },
+        {
+            "trigger": "LoopContinue\t (args)",
+            "contents": "[LoopContinue\n]"
+        },
+        {
+            "trigger": "LoopExit\tExits the current Loop",
+            "contents": "[LoopExit]"
+        },
+        {
+            "trigger": "LoopExit\t (args)",
+            "contents": "[LoopExit\n]"
+        },
+        {
+            "trigger": "RoutineCall\tExecutes the specified defined routine (can be placed anywhere).",
+            "contents": "[RoutineCall, testing]"
+        },
+        {
+            "trigger": "RoutineCall\t (args)",
+            "contents": "[RoutineCall, \n\t Name of the routine to be called, \n\t Input Var01, \n\t Input Var02, \n\t Input Var03, \n\t Input Var04, \n\t Input Var05, \n\t Input Var06, \n\t Input Var07, \n\t Input Var08, \n\t Input Var09, \n\t Input Var10\n]"
+        },
+        {
+            "trigger": "RoutineDef\tDefines a named commands group (can be placed anywhere but generally Top Level).",
+            "contents": "[RoutineDef, testing, [MessageOk, Hi][MessageOk, There]]"
+        },
+        {
+            "trigger": "RoutineDef\t (args)",
+            "contents": "[RoutineDef, \n\t Name of the routine, \n\t Commands group that will be executed when the routine is called, \n\t Input Var01, \n\t Input Var02, \n\t Input Var03, \n\t Input Var04, \n\t Input Var05, \n\t Input Var06, \n\t Input Var07, \n\t Input Var08, \n\t Input Var09, \n\t Input Var10\n]"
+        },
+        {
+            "trigger": "Sleep\tExists ZScript and be awaken by specified event (can be placed anywhere).",
+            "contents": "[Sleep, 100, [Note, \"LButton pressed\"], 4]"
+        },
+        {
+            "trigger": "Sleep\t (args)",
+            "contents": "[Sleep , \n\t Sleep amount in seconds, \n\t Commands group to execute when awaken, \n\t Optional event (default:1) (1:Timer 2:Mouse Moved 4:LButton down 8:LButton up 16:KeyDown 32:keyUp 64:ModifierKeyDown 128:ModifierKeyUp 256:Startup 512:Shut down 1024:InterfaceItem pressed/unpressed 2048:tool selected 4096:texture selected 8192:alpha selected), \n\t Optional output variable which will contain the event code that has awaken the ZScript, \n\t Optional output variable which will contain the ID of the window pointed by the mouse\n]"
+        },
+        {
+            "trigger": "SleepAgain\tExists ZScript and continues the Sleep command (Sub-Level only).",
+            "contents": "[SleepAgain]"
+        },
+        {
+            "trigger": "SleepAgain\t (args)",
+            "contents": "[SleepAgain , \n\t Optional new Sleep amount in seconds (default:unchanged), \n\t Optional event (default:unchanged) (1:Timer 2:Mouse Moved 4:LButton down 8:LButton up 16:KeyDown 32:keyUp 64:ModifierKeyDown 256:Startup 512:Shut down 1024:InterfaceItem post pressed/unpressed 2048:tool selected 4096:texture selected 8192 alpha selected)\n]"
+        },
+        {
+            "trigger": "<zscriptinsert>\tInserts all the text and commands of an entire ZScript file. Not strictly a zscript command, it is the only one that does not have square brackets.",
+            "contents": "<zscriptinsert, \"MyZscript.txt\">"
+        },
+        {
+            "trigger": "<zscriptinsert>\t (args)",
+            "contents": "<zscriptinsert, \n\t \"Filename.txt\" \n>"
+        }
+    ]
+}

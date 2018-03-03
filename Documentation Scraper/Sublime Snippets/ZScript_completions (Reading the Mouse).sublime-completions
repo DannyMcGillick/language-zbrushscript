@@ -1,0 +1,29 @@
+{
+    "scope": "text.zscript",
+    "completions": [
+        {
+            "trigger": "MouseHPos\tReturns the current H position of the mouse in Canvas or Global coordinates. Output: The H position of the mouse",
+            "contents": "[MouseHPos]"
+        },
+        {
+            "trigger": "MouseHPos\t (args)",
+            "contents": "[MouseHPos, \n\t Global coordinates? (set value to non-zero for global coordinates, \n\t default:Canvas coordinates)\n]"
+        },
+        {
+            "trigger": "MouseLButton\tReturns the current state of the left mouse button Output: Returns 1 if mouse button is pressed, returns zero if unpressed",
+            "contents": "[MouseLButton]"
+        },
+        {
+            "trigger": "MouseLButton\t (args)",
+            "contents": "[MouseLButton\n]"
+        },
+        {
+            "trigger": "MouseVPos\tReturns the current V position of the mouse in Canvas or Global coordinates. Output: The V position of the mouse",
+            "contents": "[MouseVPos]"
+        },
+        {
+            "trigger": "MouseVPos\t (args)",
+            "contents": "[MouseVPos, \n\t Global coordinates? (set value to non-zero for global coordinates, \n\t default:Canvas coordinates)\n]"
+        }
+    ]
+}

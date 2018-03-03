@@ -1,0 +1,413 @@
+{
+    "scope": "text.zscript",
+    "completions": [
+        {
+            "trigger": "IClick\tEmulates a click within a specified ZBrush interface item (Sub-Level only).",
+            "contents": "[IClick, LIGHT:Intensity, 55, 10]"
+        },
+        {
+            "trigger": "IClick\t (args)",
+            "contents": "[IClick, \n\t Interface item path, \n\t X1, \n\t Y1, \n\t X2, \n\t Y2, \n\t X3, \n\t Y3, \n\t X4, \n\t Y4, \n\t X5, \n\t Y5, \n\t X6, \n\t Y6, \n\t X7, \n\t Y7\n]"
+        },
+        {
+            "trigger": "IClose\tCloses an interface item.",
+            "contents": "[IClose, ZScript:Play]"
+        },
+        {
+            "trigger": "IClose\t (args)",
+            "contents": "[IClose, \n\t Interface item path, \n\t Show Zoom Rectangles?, \n\t Target parent window?\n]"
+        },
+        {
+            "trigger": "IColorSet\tSets the active color to a new value",
+            "contents": "[IColorSet, 255, 0, 0]"
+        },
+        {
+            "trigger": "IColorSet\t (args)",
+            "contents": "[IColorSet, \n\t Red (0-255), \n\t Green (0-255), \n\t Blue (0-255)\n]"
+        },
+        {
+            "trigger": "IConfig\tSets ZBrush internal version-configuration",
+            "contents": "[IConfig, 2.0]"
+        },
+        {
+            "trigger": "IConfig\t (args)",
+            "contents": "[IConfig, \n\t ZBrush version-configuration \n]"
+        },
+        {
+            "trigger": "IDialog\tCommand currently disabled",
+            "contents": "[IDisable, Zscript:DoIt]"
+        },
+        {
+            "trigger": "IDialog\t (args)",
+            "contents": "[IDisable, \n\t Window path, \n\t Window ID or relative windowID(-100<->100)\n]"
+        },
+        {
+            "trigger": "IDisable\tDisables a ZScript interface item (can only be used for ZScript-generated interface items)",
+            "contents": "[IDisable, Zscript:DoIt]"
+        },
+        {
+            "trigger": "IDisable\t (args)",
+            "contents": "[IDisable, \n\t Window path, \n\t Window ID or relative windowID(-100<->100)\n]"
+        },
+        {
+            "trigger": "IEnable\tEnables a ZScript interface item (can only be used for ZScript-generated interface items)",
+            "contents": "[IEnable, ZScript:DoIt]"
+        },
+        {
+            "trigger": "IEnable\t (args)",
+            "contents": "[IEnable, \n\t Window path, \n\t Window ID or relative windowID(-100<->100)\n]"
+        },
+        {
+            "trigger": "IExists\tVerifies that a specified interface item exists. Output: 1 if item exists, 0 otherwise",
+            "contents": "[IExists, TOOL:Sphere3D]"
+        },
+        {
+            "trigger": "IExists\t (args)",
+            "contents": "[IExists, \n\t Interface item path\n]"
+        },
+        {
+            "trigger": "IFadeIn\tFades in ZBrush window from black.",
+            "contents": "[IFadeIn, .35]"
+        },
+        {
+            "trigger": "IFadeIn\t (args)",
+            "contents": "[IFadeIn, \n\t Fade in speed in secs. (default:.5 secs)\n]"
+        },
+        {
+            "trigger": "IFadeOut\tFades out ZBrush window to black.",
+            "contents": "[IFadeOut, .35]"
+        },
+        {
+            "trigger": "IFadeOut\t (args)",
+            "contents": "[IFadeOut, \n\t Fade out speed in secs. (default:.5 secs)\n]"
+        },
+        {
+            "trigger": "IGet\tReturns the current value of a ZBrush or ZScript interface item Output: The item value",
+            "contents": "[IGet, Draw:Width]"
+        },
+        {
+            "trigger": "IGet\t (args)",
+            "contents": "[IGet, \n\t Interface item path\n]"
+        },
+        {
+            "trigger": "IGetFlags\tReturns the status flags of the specified interface item Output: The flags",
+            "contents": "[IGetFlags, windowID]"
+        },
+        {
+            "trigger": "IGetFlags\t (args)",
+            "contents": "[IGetFlags, \n\t Interface item path\n]"
+        },
+        {
+            "trigger": "IGetHotkey\tReturns the hotkey of the specified interface item Output: The Hotkey",
+            "contents": "[IGetHotkey, windowID]"
+        },
+        {
+            "trigger": "IGetHotkey\t (args)",
+            "contents": "[IGetHotkey, \n\t Interface item path\n]"
+        },
+        {
+            "trigger": "IGetID\tReturns the window ID code of the specified interface item Output: The Title",
+            "contents": "[IGetID, Tool:LoadTool]"
+        },
+        {
+            "trigger": "IGetID\t (args)",
+            "contents": "[IGetID, \n\t Interface item path\n]"
+        },
+        {
+            "trigger": "IGetInfo\tReturns the info (popup info) of the specified interface item Output: The info",
+            "contents": "[IGetInfo, windowID]"
+        },
+        {
+            "trigger": "IGetInfo\t (args)",
+            "contents": "[IGetInfo, \n\t Interface item path\n]"
+        },
+        {
+            "trigger": "IGetMax\tReturns the maximum possible value of a ZBrush or ZScript interface item Output: The item maximum value",
+            "contents": "[IGetMax, Draw:Width]"
+        },
+        {
+            "trigger": "IGetMax\t (args)",
+            "contents": "[IGetMax, \n\t Interface item path\n]"
+        },
+        {
+            "trigger": "IGetMin\tReturns the minimum possible value of a ZBrush or ZScript interface item Output: The item minimum value",
+            "contents": "[IGetMin, Draw:Width]"
+        },
+        {
+            "trigger": "IGetMin\t (args)",
+            "contents": "[IGetMin, \n\t Interface item path\n]"
+        },
+        {
+            "trigger": "IGetSecondary\tReturns the the secondary value of a 2D interface item Output: The item value",
+            "contents": "[IGetSeconday, Light:LightPlacement]"
+        },
+        {
+            "trigger": "IGetSecondary\t (args)",
+            "contents": "[IGetSecondary, \n\t Interface item path\n]"
+        },
+        {
+            "trigger": "IGetStatus\tReturns the Enabled/Disabled status of a ZBrush or ZScript interface item Output: The item status 0=Disabled 1=Enabled",
+            "contents": "[IGetStatus, Transform:Move] "
+        },
+        {
+            "trigger": "IGetStatus\t (args)",
+            "contents": "[IGetStatus, \n\t Interface item path\n]"
+        },
+        {
+            "trigger": "IGetTitle\tReturns the title of the specified interface item Output: The Title of the button",
+            "contents": "[IGetTitle, windowID]"
+        },
+        {
+            "trigger": "IGetTitle\t (args)",
+            "contents": "[IGetTitle, \n\t Interface item path, \n\t Return full path? (0:no nonZero:yes)\n]"
+        },
+        {
+            "trigger": "IHeight\tReturns the pixel-height of an interface item. Output: The height of the interface item.",
+            "contents": "[IHeight, Tool:SimpleBrush]"
+        },
+        {
+            "trigger": "IHeight\t (args)",
+            "contents": "[IHeight, \n\t Interface item path\n]"
+        },
+        {
+            "trigger": "IHide\tHides an interface item.",
+            "contents": "[IHide, Draw:Width]"
+        },
+        {
+            "trigger": "IHide\t (args)",
+            "contents": "[IHide, \n\t Interface item path, \n\t Show Zoom Rectangles?, \n\t Target parent window?\n]"
+        },
+        {
+            "trigger": "IHPos\tReturns the H position of the interface item in Canvas or Global coordinates. Output: The H position of the interface item.",
+            "contents": "[IHPos, Draw:Width, 1]"
+        },
+        {
+            "trigger": "IHPos\t (args)",
+            "contents": "[IHPos, \n\t Interface item path , \n\t Global coordinates?(set value to non-zero for global coordinates; default:Canvas coordinates)\n]"
+        },
+        {
+            "trigger": "IKeyPress\tSimulates a key press",
+            "contents": "[IKeyPress, 'x']"
+        },
+        {
+            "trigger": "IKeyPress\t (args)",
+            "contents": "[IKeyPress, \n\t The key to press (with an optional CTRL/CMD, \n\t ALT/OPT, \n\t SHIFT or TAB combination.) , \n\t Commands group to execute while the key is pressed , \n\t Optional H cursor position prior to key press , \n\t Optional V cursor position prior to key press\n]"
+        },
+        {
+            "trigger": "ILock\tLocks an interface item.",
+            "contents": "[ILock, ZScript:DoIt]"
+        },
+        {
+            "trigger": "ILock\t (args)",
+            "contents": "[ILock, \n\t Window path, \n\t Window ID or relative windowID(-100<->100)\n]"
+        },
+        {
+            "trigger": "IMaximize\tLocates an interface item and (if possible) maximize its size.",
+            "contents": "[IMaximize, Tool:, 1]"
+        },
+        {
+            "trigger": "IMaximize\t (args)",
+            "contents": "[IMaximize, \n\t Interface item path, \n\t Maximizeall sub palettes? (0:no, \n\t NonZero:yes)\n]"
+        },
+        {
+            "trigger": "IMinimize\tLocates an interface item and (if possible) minimize its size.",
+            "contents": "[IMinimize, Tool:, 1]"
+        },
+        {
+            "trigger": "IMinimize\t (args)",
+            "contents": "[IMinimize, \n\t Interface item path, \n\t Minimize all sub palettes? (0:no, \n\t NonZero:yes)\n]"
+        },
+        {
+            "trigger": "IModGet\tReturns the current modifiers binary state of a ZBrush or ZScript interface item Output: The item value",
+            "contents": "[IModGet, Tool:Modifiers:Deformation:Rotate]"
+        },
+        {
+            "trigger": "IModGet\t (args)",
+            "contents": "[IModGet, \n\t Interface item path\n]"
+        },
+        {
+            "trigger": "IModSet\tSets the modifiers binary value of a ZBrush or a ZScript interface item",
+            "contents": "[IModSet, Tool:Modifiers:Deformation:Rotate, 2]"
+        },
+        {
+            "trigger": "IModSet\t (args)",
+            "contents": "[IModSet, \n\t Interface item path, \n\t value\n]"
+        },
+        {
+            "trigger": "IPress\tPresses a ZBrush or ZScript interface item (Sub-Level only).",
+            "contents": "[IPress, Tool:Cube3D]"
+        },
+        {
+            "trigger": "IPress\t (args)",
+            "contents": "[IPress, \n\t Interface item path\n]"
+        },
+        {
+            "trigger": "IReset\tInterface Reset. Output: Returns the button that the user clicked ( 0=NO, 1=YES ) (Sub-Level only).",
+            "contents": "[IReset]"
+        },
+        {
+            "trigger": "IReset\t (args)",
+            "contents": "[IReset, \n\t Optional item to reset (default:All). (0:All, \n\t 1:Interface, \n\t 2:Document, \n\t 3:Tools, \n\t 4:Lights, \n\t 5:Materials, \n\t 6:Stencil) , \n\t Optional ZBrush version-configuration\n]"
+        },
+        {
+            "trigger": "IsDisabled\tReturns 1 if the specified ZBrush or ZScript interface item is currently disabled, returns 0 otherwise Output: The item \u2018Disabled\u2019 status (1=Disabled 0=Enabled)",
+            "contents": "[IsDisabled, Transform:Move]"
+        },
+        {
+            "trigger": "IsDisabled\t (args)",
+            "contents": "[IsDisabled, \n\t Interface item path\n]"
+        },
+        {
+            "trigger": "IsEnabled\tReturns 1 if the specified ZBrush or ZScript interface item is currently enabled, returns 0 otherwise Output: The item \u2018Enabled\u2019 status (1=Enabled 0=Disabled)",
+            "contents": "[IsEnabled, Transform:Move]"
+        },
+        {
+            "trigger": "IsEnabled\t (args)",
+            "contents": "[IsEnabled, \n\t Interface item path\n]"
+        },
+        {
+            "trigger": "ISet\tSets a new value to a ZBrush or ZScript interface item",
+            "contents": "[ISet, Draw:Width, 50]"
+        },
+        {
+            "trigger": "ISet\t (args)",
+            "contents": "[ISet, \n\t Interface item path, \n\t value, \n\t Secondary value\n]"
+        },
+        {
+            "trigger": "ISetHotkey\tSets the hotkey of the specified interface item",
+            "contents": "[ISetHotkey, windowID, 'k']"
+        },
+        {
+            "trigger": "ISetHotkey\t (args)",
+            "contents": "[ISetHotkey, \n\t Interface item path, \n\t Hotkey(0:no Hotkey)\n]"
+        },
+        {
+            "trigger": "ISetMax\tSets the maximum value for an ISlider interface item (can only be used for ZScript-generated interface items)",
+            "contents": "[ISetMax, Zscript:Counter, 10]"
+        },
+        {
+            "trigger": "ISetMax\t (args)",
+            "contents": "[ISetMax, \n\t Interface item path, \n\t New max value\n]"
+        },
+        {
+            "trigger": "ISetMin\tSets the minimum value for an ISlider interface item (can only be used for ZScript-generated interface items)",
+            "contents": "[ISetMin, Zscript:Counter, 10]"
+        },
+        {
+            "trigger": "ISetMin\t (args)",
+            "contents": "[ISetMin, \n\t Interface item path, \n\t New min value\n]"
+        },
+        {
+            "trigger": "IShow\tLocates an interface item and makes it visible.",
+            "contents": "[IShow, Draw:Width]"
+        },
+        {
+            "trigger": "IShow\t (args)",
+            "contents": "[IShow, \n\t Interface item path, \n\t Show Zoom Rectangles?, \n\t Target parent window?\n]"
+        },
+        {
+            "trigger": "IShowActions\tTemorarily sets the status of ShowActions",
+            "contents": "[IShowActions, 0]"
+        },
+        {
+            "trigger": "IShowActions\t (args)",
+            "contents": "[IShowActions, \n\t The ShowActions status.(0:Disable ShowActions, \n\t Positive value:enable show actions, \n\t Negative value:Reset ShowActions)\n]"
+        },
+        {
+            "trigger": "IsLocked\tReturns 1 if the specified ZBrush or ZScript interface item is currently locked, returns 0 otherwiseOutput: The item \u2018Locked\u2019 status (1=Locked 0=Unlocked)",
+            "contents": "[IsLocked, Transform:Move]"
+        },
+        {
+            "trigger": "IsLocked\t (args)",
+            "contents": "[IsLocked, \n\t Interface item path\n]"
+        },
+        {
+            "trigger": "IStroke\tEmulates a brush stroke within an interface item",
+            "contents": "[IStroke, [StrokeLoad, \"CurvePoints.txt\"]]"
+        },
+        {
+            "trigger": "IStroke\t (args)",
+            "contents": "[IStroke, \n\t Interface item path, \n\t StrokeData\n]"
+        },
+        {
+            "trigger": "IsUnlocked\tReturns 1 if the specified ZBrush or ZScript interface item is currently unlocked, returns 0 otherwiseOutput: The item \u2018Unlocked\u2019 status (1=Unlocked 0=locked)",
+            "contents": "[IsUnLocked, Transform:Move]"
+        },
+        {
+            "trigger": "IsUnlocked\t (args)",
+            "contents": "[IsUnlocked, \n\t Interface item path\n]"
+        },
+        {
+            "trigger": "IToggle\tToggles the state of a ZBrush or ZScript interface item",
+            "contents": "[IToggle, Draw:ZAdd]"
+        },
+        {
+            "trigger": "IToggle\t (args)",
+            "contents": "[IToggle, \n\t Interface item path\n]"
+        },
+        {
+            "trigger": "IUnlock\tUnlocks an interface item",
+            "contents": "[IUnLock, ZScript:DoIt]"
+        },
+        {
+            "trigger": "IUnlock\t (args)",
+            "contents": "[IUnlock, \n\t Window path, \n\t Window ID or relative windowID(-100<->100)\n]"
+        },
+        {
+            "trigger": "IUnPress\tUnpresses a ZBrush or ZScript interface item",
+            "contents": "[IUnPress, Layer:Modifiers:w]"
+        },
+        {
+            "trigger": "IUnPress\t (args)",
+            "contents": "[IUnPress, \n\t Interface item path\n]"
+        },
+        {
+            "trigger": "IUpdate\tUpdates the ZBrush interface.",
+            "contents": "[IUpdate, 5]"
+        },
+        {
+            "trigger": "IUpdate\t (args)",
+            "contents": "[IUpdate, \n\t Repeat count (default:1), \n\t Redraw UI? (default:no, \n\t 1:yes)\n]"
+        },
+        {
+            "trigger": "IVPos\tReturns the V position of the interface item in Canvas or Global coordinates. Output: The V position of the interface item.",
+            "contents": "[IVPos, Draw:Width, 1]"
+        },
+        {
+            "trigger": "IVPos\t (args)",
+            "contents": "[IVPos, \n\t Interface item path , \n\t Global coordinates? (set value to non-zero for global coordinates, \n\t default:Canvas coordinates)\n]"
+        },
+        {
+            "trigger": "IWidth\tReturns the pixel-width of an interface item. Output: The width of the interface item.",
+            "contents": "[IWidth, Tool:SimpleBrush]"
+        },
+        {
+            "trigger": "IWidth\t (args)",
+            "contents": "[IWidth, \n\t Interface item path\n]"
+        },
+        {
+            "trigger": "ZBrushInfo\tReturns ZBrush info. Output: Result value",
+            "contents": "[ZBrushInfo, 6]"
+        },
+        {
+            "trigger": "ZBrushInfo\t (args)",
+            "contents": "[ZBrushInfo, \n\t The info type. (0:version number 1:Demo/Beta/Full 2:Runtime seconds 3:Mem use 4:VMem Use 5:Free Mem 6:operating system (0:PC 1:Mac 2:MacOSX) 7:Unique session ID 8:Total RAM)\n]"
+        },
+        {
+            "trigger": "ZBrushPriorityGet\tReturns the task-priority of ZBrush. Output: The current task-priority",
+            "contents": "[ZBrushPriorityGet]"
+        },
+        {
+            "trigger": "ZBrushPriorityGet\t (args)",
+            "contents": "[ZBrushPriorityGet\n]"
+        },
+        {
+            "trigger": "ZBrushPrioritySet\tSets the task-priority of ZBrush.",
+            "contents": "[ZBrushPrioritySet, 1]"
+        },
+        {
+            "trigger": "ZBrushPrioritySet\t (args)",
+            "contents": "[ZBrushPrioritySet , \n\t The priority. -2:Low, \n\t -1:BelowNormal, \n\t 0:normal, \n\t 1:Above Normal, \n\t 2:High\n]"
+        }
+    ]
+}

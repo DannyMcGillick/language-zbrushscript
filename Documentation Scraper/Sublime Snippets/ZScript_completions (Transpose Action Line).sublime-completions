@@ -1,0 +1,29 @@
+{
+    "scope": "text.zscript",
+    "completions": [
+        {
+            "trigger": "TransposeGet\tGets current Transpose Action Line values (Sub-Level only).",
+            "contents": "[TransposeGet, xPos, yPos, zPos]"
+        },
+        {
+            "trigger": "TransposeGet\t (args)",
+            "contents": "[TransposeGet, \n\t Start xPos, \n\t Start yPos, \n\t Start zPos, \n\t End xPos, \n\t End yPos, \n\t End zPos, \n\t Action Line Length, \n\t x of red axis, \n\t y of red axis, \n\t z of red axis, \n\t x of green axis, \n\t y of green axis, \n\t z of green axis, \n\t x of blue axis, \n\t y of blue axis, \n\t z of blue axis\n]"
+        },
+        {
+            "trigger": "TransposeIsShown\tReturns status of transpose line. Output: Returns 1 if shown, zero if not (Sub-Level only).",
+            "contents": "[TransposeSet, xPos, yPos, zPos]"
+        },
+        {
+            "trigger": "TransposeIsShown\t (args)",
+            "contents": "[TransposeIsShown\n]"
+        },
+        {
+            "trigger": "TransposeSet\tSets current Transpose Action Line values (Sub-Level only).",
+            "contents": "[TransposeSet, xPos, yPos, zPos]"
+        },
+        {
+            "trigger": "TransposeSet\t (args)",
+            "contents": "[TransposeSet, \n\t Start xPos, \n\t Start yPos, \n\t Start zPos, \n\t End xPos, \n\t End yPos, \n\t End zPos, \n\t Action Line Length, \n\t x of red axis, \n\t y of red axis, \n\t z of red axis, \n\t x of green axis, \n\t y of green axis, \n\t z of green axis, \n\t x of blue axis, \n\t y of blue axis, \n\t z of blue axis\n]"
+        }
+    ]
+}

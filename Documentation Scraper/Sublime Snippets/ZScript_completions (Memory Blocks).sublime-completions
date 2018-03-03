@@ -1,0 +1,165 @@
+{
+    "scope": "text.zscript",
+    "completions": [
+        {
+            "trigger": "MemCopy\tCopies data from one memory block into another. Output: Returns the number of bytes moved. (-1 indicates an error)",
+            "contents": "[MemCopy, FromMemBlock, 1000, ToMemBlock, 2000, 10000]"
+        },
+        {
+            "trigger": "MemCopy\t (args)",
+            "contents": "[MemCopy, \n\t From Mem block identifier, \n\t From offset, \n\t To Mem block identifier, \n\t To offset, \n\t Number of bytes to move (if omitted, \n\t max possible number of bytes will be copied)\n]"
+        },
+        {
+            "trigger": "MemCreate\tCreates a new memory block. Output: Returns the size of the new memory block or error code\u20260=Error -1=Memory already exists -2=Can\u2019t create memory block.",
+            "contents": "[MemCreate, myTempData, 1000, 0]"
+        },
+        {
+            "trigger": "MemCreate\t (args)",
+            "contents": "[MemCreate, \n\t Mem block identifier, \n\t Mem block requested size, \n\t Initial fill? (omitted: noFill - faster to create)\n]"
+        },
+        {
+            "trigger": "MemCreateFromFile\tCreates a new memory block from a disk file. Output: Returns the size of the new memory block or error code\u20260=Error -1=Memory already exists -2=Can\u2019t create memory block -3=File not found.",
+            "contents": "[MemCreateFromFile, myTempData, mesh.obj]"
+        },
+        {
+            "trigger": "MemCreateFromFile\t (args)",
+            "contents": "[MemCreateFromFile, \n\t Mem block identifier, \n\t File name including the extension (such as brush1.ztl ), \n\t Optional start file offset for partial file read (default:0), \n\t Optional max bytes to read (default:all file)\n]"
+        },
+        {
+            "trigger": "MemDelete\tDeletes a memory block. Output: Returns the size of the deleted memory block. Returns 0 if memory block could not be found.",
+            "contents": "[MemDelete, myTempData]"
+        },
+        {
+            "trigger": "MemDelete\t (args)",
+            "contents": "[MemDelete, \n\t Data block identifier\n]"
+        },
+        {
+            "trigger": "MemGetSize\tReturns the size of a memory block (Also useful for determining if a memory block already exists. Output: Returns the size of the memory block. Returns 0 if data block could not be found.",
+            "contents": "[MemGetSize, myTempData]"
+        },
+        {
+            "trigger": "MemGetSize\t (args)",
+            "contents": "[MemGetSize, \n\t Memory block identifier\n]"
+        },
+        {
+            "trigger": "MemMove\tMove data within an existing memory block. Output: Returns the mumber of bytes moved.",
+            "contents": "[MemMove, myTempData, 1000, 2000, 10000]"
+        },
+        {
+            "trigger": "MemMove\t (args)",
+            "contents": "[MemMove, \n\t Mem block identifier, \n\t From offset, \n\t To offset, \n\t Number of bytes to move\n]"
+        },
+        {
+            "trigger": "MemMultiWrite\tWrite data to a memory block. Output: Returns the number of actual bytes written",
+            "contents": "[MemMultiWrite, myTempData, 4, 12, 3, 5, 100]"
+        },
+        {
+            "trigger": "MemMultiWrite\t (args)",
+            "contents": "[MemMultiWrite, \n\t Mem block identifier, \n\t Value to write, \n\t Data format (0:omitted:float 1:signed char 2:unsigned char 3:signed short 4:unsigned short 5:signed long 6:unsigned long 7:fixed16 (16.16)), \n\t Offset (in bytes) into memory block, \n\t Repeat count, \n\t Offset (in bytes) to subsequent writes\n]"
+        },
+        {
+            "trigger": "MemRead\tReads data from a memory block. Output: Returns the number of actual bytes read",
+            "contents": "[MemRead, myTempData, width, 12, 3]"
+        },
+        {
+            "trigger": "MemRead\t (args)",
+            "contents": "[MemRead, \n\t Mem block identifier, \n\t Read variable, \n\t Data format (0:omitted:float 1:signed char 2:unsigned char 3:signed short 4:unsigned short 5:signed long 6:unsigned long 7:fixed16 (16.16)), \n\t Offset (in bytes) into memory block\n]"
+        },
+        {
+            "trigger": "MemReadString\tReads a string from a memory block. Output: Returns the number of bytes scanned. (may be larger than the actual bytes read)",
+            "contents": "[MemReadString, myTempData, tempText, 12, 1]"
+        },
+        {
+            "trigger": "MemReadString\t (args)",
+            "contents": "[MemReadString, \n\t Mem block identifier, \n\t The string variable, \n\t Offset (in bytes) into memory block, \n\t Break at line end? (default:no), \n\t Skip white space? (default:no), \n\t Max read length 1 - 255(default)\n]"
+        },
+        {
+            "trigger": "MemResize\tResizes an exsiting memory block. Output: Returns the new size of the memory block. Zero indicates an error.",
+            "contents": "[MemResize, myTempData, 1000]"
+        },
+        {
+            "trigger": "MemResize\t (args)",
+            "contents": "[MemResize, \n\t Mem block identifier, \n\t New size, \n\t Optional byte value to fill the newly added memory? (omitted:no)\n]"
+        },
+        {
+            "trigger": "MemSaveToFile\tSaves an exisiting memory block to a disk file. Output: Returns the size of the new memory block or error code\u20260=Error -1=Memory does not exist -2=File already exists -3=File write error.",
+            "contents": "[MemSaveToFile, myTempData, \"mesh.obj\"]"
+        },
+        {
+            "trigger": "MemSaveToFile\t (args)",
+            "contents": "[MemSaveToFile, \n\t Mem block identifier, \n\t File name including the extension (such as brush1.ztl ), \n\t Overwrite if exists? Set to a value (including 0) to save the file even if an identically named file already exists on disk - Default (no argument): do not overwrite\n]"
+        },
+        {
+            "trigger": "MemWrite\tWrite data to a memory block. Output: Returns the number of actual bytes written",
+            "contents": "[MemWrite, myTempData, 4, 12, 3]"
+        },
+        {
+            "trigger": "MemWrite\t (args)",
+            "contents": "[MemWrite, \n\t Mem block identifier, \n\t Value to write, \n\t Data format (0:omitted:float 1:signed char 2:unsigned char 3:signed short 4:unsigned short 5:signed long 6:unsigned long 7:fixed16 (16.16)), \n\t Offset (in bytes) into memory block\n]"
+        },
+        {
+            "trigger": "MemWriteString\tWrites a string into a memory block. Output: Returns the number of bytes written. (including the terminating zero)",
+            "contents": "[MemWriteString, myTempData, \"Hello There\", 12]"
+        },
+        {
+            "trigger": "MemWriteString\t (args)",
+            "contents": "[MemWriteString, \n\t Mem block identifier, \n\t The string, \n\t Offset (in bytes) into memory block, \n\t Write terminating zero char (if omitted:yes)\n]"
+        },
+        {
+            "trigger": "MTransformGet\tGets current transformation values into an existing memory block (Sub-Level only).",
+            "contents": "[MTransformGet, MyDataBlock, 1]"
+        },
+        {
+            "trigger": "MTransformGet\t (args)",
+            "contents": "[MTransformGet, \n\t Mem block identifier, \n\t Optional variable index (default:0)\n]"
+        },
+        {
+            "trigger": "MTransformSet\tSets new transformation values from an existing memory block (Sub-Level only).",
+            "contents": "[MTransformSet, MyDataBlock, 1]"
+        },
+        {
+            "trigger": "MTransformSet\t (args)",
+            "contents": "[MTransformSet, \n\t Mem block identifier, \n\t Optional variable index (default:0)\n]"
+        },
+        {
+            "trigger": "MVarDef\tDefines a new variables memory block. Output: Returns the variables count of the new memory block or error code\u20260=Error -1=Memory already exists -2=Can\u2019t create memory block.",
+            "contents": "[MVarDef, myTempData, 1000, 0]"
+        },
+        {
+            "trigger": "MVarDef\t (args)",
+            "contents": "[MVarDef, \n\t Mem block identifier, \n\t Mem block variables count, \n\t Initial fill? (omitted:noFill - faster to create)\n]"
+        },
+        {
+            "trigger": "MVarGet\tReads a float value from a memory block. Output: Returns the float value.",
+            "contents": "[MVarGet, myTempData, 1]"
+        },
+        {
+            "trigger": "MVarGet\t (args)",
+            "contents": "[MVarGet, \n\t Mem block identifier, \n\t Variable index (0 based)\n]"
+        },
+        {
+            "trigger": "MVarSet\tWrites a float value to a memory block. Output: Returns the old value of the variable.",
+            "contents": "[MVarSet, myTempData, 1, 4]"
+        },
+        {
+            "trigger": "MVarSet\t (args)",
+            "contents": "[MVarSet, \n\t Mem block identifier, \n\t Variable index (0 based), \n\t The value to write\n]"
+        },
+        {
+            "trigger": "SoundPlay\tPlays the sounds loaded into a specified memory block. Output: Returns the zero if command executed successfully (Sub-Level only).",
+            "contents": "[SoundPlay, SayHello]"
+        },
+        {
+            "trigger": "SoundPlay\t (args)",
+            "contents": "[SoundPlay, \n\t Mem block identifier, \n\t Optional play mode (0:Play once, \n\t don't wait for completion (default); 1:Play once, \n\t wait for completion; 2:Play loop, \n\t don't wait for completion)\n]"
+        },
+        {
+            "trigger": "SoundStop\tStops the currently specified sound. Output: Returns the zero if command executed successfully (Sub-Level only).",
+            "contents": "[Soundstop, SayHello]"
+        },
+        {
+            "trigger": "SoundStop\t (args)",
+            "contents": "[SoundStop, \n\t Mem block identifier\n]"
+        }
+    ]
+}
